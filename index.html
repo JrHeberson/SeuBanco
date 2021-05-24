@@ -573,18 +573,34 @@
         </div>
     </section>
 -->
+
+     <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="noCognitoMessage" class="configMessage" style="display: none;">
+        <div class="backdrop"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">No Cognito User Pool Configured</h3>
+            </div>
+            <div class="panel-body">
+                <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+            </div>
+        </div>
+    </div>
     <!-- Blog section END -->
     <!-- Contact  start-->
-    <section class="section-padding contact " id="contact">
+    <section class="section-padding contact form-wrap" id="contact">
         <div class="container">
             <div class="row ">
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
                     <div class="heading ">
-                        <span class="subheading">Quer saber mais?</span>
-                        <h2>Vamos falar!</h2>
+                        <span class="subheading">Quer estar entre os primeiros a aproveitar todas essas vantagens?</span>
+                        <h2>Faça seu pré-cadastro!</h2>
                     </div>
 
-                    <form id="registrationForm" class="contact_form form-row ">
+                    <form id="registrationForm" class="contact_form form-row">
                         <div class="row">
                             <!-- 
                             <div class="col-lg-4">
@@ -596,19 +612,19 @@
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="email" id="emailInputRegister" placeholder="Email" pattern=".*" required>
+                                    <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" pattern=".*" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
+                                    <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+                                    <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
                                 </div>
                             </div>
                             <!--
@@ -755,11 +771,13 @@
         gtag('config', 'G-WLK32C4ZZT');
     </script>
 
+    <script src="assets/js/jquery-3.1.0.js"></script>
+    
     <!--COGNITO-->
-    <script src="js/aws-cognito-sdk.min.js"></script>
-    <script src="js/amazon-cognito-identity.min.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/cognito-auth.js"></script>
+    <script src="assets/js/aws-cognito-sdk.min.js"></script>
+    <script src="assets/js/amazon-cognito-identity.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/cognito-auth.js"></script>
 
 </body>
 

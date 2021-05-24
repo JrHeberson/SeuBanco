@@ -3,7 +3,7 @@
 var WildRydes = window.WildRydes || {};
 
 (function scopeWrapper($) {
-    var signinUrl = '/signin.html';
+    var signinUrl = 'index.html';
 
     var poolData = {
         UserPoolId: _config.cognito.userPoolId,
@@ -137,7 +137,7 @@ var WildRydes = window.WildRydes || {};
         var onSuccess = function registerSuccess(result) {
             var cognitoUser = result.user;
             console.log('user name is ' + cognitoUser.getUsername());
-            var confirmation = ('Registration successful. Please check your email inbox or spam folder for your verification code.');
+            var confirmation = ('Registro realizado com sucesso. Verifique sua caixa de entrada de e-mail ou pasta de spam para obter o código de verificação.');//('Registration successful. Please check your email inbox or spam folder for your verification code.');
             if (confirmation) {
                 window.location.href = 'verify.html';
             }
@@ -150,7 +150,7 @@ var WildRydes = window.WildRydes || {};
         if (password === password2) {
             register(email, password, onSuccess, onFailure);
         } else {
-            alert('Passwords do not match');
+            alert('Senhas diferentes');
         }
     }
 
@@ -161,8 +161,8 @@ var WildRydes = window.WildRydes || {};
         verify(email, code,
             function verifySuccess(result) {
                 console.log('call result: ' + result);
-                console.log('Successfully verified');
-                alert('Verification successful. You will now be redirected to the login page.');
+                console.log('Verificado com sucesso!'); //('Successfully verified');
+                alert('Verificado com sucesso! Muito obrigado pelo seu pré-cadastro! Você será redirecionado a nossa pagina principal!');
                 window.location.href = signinUrl;
             },
             function verifyError(err) {

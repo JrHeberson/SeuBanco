@@ -46,25 +46,41 @@
             </div>
         </div>
 
-        <header>
-          <img src="images/logo.png">
-        </header>
+       
 
 
-        <section class="form-wrap">
-            <h1>Verify Email</h1>
-            <form id="verifyForm">
-              <input type="email" id="emailInputVerify" placeholder="Email" required>
-              <input type="text" id="codeInputVerify" placeholder="Verification Code" pattern=".*" required>
-
-              <input type="submit" value="Verify">
+        <section class="section-padding contact form-wrap" id="contact">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
+                        <div class="heading ">
+                            <span class="subheading">Nós presamos pela sua privacidade! Por isso mandamos um código para o seu email! <br> Somente entrando esse código que seu cadastro será concluído!</span>
+                            <h2>Concluir pré-cadastro</h2>
+                        </div>
+            <form id="verifyForm" class="contact_form form-row">
+                <div class="row"> 
+                    <div class="col-lg-12">
+                        <input type="email" class="form-control" id="emailInputVerify" placeholder="Email" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" class="form-control" id="codeInputVerify" placeholder="Código de verificação" pattern=".*" required>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class=" mt-4">
+                        <input type="submit" class="btn btn-main" value="Verificar cadastro">
+                    </div>
+                </div>              
             </form>
-        </section>
+        </div>
+    </div>
+</div>
+</section>
 
-        
-        <script src="js/aws-cognito-sdk.min.js"></script>
-        <script src="js/amazon-cognito-identity.min.js"></script>
-        <script src="js/config.js"></script>
-        <script src="js/cognito-auth.js"></script>
+        <script src="assets/js/jquery-3.1.0.js"></script>
+        <script src="assets/js/aws-cognito-sdk.min.js"></script>
+        <script src="assets/js/amazon-cognito-identity.min.js"></script>
+        <script src="assets/js/config.js"></script>
+        <script src="assets/js/cognito-auth.js"></script>
     </body>
 </html>
