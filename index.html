@@ -584,35 +584,43 @@
                         <h2>Vamos falar!</h2>
                     </div>
 
-                    <form class="contact_form form-row " method="post" action="#">
+                    <form id="registrationForm" class="contact_form form-row ">
                         <div class="row">
+                            <!-- 
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nome*">
                                 </div>
                             </div>
+                            -->
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email*">
+                                    <input type="email" id="emailInputRegister" placeholder="Email" pattern=".*" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Assunto">
+                                    <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
                                 </div>
                             </div>
 
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+                                </div>
+                            </div>
+                            <!--
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <textarea cols="30" rows="4" class="form-control" placeholder="Mensagem"></textarea>
                                 </div>
                             </div>
-
+                            -->    
                             <div class="col-lg-12">
                                 <div class=" mt-4">
-                                    <input type="submit" class="btn btn-main" value="Enviar">
+                                    <input type="submit" class="btn btn-main" value="Cadastrar">
                                 </div>
                             </div>
                         </div>
@@ -747,6 +755,11 @@
         gtag('config', 'G-WLK32C4ZZT');
     </script>
 
+    <!--COGNITO-->
+    <script src="js/aws-cognito-sdk.min.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cognito-auth.js"></script>
 
 </body>
 
