@@ -132,7 +132,7 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 /*-------------------
@@ -159,9 +159,9 @@ BUTTONS STYLE
 }
 
 .btn-main {
-  background: #F87679;
+  background: rgb(122, 155, 160);
   color: #fff;
-  border-color: #F87679;
+  border-color: rgb(122, 155, 160);
 }
 
 .btn-main:hover {
@@ -178,9 +178,9 @@ BUTTONS STYLE
 }
 
 .btn-white:hover {
-  background: #F87679;
+  background: rgb(122, 155, 160);
   color: #fff;
-  border-color: #F87679;
+  border-color: rgb(122, 155, 160);
 }
 
 .btn-white-tp {
@@ -190,9 +190,34 @@ BUTTONS STYLE
 }
 
 .btn-white-tp:hover {
-  background: #F87679;
+  background: rgb(122, 155, 160);
   color: #fff;
-  border-color: #F87679;
+  border-color: rgb(122, 155, 160);
+}
+
+.btn-green {
+  border-color: rgb(122, 155, 160);
+  background: rgb(122, 155, 160);
+  color: #fff;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+.btn-green:hover {
+  background: rgb(122, 155, 160);
+  color: #000;
+  border-color: rgb(122, 155, 160);
+}
+
+.btn-green-tp {
+  border-color: rgb(122, 155, 160);
+  background: transparent;
+  color: rgb(122, 155, 160);
+}
+
+.btn-green-tp:hover {
+  background: rgb(122, 155, 160);
+  color: #fff;
+  border-color: rgb(122, 155, 160);
 }
 
 .btn-tp {
@@ -205,8 +230,8 @@ BUTTONS STYLE
 }
 
 .btn-tp:hover {
-  background: #F87679;
-  border-color: #F87679;
+  background: rgb(122, 155, 160);
+  border-color: rgb(122, 155, 160);
   color: #fff;
 }
 
@@ -222,7 +247,7 @@ a {
 }
 
 a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
   outline: none;
   text-decoration: none;
 }
@@ -288,7 +313,7 @@ Page Banner Area
 }
 
 .page-header .page-header-info span {
-  color: #F87679;
+  color: rgb(122, 155, 160);
   font-size: 26px;
   font-weight: 700;
   line-height: 39px;
@@ -429,7 +454,7 @@ Sidebar menu
 
 .menu-main .active > a,
 .menu-main a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .menu-footer {
@@ -495,7 +520,7 @@ Sidebar menu
 }
 
 .menu-btn-box:hover {
-  background: #F87679;
+  background: rgb(122, 155, 160);
 }
 
 .menu-btn-box:hover .nav-toggle .stick {
@@ -516,7 +541,7 @@ Sidebar menu
 }
 
 .search-box:hover i {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .site-navigation {
@@ -559,7 +584,7 @@ Sidebar menu
 
 .search-form {
   background-color: #ffffff;
-  border-top: 1px solid #F87679;
+  border-top: 1px solid rgb(122, 155, 160);
   float: right;
   width: 290px;
 }
@@ -692,7 +717,7 @@ Sidebar menu
 }
 
 .banner .banner-socials a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 /*-------------------
@@ -712,7 +737,7 @@ About STYLE
 .heading .subheading {
   font-size: 20px;
   line-height: 30px;
-  color: #F87679;
+  color: rgb(122, 155, 160);
   text-transform: uppercase;
 }
 
@@ -807,7 +832,7 @@ Features STYLE
   font-size: 28px;
   line-height: 42px;
   margin-bottom: 10px;
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .feature-box p {
@@ -847,7 +872,7 @@ Features STYLE
 }
 
 .video-icon a:hover {
-  background: #F87679;
+  background: rgb(122, 155, 160);
 }
 
 .video-icon:hover a {
@@ -922,7 +947,7 @@ Service Style
 .more-btn i {
   width: 44px;
   height: 44px;
-  background: #F87679;
+  background: rgb(122, 155, 160);
   display: inline-block;
   color: #fff;
   border-radius: 100%;
@@ -974,7 +999,7 @@ Service Style
 }
 
 .service-item:hover h4 a {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .service-item:hover i {
@@ -1019,7 +1044,7 @@ Skill bar
   top: 0px;
   width: 54%;
   height: 100%;
-  background: url("../images/bg/round-shape.png") no-repeat;
+  background: url("../images/bg/round-shape-green.png") no-repeat;
   background-size: cover;
 }
 
@@ -1061,7 +1086,7 @@ Skill bar
   top: 0;
   left: 0;
   height: 100%;
-  background: #F87679;
+  background: rgb(122, 155, 160);
   transition: all 3s ease-in-out;
 }
 
@@ -1303,7 +1328,7 @@ Blog Style
 }
 
 .blog-item .video-btn a:hover {
-  background: #F87679;
+  background: rgb(122, 155, 160);
 }
 
 .blog-item .video-btn:hover a {
@@ -1338,7 +1363,7 @@ Blog Style
 }
 
 .blog-item .blog-content:hover a {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 /*-------------------
@@ -1520,7 +1545,7 @@ Contact PAge
 }
 
 .contact-socials a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .google-map {
@@ -1603,7 +1628,7 @@ Work Process
   background: #ffffff;
   box-shadow: 0px 0px 58px rgba(0, 0, 0, 0.1);
   border-radius: 100%;
-  color: #F87679;
+  color: rgb(122, 155, 160);
   font-size: 32px;
   text-align: center;
   line-height: 184px;
@@ -1615,7 +1640,7 @@ Work Process
 }
 
 .process-item:hover i {
-  background: #F87679;
+  background: rgb(122, 155, 160);
   color: #fff;
 }
 
@@ -1691,7 +1716,7 @@ Latest works gallery
 CTA Style
 --------------------*/
 .cta {
-  background: #F87679;
+  background: rgb(122, 155, 160);
   padding: 100px 0px;
 }
 
@@ -1730,7 +1755,7 @@ Portfolio Page
 }
 
 .portfolio-filter li.active a {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .portfolio-filter li a {
@@ -1746,7 +1771,7 @@ Portfolio Page
 }
 
 .portfolio-filter li a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .portfolio-block {
@@ -1796,7 +1821,7 @@ Portfolio Page
 }
 
 .loadmore-section a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 /*==========================
@@ -1877,7 +1902,7 @@ POrtfolio Single
 }
 
 .portfolio-navigation a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 /*==========================
@@ -1933,7 +1958,7 @@ About Page
 .intro-block .intro-year {
   width: 86px;
   height: 86px;
-  background: #F87679;
+  background: rgb(122, 155, 160);
   color: #fff;
   text-align: center;
   float: left;
@@ -2005,7 +2030,7 @@ Team Section
   bottom: 0px;
   width: 164px;
   height: 164px;
-  background: #F87679;
+  background: rgb(122, 155, 160);
   z-index: -1;
 }
 
@@ -2172,7 +2197,7 @@ Footer Section
 }
 
 .footer .footer-links a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .footer .footer-socials {
@@ -2186,7 +2211,7 @@ Footer Section
 }
 
 .footer .footer-socials a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .footer-btm {
@@ -2209,7 +2234,7 @@ Footer Section
 }
 
 .post-content .post-meta a {
-  color: #F87679;
+  color: rgb(122, 155, 160);
   margin-right: 10px;
 }
 
@@ -2391,7 +2416,7 @@ Right Sidebar
 }
 
 .blog-sidebar .widget.widget_archieves select:focus {
-  border-color: #F87679;
+  border-color: rgb(122, 155, 160);
   box-shadow: none;
 }
 
@@ -2450,7 +2475,7 @@ Right Sidebar
 }
 
 .widget_about .about-socials a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 /*--------- INSTAGRAM BLOCK -----------*/
@@ -2585,7 +2610,7 @@ Single Blog Page
 }
 
 .single-tags a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .post-share span {
@@ -2640,7 +2665,7 @@ Single Blog Page
 }
 
 .postnav_left:hover, .postnav_right:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .postnav_left span, .postnav_right span {
@@ -2789,9 +2814,9 @@ Single Blog Page
 }
 
 .comments-form .comment_form .btn {
-  background: #F87679;
+  background: rgb(122, 155, 160);
   color: #fff;
-  border-color: #F87679;
+  border-color: rgb(122, 155, 160);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -2845,7 +2870,7 @@ Footer Section
 }
 
 .footer .footer-links a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .footer .footer-socials {
@@ -2859,7 +2884,7 @@ Footer Section
 }
 
 .footer .footer-socials a:hover {
-  color: #F87679;
+  color: rgb(122, 155, 160);
 }
 
 .footer-btm {
@@ -2874,4 +2899,41 @@ Footer Section
 
 .footer-btm .copyright a:hover {
   color: #259392;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: none;
+  color: #fff;
+  position: relative;
+  /*padding: 20px;*/
+  margin-top: 10px;
+}
+
+#message p {
+  /*padding: 10px 35px;*/
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
 }
