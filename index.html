@@ -4,23 +4,23 @@
 <head>    
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="w_lU0KRMdRXbeDJtFQdCd5Bxo438eOOoxT4jeyXy0F4" />
-    <title>SeuBanco - Open Banking! Aqui quem manda é você!</title>
+    <title>My Banking Brasil - Open Banking! Aqui quem manda é você!</title>
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="SeuBanco é uma plataforma nascida para otimizar a sua experiência no uso da infraestrutura do Open Banking" />
+    <meta name="description" content="My Banking Brasil é uma plataforma nascida para otimizar a sua experiência no uso da infraestrutura do Open Banking" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="canonical" href="https://seubanco.academy" />
+    <link rel="canonical" href="https://mybanking.com.br" />
 
     <!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="SeuBanco - Open Banking! Aqui quem manda é você!" />
-    <meta property="og:url" content="https://seubanco.academy" />
-    <meta property="og:site_name" content="SeuBanco" />
+    <meta property="og:title" content="My Banking Brasil - Open Banking! Aqui quem manda é você!" />
+    <meta property="og:url" content="https://mybanking.com.br" />
+    <meta property="og:site_name" content="My Banking Brasil" />
     <!-- For the og:image content, replace the # with a link of an image -->
     <meta property="og:image" content="assets/images/about/innovation.png" />
     <meta property="og:description"
-        content="SeuBanco é uma plataforma nascida para otimizar a sua experiência no uso da infraestrutura do Open Banking" />
+        content="My Banking Brasil é uma plataforma nascida para otimizar a sua experiência no uso da infraestrutura do Open Banking" />
 
     <!-- Add site Favicon -->
     <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="32x32" />
@@ -58,8 +58,9 @@
 
         <div class="site-navigation " id="mainmenu-area">
             <div class="container clearfix">
+                
              <!--   <a class="navbar-brand" href="index.html">
-                     <img src="assets/images/logo.png" alt="" class="img-fluid">
+                     <img  src="assets/images/about/mbb-logo-238x51.png" alt="" class="img-fluid">
                     
                 </a>
 
@@ -126,7 +127,7 @@
                             <li><a href="#"><i class="lni lni-behance-original"></i></a></li>
                             <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
                         </ul>
-                        <div class="menu-copyright">© Seu Banco 2021br> All Rights Reserved</div>
+                        <div class="menu-copyright">© My Banking Brasil 2021br> All Rights Reserved</div>
                     </div>
                 </div>
             -->
@@ -143,7 +144,7 @@
                     <div class="banner-content ">
                         <span class="subheading">Você sabe o que é</span>
                         <h1>Open Banking?</h1>
-                        <a href="#descubra" class="btn btn-main">Descubra Agora!</a>
+                        <a href="#descubra" class="btn btn-green">Descubra!<br><img  src="assets/images/about/mbb-logo-justo.png" alt="" class="img-fluid"></a>
                         <!-- <a href="#" class="btn btn-white-tp">Get Theme</a> -->
                     </div>
                     <!--
@@ -597,7 +598,7 @@
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
                     <div class="heading ">
                         <span class="subheading">Quer estar entre os primeiros a aproveitar todas essas vantagens?</span>
-                        <h2>Faça seu pré-cadastro!</h2>
+                        <h2>Faça seu<br>pré-cadastro!</h2>
                     </div>
 
                     <form id="registrationForm" class="contact_form form-row">
@@ -618,13 +619,12 @@
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
+                                    <input type="password" class="form-control" id="passwordInputRegister" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                 </div>
-                            </div>
-
+                            </div>                           
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+                                    <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirmar Senha" pattern=".*" required>
                                 </div>
                             </div>
                             <!--
@@ -641,6 +641,13 @@
                             </div>
                         </div>
                     </form>
+                    <div id="message">
+                        <span class="subheading">Sua senha precisa conter pelo menos:</span>
+                        <p id="letter" class="invalid">1 letra <b>minúscula</b></p>
+                        <p id="capital" class="invalid">1 letra <b>maiúscula</b></p>
+                        <p id="number" class="invalid">1 <b>número</b></p>
+                        <p id="length" class="invalid">No mínimo <b>8 caracteres</b></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -648,26 +655,27 @@
 
     <!-- Contact section end -->
     <!-- Footer section Start -->
-<!--
+
     <section class="footer ">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
                     <div class="footer-top text-center">
                         <div class="footer-logo">
-                            <img src="assets/images/logo-dark.png" alt="Clenora" class="img-fluid">
+                            <img src="assets/images/about/mbb-logo-fino.png" alt="Clenora" class="img-fluid">
                         </div>
-                        <p>Fusce a quam eros. Sed semper nec </p>
+                        <p>Conheça nossas Redes Sociais!</p>
                         <div class="list-inline footer-socials ">
                             <a href="https://twitter.com"><i class="icofont-twitter"></i></a>
                             <a href="https://facebook.com"><i class="icofont-facebook"></i></a>
                             <a href="https://youtube.com/"><i class="icofont-youtube-play"></i></a>
-                            <a href="https://google.com"><i class="icofont-google-plus"></i></a>
+                           <!-- <a href="https://google.com"><i class="icofont-google-plus"></i></a> -->
+                            <a target="_blank" href="https://instagram.com/mybankingbrasil/"><i class="icofont-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-
+        <!--
             <div class="row justify-content-center justify-content-xl-center justify-content-xxl-center">
                 <div class="col-lg-12 col-xl-5 col-sm-12 offset-xl-1">
                     <div class="row">
@@ -717,16 +725,17 @@
                     </div>
                 </div>
             </div>
+        -->
         </div>
     </section> 
--->
+
 
     <div class="footer-btm">
         <div class="conainer">
             <div class="row justify-content-center ">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright text-center">
-                        <p class="copyright">© 2021 <strong>SeuBanco</strong> <i class="icofont-heart text-danger" aria-hidden="true"></i></p>
+                        <p class="copyright">© 2021 <strong>My Banking Brasil</strong> <i class="icofont-heart text-success" aria-hidden="true"></i></p>
                     </div>
                 </div>
             </div>
@@ -740,6 +749,65 @@
     <!-- 
     Essential Scripts
     =====================================-->
+    <script>
+        var myInput = document.getElementById("passwordInputRegister");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function() {
+          document.getElementById("message").style.display = "block";
+        }
+        
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function() {
+          document.getElementById("message").style.display = "none";
+        }
+        
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function() {
+          // Validate lowercase letters
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+          } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+        }
+        
+          // Validate capital letters
+          var upperCaseLetters = /[A-Z]/g;
+          if(myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+          } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+          }
+        
+          // Validate numbers
+          var numbers = /[0-9]/g;
+          if(myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+          } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+          }
+        
+          // Validate length
+          if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+          } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+          }
+        }
+        </script>
 
     <!-- Main jQuery -->
     <script src="assets/vendors/jquery/jquery.min.js"></script>
