@@ -610,13 +610,20 @@
                                 </div>
                             </div>
                             -->
+                            
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" id="phone_numberInputRegister" placeholder="Fone/Whatsapp" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]*" onkeypress="mascara(this)" required>
+                                </div>
+                            </div>
 
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" pattern=".*" required>
                                 </div>
                             </div>
-
+                            </div>
+                            <div class="row">
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <input type="password" class="form-control" id="passwordInputRegister" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
@@ -749,6 +756,20 @@
     <!-- 
     Essential Scripts
     =====================================-->
+    <script type="text/javascript">
+        function mascara(telefone){ 
+            if(telefone.value.length == 0)
+                telefone.value = '(' + telefone.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+            if(telefone.value.length == 3)
+                telefone.value = telefone.value + ')'; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+ 
+            if(telefone.value.length == 9)
+                telefone.value = telefone.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+  
+        }
+    </script>
+
+
     <script>
         var myInput = document.getElementById("passwordInputRegister");
         var letter = document.getElementById("letter");

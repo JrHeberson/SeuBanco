@@ -52,14 +52,19 @@ var WildRydes = window.WildRydes || {};
      * Cognito User Pool functions
      */
 
-    function register(email, password, onSuccess, onFailure) {
+    function register(email, phone_number, password, onSuccess, onFailure) {
         var dataEmail = {
             Name: 'email',
             Value: email
         };
+        var dataPhoneNumber = {
+            Name: 'phone_number',
+            Value: phone_number
+        };
         var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
+        var attributePhoneNumber = new AmazonCognitoIdentity.CognitoUserAttribute(dataPhoneNumber);
 
-        userPool.signUp(toUsername(email), password, [attributeEmail], null,
+        userPool.signUp(toUsername(email), password, [attributeEmail,attributePhoneNumber], null,
             function signUpCallback(err, result) {
                 if (!err) {
                     onSuccess(result);
@@ -131,6 +136,7 @@ var WildRydes = window.WildRydes || {};
 
     function handleRegister(event) {
         var email = $('#emailInputRegister').val();
+        var phone_number = "+55"+$('#phone_numberInputRegister').val().replace("(","").replace(")","").replace("-","");
         var password = $('#passwordInputRegister').val();
         var password2 = $('#password2InputRegister').val();
 
@@ -148,7 +154,7 @@ var WildRydes = window.WildRydes || {};
         event.preventDefault();
 
         if (password === password2) {
-            register(email, password, onSuccess, onFailure);
+            register(email, phone_number, password, onSuccess, onFailure);
         } else {
             alert('Senhas diferentes');
         }
