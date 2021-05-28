@@ -1,0 +1,8 @@
+{
+  "storage": {
+    "MyBankingDB": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}

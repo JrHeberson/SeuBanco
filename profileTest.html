@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+         <!-- Add site Favicon -->
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/images/favicon/favicon-32x32.png" />
+    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon-32x32.png" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+         <!-- bootstrap.min css -->
+        <link rel="stylesheet" href="assets/vendors/bootstrap/bootstrap.min.css">
+        <!-- Iconfont Css -->
+        <link rel="stylesheet" href="assets/vendors/icofont/icofont.min.css">
+        <!-- animate.css -->
+        <link rel="stylesheet" href="assets/vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css">
+
+        <!-- Owl Carousel  CSS -->
+        <link rel="stylesheet" href="assets/vendors/owl/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/vendors/owl/assets/owl.theme.default.min.css">
+
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="noCognitoMessage" class="configMessage" style="display: none;">
+            <div class="backdrop"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">No Cognito User Pool Configured</h3>
+                </div>
+                <div class="panel-body">
+                    <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+                </div>
+            </div>
+        </div>
+
+       
+
+
+        <section class="section-padding contact form-wrap" id="contact">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
+                        <div class="heading ">
+                            <span class="subheading">Teste</span>
+                            <h2>Teste de Perfil</h2>
+                        </div>
+            <form id="profileTestForm" class="contact_form form-row">
+                <div class="row"> 
+                    <div class="col-lg-12">
+                        <input type="text" class="form-control" name="resposta1" id="resposta1" placeholder="resposta1" required>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class=" mt-4">
+                        <input type="submit" class="btn btn-main" value="Verificar cadastro">
+                    </div>
+                </div>              
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+        <script src="assets/js/jquery-3.1.0.js"></script>
+        <script src="assets/js/aws-cognito-sdk.min.js"></script>
+        <script src="assets/js/amazon-cognito-identity.min.js"></script>
+        <script src="assets/js/config.js"></script>        
+        <script src="assets/js/cognito-auth.js"></script>
+        <script src="assets/js/user.js"></script>
+    </body>
+</html>
