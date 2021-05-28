@@ -57,28 +57,232 @@
 
         <section class="section-padding contact form-wrap" id="contact">
             <div class="container">
-                <div class="row ">
+                <div class="row" id="pageTitle">
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
-                        <div class="heading ">
-                            <span class="subheading">Teste</span>
-                            <h2>Teste de Perfil</h2>
+                        <div class="heading ">                            
+                            <h2>Teste de Perfil Financeiro</h2>
+                            <span class="subheading">
+                                Para que possamos oferecer a melhor experiência, é importante entedermos desde já algumas questões sobre suas finanças.
+                                <br>
+                                Aconselhamos fortemente que você responda as questões da maneira mais honesta possível, para que possamos oferecer os serviços mais adequados ao seu perfil.
+                            </span>
                         </div>
-            <form id="profileTestForm" class="contact_form form-row">
-                <div class="row"> 
-                    <div class="col-lg-12">
-                        <input type="text" class="form-control" name="resposta1" id="resposta1" placeholder="resposta1" required>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class=" mt-4">
-                        <input type="submit" class="btn btn-main" value="Verificar cadastro">
+                <div class="row " id="formDiv">
+                    <form id="profileTestForm" class="contact_form form-row">
+                        <div class="row" id="question1"> 
+                            <div style="background-color: cadetblue;" ; class="col-lg-12">
+                                <br>
+                                <h2>O que você ganha por mês é suficiente para arcar com os seus gastos?</h2>
+                                <input nextQ="question2" type="radio" class="btn-check col-lg-12 scroll-click" name="answer1" id="option11" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option11">Consigo pagar minhas contas e ainda guardo mais 10% dos meus ganhos todo mês</label>
+                                <br>                                
+                                <input nextQ="question2" type="radio" class="btn-check col-lg-12 scroll-click" name="answer1" id="option12" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option12">É suficiente, mas não sobra nada</label>
+                                <br>                                
+                                <input nextQ="question2" type="radio" class="btn-check col-lg-12 scroll-click" name="answer1" id="option13" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option13">Gasto todo o meu dinheiro e ainda uso o limite de cheque especial ou peço emprestado para parentes e amigos.</label>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question2"> 
+                            <div style="background-color: darkgrey;" ; class="col-lg-12">
+                                <br>
+                                <h2>Você tem conseguido pagar suas despesas em dia e à vista?</h2>
+                                <input nextQ="question3" type="radio" class="btn-check col-lg-12 scroll-click" name="answer2" id="option21" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option21">Pago em dia, à vista e, em alguns casos, com bons descontos</label>
+                                <br>                                
+                                <input nextQ="question3" type="radio" class="btn-check col-lg-12 scroll-click" name="answer2" id="option22" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option22">Quase sempre, mas tenho que parcelar as compras de maior valor</label>
+                                <br>                                
+                                <input nextQ="question3" type="radio" class="btn-check col-lg-12 scroll-click" name="answer2" id="option23" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option23">Sempre parcelo meus compromissos e utilizo linhas de crédito como cheque especial, cartão de crédito e crediário</label>
+                                <br>
+                                <br>                                                                 
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question3"> 
+                            <div style="background-color: cadetblue;" ; class="col-lg-12">
+                                <br>
+                                <h2>Você realiza seu orçamento financeiro mensalmente?</h2>
+                                <input nextQ="question4" type="radio" class="btn-check col-lg-12 scroll-click" name="answer3" id="option31" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option31">Faço periodicamente e comparo o orçado com o realizado</label>
+                                <br>                                
+                                <input nextQ="question4" type="radio" class="btn-check col-lg-12 scroll-click" name="answer3" id="option32" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option32">Somente registro o realizado, sem analisar os gastos</label>
+                                <br>                                
+                                <input nextQ="question4" type="radio" class="btn-check col-lg-12 scroll-click" name="answer3" id="option33" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option33">Não faço o meu orçamento financeiro</label>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question4"> 
+                            <div style="background-color: darkgrey;" ; class="col-lg-12">
+                                <br>
+                                <h2>Você consegue fazer algum tipo de investimento?</h2>
+                                <input nextQ="question5" type="radio" class="btn-check col-lg-12 scroll-click" name="answer4" id="option41" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option41">Utilizo mais de 10% do meu ganho em linhas de investimentos, que variam de acordo com os meus sonhos</label>
+                                <br>                                
+                                <input nextQ="question5" type="radio" class="btn-check col-lg-12 scroll-click" name="answer4" id="option42" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option42">Quando sobra dinheiro, invisto, normalmente, na poupança</label>
+                                <br>                                
+                                <input nextQ="question5" type="radio" class="btn-check col-lg-12 scroll-click" name="answer4" id="option43" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option43">Nunca sobra dinheiro para esse tipo de ação</label>
+                                <br>
+                                <br>                                                                 
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question5"> 
+                            <div style="background-color: cadetblue;" ; class="col-lg-12">
+                                <br>
+                                <h2>Como você planeja a sua aposentadoria</h2>
+                                <input nextQ="question6" type="radio" class="btn-check col-lg-12 scroll-click" name="answer5" id="option51" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option51">Tenho planos alternativos de previdência privada para garantir minha segurança financeira</label>
+                                <br>                                
+                                <input nextQ="question6" type="radio" class="btn-check col-lg-12 scroll-click" name="answer5" id="option52" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option52"> Contribuo para a previdência social, sei que preciso de reserva extra, mas não consigo poupar</label>
+                                <br>                                
+                                <input nextQ="question6" type="radio" class="btn-check col-lg-12 scroll-click" name="answer5" id="option53" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option53">Não contribuo para a previdência social e nem para a privada</label>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question6"> 
+                            <div style="background-color: darkgrey;" ; class="col-lg-12">
+                                <br>
+                                <h2>O que você entende sobre ser Independente Financeiramente</h2>
+                                <input nextQ="question7" type="radio" class="btn-check col-lg-12 scroll-click" name="answer6" id="option61" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option61">Que posso trabalhar por prazer e não por necessidade</label>
+                                <br>                                
+                                <input nextQ="question7" type="radio" class="btn-check col-lg-12 scroll-click" name="answer6" id="option62" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option62">Que posso ter dinheiro para viver bem o dia a dia</label>
+                                <br>                                
+                                <input nextQ="question7" type="radio" class="btn-check col-lg-12 scroll-click" name="answer6" id="option63" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option63">Que posso curtir a vida intensamente e não pensar no futuro</label>
+                                <br>
+                                <br>                                                                 
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question7"> 
+                            <div style="background-color: cadetblue;" ; class="col-lg-12">
+                                <br>
+                                <h2>Você sabe quais são seus sonhos e objetivos de curto, médio e longo prazos?</h2>
+                                <input nextQ="question8" type="radio" class="btn-check col-lg-12 scroll-click" name="answer7" id="option71" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option71">Sei quais são, quanto custam e por quanto tempo terei que guardar dinheiro para realizá-los</label>
+                                <br>                                
+                                <input nextQ="question8" type="radio" class="btn-check col-lg-12 scroll-click" name="answer7" id="option72" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option72">Tenho muitos sonhos e sei quanto custam, mas não sei como realizá-los</label>
+                                <br>                                
+                                <input nextQ="question8" type="radio" class="btn-check col-lg-12 scroll-click" name="answer7" id="option73" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option73">Sempre acabo deixando os meus sonhos e objetivos para o futuro, porque não consigo guardar dinheiro para eles</label>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question8"> 
+                            <div style="background-color: darkgrey;" ; class="col-lg-12">
+                                <br>
+                                <h2>Se um imprevisto alterasse a sua situação financeira, qual seria a sua reação?</h2>
+                                <input nextQ="question9" type="radio" class="btn-check col-lg-12 scroll-click" name="answer8" id="option81" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option81">Faria um bom diagnóstico financeiro, registrando o que ganho e o que gasto, além dos meus investimentos e dívidas, se os tiverem</label>
+                                <br>                                
+                                <input nextQ="question9" type="radio" class="btn-check col-lg-12 scroll-click" name="answer8" id="option82" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option82">Cortaria despesas e gastos desnecessários</label>
+                                <br>                                
+                                <input nextQ="question9" type="radio" class="btn-check col-lg-12 scroll-click" name="answer8" id="option83" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option83">Não saberia por onde começar e teria medo de encarar a minha verdadeira situação financeira</label>
+                                <br>
+                                <br>                                                                 
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question9"> 
+                            <div style="background-color: cadetblue;" ; class="col-lg-12">
+                                <br>
+                                <h2>Se a partir de hoje você não recebesse mais seu ganho, por quanto tempo você conseguiria manter seu atual padrão de vida?</h2>
+                                <input nextQ="question10" type="radio" class="btn-check col-lg-12 scroll-click" name="answer9" id="option91" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option91">Conseguiria fazer tudo o que faço por 10 anos ou mais</label>
+                                <br>                                
+                                <input nextQ="question10" type="radio" class="btn-check col-lg-12 scroll-click" name="answer9" id="option92" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option92">Manteria o meu padrão de vida por, no máximo, um ano</label>
+                                <br>                                
+                                <input nextQ="question10" type="radio" class="btn-check col-lg-12 scroll-click" name="answer9" id="option93" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option93">Não conseguiria me manter nem por alguns meses</label>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="row" id="question10"> 
+                            <div style="background-color: darkgrey;" ; class="col-lg-12">
+                                <br>
+                                <h2>Quando você decide comprar um produto, qual é a sua atitude?</h2>
+                                <input nextQ="question10" type="radio" class="btn-check col-lg-12 scroll-click" name="answer10" id="option101" autocomplete="off" value="10">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option101">Planejo uma forma de investimento para comprar à vista e com desconto</label>
+                                <br>                                
+                                <input nextQ="question10" type="radio" class="btn-check col-lg-12 scroll-click" name="answer10" id="option102" autocomplete="off" value="5">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option102">Parcelo dentro do meu orçamento</label>
+                                <br>                                
+                                <input nextQ="question10" type="radio" class="btn-check col-lg-12 scroll-click" name="answer10" id="option103" autocomplete="off" value="0">
+                                <label class="btn btn-secondary btn-outline-light col-lg-12" for="option103">Compro e depois me preocupo como vou pagar</label>
+                                <br>
+                                <br>                                                                 
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <br>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class=" mt-4">
+                                <input type="submit" class="btn btn-main" value="Calcular resulado!">
+                            </div>                            
+                        </div>              
+                    </form>
+                </div>
+                <div class="row " id="profileResult" style="display: none;">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
+                        <div class="heading ">                            
+                            <h2>Seu perfil financeiro é: <h2 style="color: rgb(122, 155, 160);" id="profileTitle"></h2></h2>
+                            <span class="subheading" id="profileDesc">
+                                
+                            </span>
+                        </div>
+                        <div class=" mt-4">
+                            <input type="reset" id="reset" onclick="resetAnswer()" class="btn btn-secondary" value="Reiniciar perguntas" >
+                        </div>
                     </div>
-                </div>              
-            </form>
-        </div>
-    </div>
-</div>
-</section>
+                </div>
+            </div>
+        </section>
 
         <script src="assets/js/jquery-3.1.0.js"></script>
         <script src="assets/js/aws-cognito-sdk.min.js"></script>
@@ -86,5 +290,35 @@
         <script src="assets/js/config.js"></script>        
         <script src="assets/js/cognito-auth.js"></script>
         <script src="assets/js/user.js"></script>
+        <script src="assets/js/score.js"></script>
     </body>
 </html>
+
+<script>
+
+$(".scroll-click").click(function() {
+    console.log($(this).attr("nextQ"));
+    $('html,body').animate({
+        scrollTop: $("#"+$(this).attr("nextQ")).offset().top},
+        'slow');
+});
+
+// program the reset button
+function resetAnswer() {
+    $("#profileTitle").text("");
+    $("#profileDesc").text("");
+    $("#profileResult").hide();
+    $("#reset").hide();
+    $("#formDiv").show();
+    $("#pageTitle").show();
+
+    $('input[type="radio"]').attr('checked',false);
+
+    $('html,body').animate({
+        scrollTop: $("#question1").offset().top},
+        'slow');
+
+   }
+
+
+</script>
