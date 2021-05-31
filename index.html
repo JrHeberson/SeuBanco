@@ -83,10 +83,11 @@
                 </a>
             -->
 
-                <div class="header-menu-right float-right ">
-                    <!--<div class="search-box " id="toggle-search">
-                        <i class="icofont-search"></i>
-                    </div>-->
+                <div class="header-menu-right float-right ">                                            
+                    <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus"  data-placement="left" data-content="">
+                        <a id="signin-link" href="signin.html"><i class="icofont-user"></i></a>
+                    </div>
+                    
 
                     <div class="menu-btn-box">
                         <button class="nav-toggle-btn a-nav-toggle">
@@ -120,6 +121,7 @@
                         <ul id="menuMain">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li class="active"><a href="signin.html">Login</a></li>
+                            <li class="active"><a href="#contact" onlick="$('.icofont-close').click();">Faça seu cadastro</a></li>
                           <!--  <li><a href="about.html">About</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li class="has-sub-menu active">
@@ -775,7 +777,8 @@
 
     <!-- 
     Essential Scripts
-    =====================================-->
+    =====================================-->    
+
     <script type="text/javascript">
         function mascara(telefone){ 
             if(telefone.value.length == 0)
@@ -852,6 +855,7 @@
 
     <!-- Main jQuery -->
     <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/js/jquery-3.1.0.js"></script>
     <!-- Bootstrap 5 Alpha-->
     <script src="assets/vendors/bootstrap/popper.min.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.min.js"></script>
@@ -880,13 +884,21 @@
         gtag('config', 'G-WLK32C4ZZT');
     </script>
 
-    <script src="assets/js/jquery-3.1.0.js"></script>
 
     <!--COGNITO-->
     <script src="assets/js/aws-cognito-sdk.min.js"></script>
     <script src="assets/js/amazon-cognito-identity.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/cognito-auth.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#login-btn").popover('show');            
+                    
+            setTimeout(function(){ $("#login-btn").popover('hide');},5000);
+
+        });
+    </script>
 
 </body>
 

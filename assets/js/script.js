@@ -3,14 +3,22 @@
 (function ($) {
   "use strict";
   /*----------------------------
+  Enable popovers everywhere
+  ------------------------------ */
+
+  $(function () {
+    $('#login-btn').popover()
+  })
+
+  /*----------------------------
   Toogle Search
   ------------------------------ */
   // Handle click on toggle search button
 
-  $('.search-box').on('click', function () {
+  /*$('.search-box').on('click', function () {
     $('.search').toggleClass('open');
     return false;
-  });
+  });*/
   $(window).on('load', function () {
     $('.progress-bar').each(function () {
       var width = $(this).data('percent');

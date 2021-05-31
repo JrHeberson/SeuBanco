@@ -1,5 +1,0 @@
-{
-    "tableName": "user_finance_profile",
-    "partitionKeyName": "ufp_id",
-    "partitionKeyType": "S"
-}

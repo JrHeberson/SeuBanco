@@ -1,9 +1,11 @@
 /*global MyBanking _config AmazonCognitoIdentity AWSCognito*/
 
+
 var MyBanking = window.MyBanking || {};
 
 (function scopeWrapper($) {
     var signinUrl = 'signin.html';
+    var indexUrl = 'index.html';
 
     var poolData = {
         UserPoolId: _config.cognito.userPoolId,
@@ -27,6 +29,7 @@ var MyBanking = window.MyBanking || {};
 
     MyBanking.signOut = function signOut() {
         userPool.getCurrentUser().signOut();
+        window.location.href = indexUrl;
     };
 
     MyBanking.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
@@ -45,12 +48,17 @@ var MyBanking = window.MyBanking || {};
         } else {
             resolve(null);
         }
+        
     });
 
 
     /*
      * Cognito User Pool functions
      */
+
+    function userToEmail(user){
+        return user.replace('-at-', '@');
+    }
 
     function register(email, phone_number, password, onSuccess, onFailure) {
         var dataEmail = {
@@ -109,14 +117,58 @@ var MyBanking = window.MyBanking || {};
         return email.replace('@', '-at-');
     }
 
+    function forgotPwd(email, onSuccess, onFailure){
+        
+        var cognitoUser = createCognitoUser(email);  
+                
+         cognitoUser.forgotPassword({
+             onSuccess: onSuccess,
+             onFailure: onFailure,
+             inputVerificationCode: function(data) {
+                alert("Código enviado com sucesso! Verifique seu email!");
+                window.location.href = 'newPassword.html';
+             }
+         })
+                
+    }
+
+    function updatePwd(email, code, password, onSuccess, onFailure) {
+
+        var cognitoUser = createCognitoUser(email);
+        cognitoUser.confirmPassword(code, password, {
+            onSuccess: onSuccess,
+            onFailure: onFailure
+        });
+    }
+
     /*
      *  Event Handlers
      */
 
     $(function onDocReady() {
+        var cognitoUser = userPool.getCurrentUser();
         $('#signinForm').submit(handleSignin);
         $('#registrationForm').submit(handleRegister);
         $('#verifyForm').submit(handleVerify);
+        $('#forgotPwdForm').submit(handleForgotPwd);
+        $('#newPwdForm').submit(handleUpdatePwd);
+        if(cognitoUser ==  null){
+            console.log("No user logged!");
+            $("#login-btn").attr("data-content","Já tem cadastro? Acesse aqui!");            
+        }else{
+            $("#login-btn").attr("data-content",userToEmail(cognitoUser.username));
+            $("#signin-link").attr("href","#");
+
+            $("#menuMain").html('<li class="active"><a href="index.html">Home</a></li>'+            
+            '<li class="active"><a href="profileTest.html">Teste de Perfil Financeiro</a></li>'+
+            '<li class="active"><a href="#" onclick="MyBanking.signOut();">Sair</a></li>')
+        }
+        
+        $("#login-btn").popover('show');            
+                    
+        setTimeout(function(){ $("#login-btn").popover('hide');},5000);
+
+        
     });
 
     function handleSignin(event) {
@@ -129,6 +181,22 @@ var MyBanking = window.MyBanking || {};
                 window.location.href = 'profileTest.html';
             },
             function signinError(err) {
+                alert(err);
+            }
+        );
+    }
+
+    function handleUpdatePwd(event) {
+        var email = $('#emailInputNewPwd').val();
+        var code = $('#codeInputNewPwd').val();
+        var password = $('#passwordInputNewPwd').val();
+        event.preventDefault();
+        updatePwd(email, code, password,
+            function updatePwdSuccess() {
+                console.log('Password update!');
+                window.location.href = 'signin.html';
+            },
+            function updatePwdError(err) {
                 alert(err);
             }
         );
@@ -176,4 +244,21 @@ var MyBanking = window.MyBanking || {};
             }
         );
     }
+
+    function handleForgotPwd(event) {
+        var email = $('#emailInputForgotPwd').val();        
+
+        var onSuccess = function forgotPwdSuccess(result) {
+            var cognitoUser = result.user;
+            console.log('user name is ' + cognitoUser.getUsername());                                    
+            
+        };
+        var onFailure = function forgotPwdFailure(err) {
+            alert(err);
+        };
+        event.preventDefault();
+        
+        forgotPwd(email, onSuccess, onFailure);
+    }
+
 }(jQuery));
