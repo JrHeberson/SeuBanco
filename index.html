@@ -124,7 +124,7 @@
                         <ul id="menuMain">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li class="active"><a href="signin.html">Login</a></li>
-                            <li class="active"><a href="#contact" onlick="$('.icofont-close').click();">Faça seu cadastro</a></li>
+                            <li class="active"><a href="#contact" onclick="$('.icofont-close').click();">Faça seu cadastro</a></li>
                           <!--  <li><a href="about.html">About</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li class="has-sub-menu active">
@@ -661,8 +661,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="form-group"></div>
-                                        <input type="checkbox" id="termsAndCondition" onchange="checkTerms();" required><label style="padding-left: 10px;">Compreendo e Aceito os <a style="color: #fff;" href="termos_de_uso.html">Termos e Condições de uso</a> do My Banking Brasil.</label>
+                                    <div class="form-group">                                        
+                                            <label for="termsAndCondition" style="padding-left: 10px" class="checkbox-inline">
+                                                <input type="checkbox" class="custom-control-input" id="termsAndCondition" onchange="checkTerms();" required>
+                                                Compreendo e Aceito os <a style="color: #fff;" target="_blank" href="termos_de_uso.html"><u>Termos e Condições de uso</u></a> do My Banking Brasil.
+                                            </label>
                                     </div>
                                 </div> 
                             </div>                         
