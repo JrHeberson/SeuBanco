@@ -40,21 +40,11 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="noCognitoMessage" class="configMessage" style="display: none;">
-            <div class="backdrop"></div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">No Cognito User Pool Configured</h3>
-                </div>
-                <div class="panel-body">
-                    <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
-                </div>
-            </div>
-        </div>
+      
 
         <!-- Main Menu Start -->
 
-        <div class="site-navigation " id="mainmenu-area">
+        <nav class="site-navigation " id="mainmenu-area">
             <div class="container clearfix">
 
                 <div class="header-menu-right float-right ">                                            
@@ -100,7 +90,7 @@
                 </div>
             
             </div> <!-- / .container -->
-        </div>
+        </nav>
     </header>
        
 
@@ -434,8 +424,12 @@
 $(".scroll-click").click(function() {
     console.log($(this).attr("nextQ"));
     $('html,body').animate({
-        scrollTop: $("#"+$(this).attr("nextQ")).offset().top},
+        scrollTop: $("#"+$(this).attr("nextQ")).offset().top -50},
         'slow');
+});
+
+$(window).scroll(function(){
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
 });
 
 // program the reset button
@@ -450,7 +444,7 @@ function resetAnswer() {
     $('input[type="radio"]').attr('checked',false);
 
     $('html,body').animate({
-        scrollTop: $("#question1").offset().top},
+        scrollTop: $("#question1").offset().top -50},
         'slow');
 
    }

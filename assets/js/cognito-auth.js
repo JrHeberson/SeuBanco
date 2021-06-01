@@ -154,7 +154,7 @@ var MyBanking = window.MyBanking || {};
         $('#newPwdForm').submit(handleUpdatePwd);
         if(cognitoUser ==  null){
             console.log("No user logged!");
-            $("#login-btn").attr("data-content","Já tem cadastro? Acesse aqui!");            
+            $("#login-btn").attr("data-content","Acesse aqui!");            
         }else{
             $("#login-btn").attr("data-content",userToEmail(cognitoUser.username));
             $("#signin-link").attr("href","#");

@@ -60,6 +60,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
+    <!-- Pure Cookie -->
+    <link rel="stylesheet" href="assets/css/purecookie.css">
+
     <!-- Google Ad Sense -->
     <script data-ad-client="ca-pub-4922244585206642" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -72,7 +75,7 @@
 
         <!-- Main Menu Start -->
 
-        <div class="site-navigation " id="mainmenu-area">
+        <nav class="site-navigation" id="mainmenu-area">
             <div class="container clearfix">
 
                 
@@ -154,7 +157,7 @@
                 </div>
             
             </div> <!-- / .container -->
-        </div>
+        </nav>
     </header>
 
 
@@ -643,19 +646,26 @@
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" pattern=".*" required>
                                 </div>
-                            </div>
+                            </div>                            
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="passwordInputRegister" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                    </div>
+                                </div>                           
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirmar Senha" pattern=".*" required>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="passwordInputRegister" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                </div>
-                            </div>                           
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirmar Senha" pattern=".*" required>
-                                </div>
-                            </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group"></div>
+                                        <input type="checkbox" id="termsAndCondition" onchange="checkTerms();" required><label style="padding-left: 10px;">Compreendo e Aceito os <a style="color: #fff;" href="termos_de_uso.html">Termos e Condições de uso</a> do My Banking Brasil.</label>
+                                    </div>
+                                </div> 
+                            </div>                         
                             <!--
                             <div class="col-lg-12">
                                 <div class="form-group">
@@ -665,7 +675,7 @@
                             -->    
                             <div class="col-lg-12">
                                 <div class=" mt-4">
-                                    <input type="submit" class="btn btn-main" value="Cadastrar">
+                                    <input id="btnCadastrar" type="submit" class="btn btn-main" value="Cadastrar">
                                 </div>
                             </div>
                         </div>
@@ -853,6 +863,9 @@
         }
         </script>
 
+    <!-- Pure Cookie -->
+    <script src="assets/js/purecookie.js"></script>
+
     <!-- Main jQuery -->
     <script src="assets/vendors/jquery/jquery.min.js"></script>
     <script src="assets/js/jquery-3.1.0.js"></script>
@@ -867,7 +880,8 @@
     <script src="assets/vendors/owl/owl.carousel.min.js"></script>
     <!-- Progress Bar -->
     <script src="assets/vendors/counto/apear.js"></script>
-    <script src="assets/vendors/counto/counTo.js"></script>
+    <script src="assets/vendors/counto/counTo.js"></script>    
+
     <!-- Google Map -->
     <script src="assets/vendors/google-map/map.js"></script>
     <script
@@ -891,14 +905,41 @@
     <script src="assets/js/config.js"></script>
     <script src="assets/js/cognito-auth.js"></script>
 
+    
     <script>
-        $(document).ready(function() {
-            $("#login-btn").popover('show');            
-                    
-            setTimeout(function(){ $("#login-btn").popover('hide');},5000);
+        $(document).ready(function() {            
+            
+            $("#btnCadastrar").prop("disabled",true);                                
+            
+            $(window).scroll(function(){
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+            });
 
         });
+
+        function checkTerms(){
+            if($("#btnCadastrar").prop("disabled")){
+                $("#btnCadastrar").prop("disabled",false);
+            }else{
+                $("#btnCadastrar").prop("disabled",true);
+            }
+        };
+
     </script>
+
+
+
+    <div class="cookieConsentContainer" id="cookieConsentContainer">
+        <div class="cookieTitle">
+            <a>Cookies</a>
+        </div>
+        <div class="cookieDesc">
+            <p>Este site utiliza cookies para te proporcionar uma melhor experiência. Ao continuar navegando, você aceita nossa <a href="politica_de_privacidade.html" target="_blank">Política de Privacidade</a></p>
+        </div>
+        <div class="cookieButton">
+            <a onClick="purecookieDismiss();">Aceitar</a>
+        </div>
+    </div>
 
 </body>
 

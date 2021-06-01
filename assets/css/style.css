@@ -545,12 +545,24 @@ Sidebar menu
 }
 
 .site-navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 900;
   padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.site-navigation.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background:#232323;
 }
 
 .sub-menu-2 {
