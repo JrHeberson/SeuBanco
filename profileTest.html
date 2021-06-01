@@ -345,7 +345,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class=" mt-4">
-                                <input type="submit" class="btn btn-main" value="Calcular resulado!">
+                                <input type="submit" class="btn btn-main" onclick="backToTop('profileResult')" value="Calcular resulado!">
                             </div>                            
                         </div>              
                     </form>
@@ -450,6 +450,14 @@ function resetAnswer() {
         'slow');
 
    }
+
+function backToTop(divName) {
+    $('html,body').animate({
+        scrollTop: $("#"+divName).offset().top -50},
+        'slow');
+
+   };
+
 
 
 </script>
