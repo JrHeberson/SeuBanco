@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>My Banking Brasil - Teste de Perfil Financeiro</title>
+    <meta name="description"
+        content="Este teste de Perfil Financeiro irá nos ajudar a entender melhor suas necessidades">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Add site Favicon -->
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/images/favicon/favicon-32x32.png" />
+    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon-32x32.png" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/bootstrap.min.css">
+    <!-- Iconfont Css -->
+    <link rel="stylesheet" href="assets/vendors/icofont/icofont.min.css">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="assets/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css">
+
+    <!-- Owl Carousel  CSS -->
+    <link rel="stylesheet" href="assets/vendors/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendors/owl/assets/owl.theme.default.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+    <!-- Main Menu Start -->
+
+    <nav class="site-navigation " id="mainmenu-area">
+        <div class="container clearfix">
+
+            <div class="header-menu-right float-right ">
+                <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="left"
+                    data-content="">
+                    <a id="signin-link" href="signin.html"><i class="icofont-user"></i></a>
+                </div>
+
+
+                <div class="menu-btn-box">
+                    <button class="nav-toggle-btn a-nav-toggle">
+                        <span class="nav-toggle">
+                            <span class="stick stick-1"></span>
+                            <span class="stick stick-3"></span>
+                            <span class="stick stick-2"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="hide-menu a-nav-toggle"></div>
+            <div class="menu">
+                <div class="sidebar-close">
+                    <i class="icofont-close"></i>
+                </div>
+                <nav class="menu-main clickable-mainmenu-wrap" id="accordion">
+                    <ul id="menuMain">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="signin.html">Login</a></li>
+                        <li class="active"><a href="#contact" onlick="$('.icofont-close').click();">Faça seu
+                                cadastro</a></li>
+                    </ul>
+                </nav>
+
+                <div class="menu-footer">
+                    <ul class="social social-rounded">
+                        <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+                        <li><a href="#"><i class="lni lni-behance-original"></i></a></li>
+                        <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
+                    </ul>
+                    <div class="menu-copyright">© My Banking Brasil 2021 <br>
+                        <br> All Rights Reserved</div>
+                </div>
+            </div>
+
+        </div> <!-- / .container -->
+    </nav>
+
+
+
+
+    <section class="section-padding contact form-wrap" id="contact">
+        <div class="container">
+         <!--   <div class="row" id="pageTitle">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
+                    <div class="heading ">
+                        <h2>Teste de Perfil Financeiro</h2>
+                        <span class="subheading">
+                            Para que possamos oferecer a melhor experiência, é importante entedermos desde já algumas
+                            questões sobre suas finanças.
+                            <br>
+                            Aconselhamos fortemente que você responda as questões da maneira mais honesta possível, para
+                            que possamos oferecer os serviços mais adequados ao seu perfil.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        -->
+            <div class="row " id="formDiv">
+                <form id="userProfile" class="contact_form form-row">
+                    <div class="container rounded bg-white mt-5 mb-5">
+                        <div class="row">
+                            <div class="col-md-3 border-right">
+                                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                    <span id="username" class="font-weight-bold"></span>
+                                    <span id="userId" class="text-black-50"></span><br>
+                                    <span class="text-black-50"> 
+                                        <img src="assets/images/about/icon-trophy.png" data-toggle="tooltip" data-placement="top" title="Descubra mais sobre seus pontos na sessão MISSÕES">
+                                        <h3><span id="points">0</span> PONTOS</h3>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-5 border-right">
+                                <div class="p-3 py-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="text-right">Perfil</h4>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6"><label class="labels">Nome</label><input style="color:#000" id="firstName" type="text" class="form-control" placeholder="" value="" required oninvalid="this.setCustomValidity('Por favor, preencha o campo Nome')" oninput="setCustomValidity('')"></div>
+                                        <div class="col-md-6"><label class="labels">Sobrenome</label><input style="color:#000" id="lastName" type="text" class="form-control" value="" placeholder="" required oninvalid="this.setCustomValidity('Por favor, preencha o campo Sobrenome')" oninput="setCustomValidity('')"></div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12"><label class="labels">Telefone/Whatsapp</label><input style="color:#000" id="phoneNumber" type="text" class="form-control" placeholder="" value="" required oninvalid="this.setCustomValidity('Por favor, preencha o campo Telefone/Whatsapp')" oninput="setCustomValidity('')"></div>
+                                        <div class="col-md-12"><label class="labels">Endereço</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
+                                        <div class="col-md-12"><label class="labels">CEP</label><input style="color:#000" id="zipcode" type="text" class="form-control" placeholder="" value=""></div>
+                                        <div class="col-md-12"><label class="labels">Estado</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                
+                                    </div>                                    
+                                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Atualizar Dados</button></div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="col-md-4">
+                                <div class="p-3 py-5">
+                                    <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                                    <div class="col-md-12"><label class="labels">Experience in Designing</label><input style="color:#000" type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                                    <div class="col-md-12"><label class="labels">Additional Details</label><input style="color:#000" type="text" class="form-control" placeholder="additional details" value=""></div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <input hidden data-toggle="modal" data-target="#subscribeAlert" data-backdrop="static" data-keyboard="false" id="subscribeAlertButton" type="button" class="btn btn-main" value="">
+                </form>
+            </div>
+        </div>        
+    </section>
+
+    <div class="footer-btm">
+        <div class="conainer">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-6">
+                    <div class="copyright text-center">
+                        <p class="copyright">© 2021 <strong>My Banking Brasil</strong> <i
+                                class="icofont-heart text-success" aria-hidden="true"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade dark" id="subscribeAlert" tabindex="-1" role="dialog" aria-labelledby="rewardsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="">
+                    <h5 id="rewardsLabel">NOVA MISSÃO!</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <h3><span style="color:#fff">PREENCHA O PERFIL PARA GANHAR</span></h3>
+                    <img src="assets/images/about/vantagens-white.png">
+                    <h3><span style="color:#fff">10 PONTOS</span></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ENTENDI!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main jQuery -->
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/js/jquery-3.1.0.js"></script>
+    <!-- Bootstrap 5 Alpha-->
+    <script src="assets/vendors/bootstrap/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/vendors/jquery.isotope.js"></script>
+    <script src="assets/vendors/imagesloaded.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <!--  Owl Carousel-->
+    <script src="assets/vendors/owl/owl.carousel.min.js"></script>
+    <!-- Progress Bar -->
+    <script src="assets/vendors/counto/apear.js"></script>
+    <script src="assets/vendors/counto/counTo.js"></script>
+    <!-- Google Map -->
+    <script src="assets/vendors/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap">
+    </script>
+
+    <script src="assets/js/script.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLK32C4ZZT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WLK32C4ZZT');
+    </script>
+
+
+    <script src="assets/js/aws-cognito-sdk.min.js"></script>
+    <script src="assets/js/amazon-cognito-identity.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/cognito-auth.js"></script>
+    <script src="assets/js/userProfile.js"></script>    
+</body>
+
+</html>
+
+<script>
+    $(".scroll-click").click(function () {
+        console.log($(this).attr("nextQ"));
+        $('html,body').animate({
+                scrollTop: $("#" + $(this).attr("nextQ")).offset().top - 50
+            },
+            'slow');
+    });
+
+    $(window).scroll(function () {
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+        
+    });
+
+    // program the reset button
+    function resetAnswer() {
+        $("#profileTitle").text("");
+        $("#profileDesc").text("");
+        $("#profileResult").hide();
+        $("#reset").hide();
+        $("#formDiv").show();
+        $("#pageTitle").show();
+
+        $('input style="color:#000"[type="radio"]').attr('checked', false);
+
+        $('html,body').animate({
+                scrollTop: $("#question1").offset().top - 50
+            },
+            'slow');
+
+    }
+
+    function backToTop(divName) {
+        $('html,body').animate({
+                scrollTop: $("#" + divName).offset().top - 50
+            },
+            'slow');
+
+    };
+</script>

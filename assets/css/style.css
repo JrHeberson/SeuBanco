@@ -1411,6 +1411,7 @@ Contact Style
   line-height: 28px;
 }
 
+
 .contact textarea.form-control {
   padding-top: 30px;
 }
@@ -2953,4 +2954,33 @@ Footer Section
 
 .checkboxLabel{
   color: #fff;
+}
+
+/** Bootstrap Dark Modal Styles **/
+.modal-open .modal, .btn:focus {
+  outline: none !important;
+}
+
+.modal.dark { 
+  
+}
+.modal.dark .modal-body {
+background: #40464b;
+}
+
+.modal.dark .modal-header {
+background: #2d3032;
+border-bottom: 1px solid #2a2c2e;
+}
+.modal.dark .modal-header h1, .modal.dark .modal-header h2, .modal.dark .modal-header h3, .modal.dark .modal-header h4, .modal.dark .modal-header h5 {
+color: #ccc;
+}
+
+.modal.dark .modal-footer {
+background: #2d3032;
+border-top: 1px solid #2a2c2e;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+display: block;
 }

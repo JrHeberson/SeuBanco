@@ -35,7 +35,51 @@ MyBanking.map = MyBanking.map || {};
             $('#noApiMessage').show();
         }
 
+        getUserMission();
+
     });
+
+    function getUserMission(){
+        
+        $.ajax({
+             async: false,
+             crossDomain: true,
+             method: 'GET',                 
+             url: _config.api.invokeUrl + '/mission',
+             headers: {
+                 Authorization: authToken
+             },            
+             success: function(data){ 
+                 console.log(data);                        
+                 setTimeout(checkMission(data),1000);
+                 },
+             error: function ajaxError(jqXHR, textStatus, errorThrown) {
+                 console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
+                 console.error('Response: ', jqXHR.responseText);
+                 alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+             },
+             
+         });
+         
+     }
+
+     function checkMission(data){                
+        
+        var found = false;
+
+        data.map(function(item){ 
+            if(item.mission == "completarTestePerfilFinanceiro"){
+                found = true;
+            }
+        });        
+
+        if(!found){
+            $("#challengeAlertButton").click();
+        }else{
+            console.log(missionComplete);
+        }
+
+     }
 
     function insertUserProfile(event) {
 
@@ -48,12 +92,14 @@ MyBanking.map = MyBanking.map || {};
 
             var formData = {resposta1 : $("#profileTitle").text()};
 
+            $("#rewardsButton").click();
+
             console.log(authToken);
 
             $.ajax({
                 method: 'POST',
                 dataType: 'json',
-                url: _config.api.invokeUrl + '/insertprofile',
+                url: _config.api.invokeUrl + '/mission',
                 headers: {
                     Authorization: authToken
                 },

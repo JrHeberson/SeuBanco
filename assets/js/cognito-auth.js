@@ -159,9 +159,12 @@ var MyBanking = window.MyBanking || {};
             $("#login-btn").attr("data-content",userToEmail(cognitoUser.username));
             $("#signin-link").attr("href","#");
 
-            $("#menuMain").html('<li class="active"><a href="index.html">Home</a></li>'+            
+            $("#menuMain").html('<li class="active"><a href="index.html">Home</a></li>'+
+            '<li class="active"><a href="userProfile.html">Seu Perfil</a></li>'+          
             '<li class="active"><a href="profileTest.html">Teste de Perfil Financeiro</a></li>'+
-            '<li class="active"><a href="#" onclick="MyBanking.signOut();">Sair</a></li>')
+            '<li class="active"><a href="#" onclick="MyBanking.signOut();">Sair</a></li>')            
+
+
         }
         
         $("#login-btn").popover('show');            
@@ -178,7 +181,7 @@ var MyBanking = window.MyBanking || {};
         signin(email, password,
             function signinSuccess() {
                 console.log('Successfully Logged In');
-                window.location.href = 'profileTest.html';
+                window.location.href = 'userProfile.html';
             },
             function signinError(err) {
                 alert(err);
@@ -260,5 +263,7 @@ var MyBanking = window.MyBanking || {};
         
         forgotPwd(email, onSuccess, onFailure);
     }
+
+    
 
 }(jQuery));
