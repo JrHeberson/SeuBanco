@@ -67,16 +67,46 @@ MyBanking.map = MyBanking.map || {};
         
         var found = false;
 
+        var testResult = "";
+
         data.map(function(item){ 
             if(item.mission == "completarTestePerfilFinanceiro"){
+
                 found = true;
+                testResult = item.result;
+                
             }
         });        
 
         if(!found){
             $("#challengeAlertButton").click();
         }else{
-            console.log(missionComplete);
+            console.log("missionComplete");
+            $("#rewardsButton").prop("disabled", true);
+
+                var profileTitle = "";
+                var profileDesc = "";
+                if (testResult == "Investidor") { // If user chooses the first choice the most, this outcome will be displayed.
+                    profileTitle = "Investidor";
+                    profileDesc = "Parabéns, você está no caminho certo! O hábito de poupar é o meio para se tornar uma pessoa sustentável financeiramente. É preciso proteger, poupar e guardar parte do dinheiro que passa por suas mãos, pois é por meio dele que você realizará seus sonhos e objetivos.";
+                }
+                if (testResult == "Equilibrado Financeiramente") { // If user chooses the second choice the most, this outcome will be displayed.
+                    profileTitle = "Equilibrado Financeiramente";
+                    profileDesc = "Pode parecer que tudo está em plena ordem. O fato de não ter dívidas ou, se as tiver, estarem controladas não pode ser objeto de tranquilidade. Isso porque você não criou o hábito de guardar parte do dinheiro que ganha e, consequentemente, quase não consegue acumular reservas financeiras. Essa situação é conhecida como ‘zona de conforto’, mas você deve assumir uma nova postura em relação à utilização do seu dinheiro. É preciso retomar o comando de sua vida financeira, fazer imediatamente um diagnóstico com a ajuda da família, registrando por 30, 60 ou, no máximo, 90 dias tudo o que gastar, até mesmo as pequenas despesas.";
+                }
+                if (testResult == "Endividado") { // If user chooses the third choice the most, this outcome will be displayed.
+                    profileTitle = "Endividado";
+                    profileDesc = "Sua situação é delicada, você pode estar inadimplente ou muito próximo disso. É preciso ter muita atenção e não desanimar, porque chegou o momento de levantar a cabeça e saber que sempre existe um caminho. É preciso fazer um diagnóstico financeiro, saber quanto ganha, com o que gasta, descrever e detalhar todos os credores e os valores das dívidas. Mas, atenção, não procure o credor para fazer acordo no primeiro momento; caso ele venha lhe procurar, diga que você está se organizando financeiramente, sabe que deve e pagará quando e como puder. Portanto, tome atitude, tenha disciplina e muita perseverança. Tudo começa com o primeiro degrau e, lembre-se, estar endividado ou inadimplente é uma questão de escolha! Acredite na beleza dos seus sonhos! Boa sorte!";
+                }
+            
+                // If you add more choices, you must add another response below.
+                $("#profileTitle").text(profileTitle);
+                $("#profileDesc").text(profileDesc);
+                $("#profileResult").show();
+                $("#reset").show();
+                $("#formDiv").hide();
+                $("#pageTitle").hide();
+
         }
 
      }
