@@ -35,17 +35,18 @@ MyBanking.map = MyBanking.map || {};
             $('#noApiMessage').show();
         }
 
-        getUserMission();
+        getUser();
 
     });
 
-    function getUserMission(){
+
+    function getUser(){
         
         $.ajax({
              async: false,
              crossDomain: true,
              method: 'GET',                 
-             url: _config.api.invokeUrl + '/mission',
+             url: _config.api.invokeUrl + '/userprofile',
              headers: {
                  Authorization: authToken
              },            
@@ -56,24 +57,25 @@ MyBanking.map = MyBanking.map || {};
              error: function ajaxError(jqXHR, textStatus, errorThrown) {
                  console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                  console.error('Response: ', jqXHR.responseText);
-                 alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+                 alert('Ops! Parece que tivemos um problema:\n' + jqXHR.responseText);
              },
              
          });
          
      }
+    
 
      function checkMission(data){                
         
-        var found = false;
-
+        var found = false;   
+        
         var testResult = "";
 
-        data.map(function(item){ 
+        data.Item.missions.map(function(item){ 
             if(item.mission == "completarTestePerfilFinanceiro"){
 
                 found = true;
-                testResult = item.result;
+                testResult = data.Item.financeProfile;
                 
             }
         });        
@@ -120,7 +122,7 @@ MyBanking.map = MyBanking.map || {};
         if(questionsAnswered === 10){         
             tabulateAnswers();
 
-            var formData = {resposta1 : $("#profileTitle").text()};
+            var formData = {missionName : "completarTestePerfilFinanceiro"};
 
             $("#rewardsButton").click();
 
@@ -140,9 +142,30 @@ MyBanking.map = MyBanking.map || {};
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                     console.error('Response: ', jqXHR.responseText);
-                    alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+                    alert('Ops! Parece que tivemos um problema:\n' + jqXHR.responseText);
                 }
             });
+
+            formData = {financeProfile : $("#profileTitle").text()};
+
+            $.ajax({
+                method: 'POST',
+                dataType: 'json',
+                url: _config.api.invokeUrl + '/financeprofile',
+                headers: {
+                    Authorization: authToken
+                },
+                data: JSON.stringify(formData)
+                ,
+                contentType: 'application/json',
+                success: console.log("ok"),
+                error: function ajaxError(jqXHR, textStatus, errorThrown) {
+                    console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
+                    console.error('Response: ', jqXHR.responseText);
+                    alert('Ops! Parece que tivemos um problema:\n' + jqXHR.responseText);
+                }
+            });
+
         }else{
             alert("Por favor, preencha todas as perguntas antes de calcular o resultado!");
         }
