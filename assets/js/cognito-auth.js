@@ -60,7 +60,7 @@ var MyBanking = window.MyBanking || {};
         return user.replace('-at-', '@');
     }
 
-    function register(email, phone_number, password, onSuccess, onFailure) {
+    function register(email, nickname, phone_number, password, onSuccess, onFailure) {
         var dataEmail = {
             Name: 'email',
             Value: email
@@ -69,10 +69,15 @@ var MyBanking = window.MyBanking || {};
             Name: 'phone_number',
             Value: phone_number
         };
+        var dataNickname = {
+            Name: 'nickname',
+            Value: nickname
+        };
         var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
         var attributePhoneNumber = new AmazonCognitoIdentity.CognitoUserAttribute(dataPhoneNumber);
+        var attributeNickname = new AmazonCognitoIdentity.CognitoUserAttribute(dataNickname);
 
-        userPool.signUp(toUsername(email), password, [attributeEmail,attributePhoneNumber], null,
+        userPool.signUp(toUsername(email), password, [attributeEmail,attributePhoneNumber,attributeNickname], null,
             function signUpCallback(err, result) {
                 if (!err) {
                     onSuccess(result);
@@ -156,7 +161,11 @@ var MyBanking = window.MyBanking || {};
             console.log("No user logged!");
             $("#login-btn").attr("data-content","Acesse aqui!");            
         }else{
+            var username = cognitoUser.username;
+            var clientId = cognitoUser.pool.clientId;
             $("#login-btn").attr("data-content",userToEmail(cognitoUser.username));
+            
+    
             $("#signin-link").attr("href","#");
 
             $("#menuMain").html('<li class="active"><a href="index.html">Home</a></li>'+
@@ -208,6 +217,7 @@ var MyBanking = window.MyBanking || {};
 
     function handleRegister(event) {
         var email = $('#emailInputRegister').val();
+        var nickname = $('#nicknameInputRegister').val();
         var phone_number = "+55"+$('#phone_numberInputRegister').val().replace("(","").replace(")","").replace("-","");
         var password = $('#passwordInputRegister').val();
         var password2 = $('#password2InputRegister').val();
@@ -226,7 +236,7 @@ var MyBanking = window.MyBanking || {};
         event.preventDefault();
 
         if (password === password2) {
-            register(email, phone_number, password, onSuccess, onFailure);
+            register(email, nickname, phone_number, password, onSuccess, onFailure);
         } else {
             alert('Senhas diferentes');
         }

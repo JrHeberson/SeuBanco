@@ -54,8 +54,9 @@
     <!-- Main Menu Start -->
 
     <nav class="site-navigation " id="mainmenu-area">
+        
         <div class="container clearfix">
-
+            <div id="inviteFriend" onclick="inviteFriend()" class="btn btn-main btn-sm">Convidar amigo!</div>
             <div class="header-menu-right float-right ">
                 <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="left"
                     data-content="">
@@ -108,22 +109,7 @@
 
 
     <section class="section-padding contact form-wrap" id="contact">
-        <div class="container">
-         <!--   <div class="row" id="pageTitle">
-                <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
-                    <div class="heading ">
-                        <h2>Teste de Perfil Financeiro</h2>
-                        <span class="subheading">
-                            Para que possamos oferecer a melhor experiência, é importante entedermos desde já algumas
-                            questões sobre suas finanças.
-                            <br>
-                            Aconselhamos fortemente que você responda as questões da maneira mais honesta possível, para
-                            que possamos oferecer os serviços mais adequados ao seu perfil.
-                        </span>
-                    </div>
-                </div>
-            </div>
-        -->
+        <div class="container">         
             <div class="row " id="formDiv">
                 <form id="userProfile" class="contact_form form-row">
                     <div class="container rounded bg-white mt-5 mb-5">
@@ -138,7 +124,7 @@
                                         <img src="assets/images/about/icon-trophy.png" data-toggle="tooltip" data-placement="top" title="Descubra mais sobre seus pontos na sessão MISSÕES">
                                         <h3><span id="points">0</span> PONTOS</h3>
                                     </span>
-                                    <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+                                    <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>                                    
                                 </div>
                             </div>
                             <div class="col-md-5 border-right">
@@ -155,6 +141,7 @@
                                         <div class="col-md-12"><label class="labels">Endereço (opcional)</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
                                         <div class="col-md-12"><label class="labels">CEP (opcional)</label><input style="color:#000" id="zipcode" type="text" class="form-control" placeholder="" value=""></div>
                                         <div class="col-md-12"><label class="labels">Estado (opcional)</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                
+                                        <input hidden style="color:#000" id="friend" type="text" class="form-control" placeholder="" value="">                                                                                
                                     </div>                                    
                                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Atualizar Dados</button></div>
                                 </div>
@@ -303,11 +290,48 @@
     <script src="assets/js/cognito-auth.js"></script>
     <script src="assets/js/userProfile.js"></script>
     <script src="assets/js/avataaars.js"></script>
+    <script src="assets/js/jsrsasign-latest-all-min.js"></script>
+    <script src="assets/js/json-sans-eval-min.js"></script>
+    <script src="assets/js/jws-3.2.min.js"></script>    
 </body>
 
 </html>
 
 <script>
+
+$(document).ready(function() {  
+    MyBanking.authToken.then(function updateAuthMessage(token) {
+        if (token) {
+            
+            var sJWS = token;
+            var hN = "";
+            var hE ="";
+            
+            var jws = new KJUR.jws.JWS();
+
+            var result = 0;
+
+            try {
+                result = jws.verifyJWSByNE(sJWS, hN, hE);
+            } catch (ex) {
+                console.log("Error: " + ex);
+                result = 0;
+            }
+
+            jws.parsedJWS.headB64U;
+            jws.parsedJWS.payloadB64U;
+            jws.parsedJWS.sigvalB64U;
+            jws.parsedJWS.si;
+            jws.parsedJWS.sigvalH;
+            
+            jws.parsedJWS.headS;            
+
+            var userData = JSON.parse(jws.parsedJWS.payloadS);
+
+            $("#friend").val(userData.nickname);
+        }
+    });
+})
 
     function changeAvatar(selectId){
         var optionId = selectId;
@@ -427,4 +451,11 @@
             'slow');
 
     };
+
+    function inviteFriend(){
+        navigator.share({title: 'My Banking Brasil', url: 'https://mybanking.com.br/index.html#contact?friend='+$("#login-btn").attr("data-content")+'#contact'});
+    };
+    
+    
+
 </script>

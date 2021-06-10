@@ -38,7 +38,7 @@ MyBanking.map = MyBanking.map || {};
 
         if (!_config.api.invokeUrl) {
             $('#noApiMessage').show();
-        }
+        }        
 
         setupAvatar();
 
@@ -52,9 +52,12 @@ MyBanking.map = MyBanking.map || {};
 
         },1000);
         
+
         
 
     });
+
+
 
 
     function setupAvatar(){
@@ -150,6 +153,7 @@ MyBanking.map = MyBanking.map || {};
             address : $("#address").val(),
             zipcode : $("#zipcode").val(),
             province : $("#province").val(),
+            friend : emailToUser($("#friend").val()),
             avatar : avatarJSON
             };
 
@@ -226,6 +230,10 @@ MyBanking.map = MyBanking.map || {};
 
     function userToEmail(user){
         return user.replace('-at-', '@');
+    }
+    
+    function emailToUser(email){
+        return email.replace('@', '-at-');
     }
       
 

@@ -263,7 +263,7 @@
                     <div class="heading feature-content">                        
                             <span class="subheading">Nosso propósito</span>
                             <h2>Suas necessidades em um só lugar!</h2>
-                            <br>                        
+                            <br>
                         <div class="feature-box">
                             <h4>Serviços personalizados</h4>
                             <p>Vamos entregar a você os melhores serviços que se encaixam perfeitamente no seu momento de vida!</p>
@@ -647,6 +647,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" pattern=".*" required>
+                                    <input hidden type="nickname" class="form-control" id="nicknameInputRegister" placeholder="" pattern=".*">
                                 </div>
                             </div>                            
                             <div class="row">
@@ -920,6 +921,22 @@
                 $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
             });
 
+
+            var pairs = window.location.search.substring(1).split("&"),
+                obj = {},
+                pair,
+                i;
+
+            for ( i in pairs ) {
+                if ( pairs[i] === "" ) continue;
+
+                pair = pairs[i].split("=");
+                obj[ decodeURIComponent( pair[0] ) ] = decodeURIComponent( pair[1] );
+            }
+            
+
+            $("#nicknameInputRegister").val(obj.friend);
+
         });
 
         function checkTerms(){
@@ -929,6 +946,22 @@
                 $("#btnCadastrar").prop("disabled",true);
             }
         };
+
+        function searchToObject() {
+            var pairs = window.location.search.substring(1).split("&"),
+                obj = {},
+                pair,
+                i;
+
+            for ( i in pairs ) {
+                if ( pairs[i] === "" ) continue;
+
+                pair = pairs[i].split("=");
+                obj[ decodeURIComponent( pair[0] ) ] = decodeURIComponent( pair[1] );
+            }
+
+            return obj;
+        }
 
     </script>
 
