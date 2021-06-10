@@ -209,7 +209,8 @@ MyBanking.map = MyBanking.map || {};
             var svg = Avataaars.create(avatar);
 
             $(".avatar-box").html(svg);
-            $("#jsonSVG").text(JSON.stringify(avatar));            
+            $("#jsonSVG").text(JSON.stringify(avatar));
+            $("#jsonSVG_bkp").text(JSON.stringify(avatar));            
             $("#points").text(points);
             $("#userId").text(email);
             $("#username").text(firstName);

@@ -48,6 +48,8 @@
         <![endif]-->
 
 
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v11.0" nonce="PrgahVVS"></script>
 
     <!-- Main Menu Start -->
 
@@ -58,6 +60,11 @@
                 <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="left"
                     data-content="">
                     <a id="signin-link" href="signin.html"><i class="icofont-user"></i></a>
+                </div>
+                <div id="fb-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="bottom"
+                    data-content="COMPARTILHE!">
+                    <!--<a id="FB-link" href="https://www.facebook.com/sharer/sharer.php?u=mybanking.com.br" target="_blank"><i class="icofont-facebook"></i></a>-->
+                    
                 </div>
 
 
@@ -135,6 +142,7 @@
                                         <img src="assets/images/about/icon-trophy.png" data-toggle="tooltip" data-placement="top" title="Descubra mais sobre seus pontos na sessão MISSÕES">
                                         <h3><span id="points">0</span> PONTOS</h3>
                                     </span>
+                                    <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
                                 </div>
                             </div>
                             <div class="col-md-5 border-right">
@@ -171,6 +179,7 @@
                     <input hidden data-toggle="modal" data-target="#subscribeAlert" data-backdrop="static" data-keyboard="false" id="subscribeAlertButton" type="button" class="btn btn-main" value="">
                     <input hidden data-toggle="modal" data-target="#avatarSelection" data-backdrop="static" data-keyboard="false" id="avatarSelectionButton" type="button" class="btn btn-main" value="">
                     <textarea style="display: none;" id="jsonSVG"></textarea>
+                    <textarea style="display: none;" id="jsonSVG_bkp"></textarea>
                 </form>
             </div>
         </div>        
@@ -220,7 +229,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="">
-                    <h5 id="rewardsLabel">MUDE SEU AVATAR!</h5>
+                    <h5 id="avatarLabel">MUDE SEU AVATAR!</h5>
                     <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button> -->
@@ -228,7 +237,9 @@
                 <div class="modal-body">                    
                     <div class="row">
                         <div id="previousAvatar" class="col-lg-4 col-md-4">                            
-                            <img src="assets/images/avatars/arrow_circle_left.png">
+                            <button class="btn btn-main">
+                                <img src="assets/images/avatars/arrow_circle_left.png">
+                            </button>
                           </div>
                         <div class="col-md-4 col-lg-4">
                             <div  class="d-flex flex-column align-items-center text-center p-3 py-5">                            
@@ -236,8 +247,13 @@
                             </div>
                         </div>
                         <div id="nextAvatar" class="col-lg-4 col-md-4">                            
-                            <img src="assets/images/avatars/arrow_circle_right.png">
+                            <button class="btn btn-main">
+                                <img src="assets/images/avatars/arrow_circle_right.png">
+                            </button>
                         </div>
+                    </div>
+                    <div class="row">
+                        <br>
                     </div>
                     <div class="row">                        
                         <div id="avatar-settings" class="col-lg-12 col-md-12">                            
@@ -247,6 +263,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" onclick="$('#userProfile').submit()" class="btn btn-secondary" data-dismiss="modal">TERMINEI!</button>
+                    <button type="button" onclick="discardChanges()" class="btn btn-light" data-dismiss="modal">DESCARTAR</button>
                 </div>
             </div>
         </div>
@@ -318,6 +335,19 @@
 
         //$("#avatarSelection").modal("hide");
 
+    };
+
+
+    function discardChanges(){        
+
+        var jsonSVG = JSON.parse($("#jsonSVG_bkp").val());
+
+        var svg = Avataaars.create(jsonSVG);
+
+        $(".avatar-box").html(svg);
+
+        $("#jsonSVG").text(JSON.stringify(jsonSVG));
+        
     };
 
     $("#nextAvatar").click(function(){                
