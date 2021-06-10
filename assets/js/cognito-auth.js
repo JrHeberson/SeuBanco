@@ -177,9 +177,10 @@ var MyBanking = window.MyBanking || {};
 
         }
         
-        $("#login-btn").popover('show');            
+        $("#login-btn").popover('show');
+        $("#inviteFriend").popover('show');            
                     
-        setTimeout(function(){ $("#login-btn").popover('hide');},5000);
+        setTimeout(function(){ $("#login-btn").popover('hide');$("#inviteFriend").popover('hide');},5000);
 
         
     });
