@@ -38,6 +38,7 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    
 
 </head>
 
@@ -126,7 +127,8 @@
                         <div class="row">
                             <div class="col-md-3 border-right">
                                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                    <!--<img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">-->
+                                    <div style="width: 150px; height: 150px;" class="avatar-box" onclick="$('#avatarSelectionButton').click()"></div>
                                     <span id="username" class="font-weight-bold"></span>
                                     <span id="userId" class="text-black-50"></span><br>
                                     <span class="text-black-50"> 
@@ -146,9 +148,9 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-md-12"><label class="labels">Telefone/Whatsapp</label><input style="color:#000" id="phoneNumber" type="text" class="form-control" placeholder="" value="" required oninvalid="this.setCustomValidity('Por favor, preencha o campo Telefone/Whatsapp')" oninput="setCustomValidity('')"></div>
-                                        <div class="col-md-12"><label class="labels">Endereço</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
-                                        <div class="col-md-12"><label class="labels">CEP</label><input style="color:#000" id="zipcode" type="text" class="form-control" placeholder="" value=""></div>
-                                        <div class="col-md-12"><label class="labels">Estado</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                
+                                        <div class="col-md-12"><label class="labels">Endereço (opcional)</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
+                                        <div class="col-md-12"><label class="labels">CEP (opcional)</label><input style="color:#000" id="zipcode" type="text" class="form-control" placeholder="" value=""></div>
+                                        <div class="col-md-12"><label class="labels">Estado (opcional)</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                
                                     </div>                                    
                                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Atualizar Dados</button></div>
                                 </div>
@@ -167,6 +169,8 @@
                     </div>
                     </div>
                     <input hidden data-toggle="modal" data-target="#subscribeAlert" data-backdrop="static" data-keyboard="false" id="subscribeAlertButton" type="button" class="btn btn-main" value="">
+                    <input hidden data-toggle="modal" data-target="#avatarSelection" data-backdrop="static" data-keyboard="false" id="avatarSelectionButton" type="button" class="btn btn-main" value="">
+                    <textarea style="display: none;" id="jsonSVG"></textarea>
                 </form>
             </div>
         </div>        
@@ -187,7 +191,7 @@
 
 
 
-    <!-- Modal -->
+    <!-- Modal Mission -->
     <div class="modal fade dark" id="subscribeAlert" tabindex="-1" role="dialog" aria-labelledby="rewardsLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -200,11 +204,49 @@
                 </div>
                 <div class="modal-body">
                     <h3><span style="color:#fff">PREENCHA O PERFIL PARA GANHAR</span></h3>
-                    <img src="assets/images/about/vantagens-white.png">
+                    <img class="select-avatar" id="avatar" class="rounded-circle mt-5" width="150px" src="">
                     <h3><span style="color:#fff">10 PONTOS</span></h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ENTENDI!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Change Avatar-->
+    <div class="modal fade dark" id="avatarSelection" tabindex="-1" role="dialog" aria-labelledby="rewardsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="">
+                    <h5 id="rewardsLabel">MUDE SEU AVATAR!</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+                </div>
+                <div class="modal-body">                    
+                    <div class="row">
+                        <div id="previousAvatar" class="col-lg-4 col-md-4">                            
+                            <img src="assets/images/avatars/arrow_circle_left.png">
+                          </div>
+                        <div class="col-md-4 col-lg-4">
+                            <div  class="d-flex flex-column align-items-center text-center p-3 py-5">                            
+                                <div style="width: 300px; height: 300px;" class="avatar-box"></div>
+                            </div>
+                        </div>
+                        <div id="nextAvatar" class="col-lg-4 col-md-4">                            
+                            <img src="assets/images/avatars/arrow_circle_right.png">
+                        </div>
+                    </div>
+                    <div class="row">                        
+                        <div id="avatar-settings" class="col-lg-12 col-md-12">                            
+                          
+                        </div>                                                 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="$('#userProfile').submit()" class="btn btn-secondary" data-dismiss="modal">TERMINEI!</button>
                 </div>
             </div>
         </div>
@@ -250,12 +292,81 @@
     <script src="assets/js/amazon-cognito-identity.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/cognito-auth.js"></script>
-    <script src="assets/js/userProfile.js"></script>    
+    <script src="assets/js/userProfile.js"></script>
+    <script src="assets/js/avataaars.js"></script>
 </body>
 
 </html>
 
 <script>
+
+    function changeAvatar(selectId){
+        var optionId = selectId;
+        var optionValue = $("#"+selectId).val();
+
+        var jsonSVG = JSON.parse($("#jsonSVG").val());
+
+        jsonSVG[optionId] = optionValue;
+
+        var svg = Avataaars.create(jsonSVG);
+
+        $(".avatar-box").html(svg);
+
+        $("#jsonSVG").text(JSON.stringify(jsonSVG));
+
+        //$("#avatar").attr("src","assets/images/avatars/256_"+imgId+".png");
+
+        //$("#avatarSelection").modal("hide");
+
+    };
+
+    $("#nextAvatar").click(function(){                
+
+        var settings = $("#settings").val();
+
+        console.log(settings);
+
+        var nextElement = $('#'+settings+' > option:selected').next('option');
+        
+        if (nextElement.length > 0) {
+            $('#'+settings+' > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
+        }else{
+            $('#'+settings).find('option:eq(0)').prop('selected', true);
+        }        
+
+
+        console.log(nextElement.length);
+
+        console.log($("#"+settings).val());
+
+        changeAvatar(settings);
+
+
+    });
+
+    $("#previousAvatar").click(function(){
+
+        var settings = $("#settings").val();
+
+        console.log(settings);
+
+        var prevElement = $('#'+settings+' > option:selected').prev('option');
+
+        console.log(prevElement.length);
+
+        if (prevElement.length > 0) {
+            $('#'+settings+' > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
+        }else{
+            $('#'+settings).find('option:last').prop('selected', true);
+        }                
+
+        console.log($("#"+settings).val());
+
+        changeAvatar(settings);
+
+    });
+
+
     $(".scroll-click").click(function () {
         console.log($(this).attr("nextQ"));
         $('html,body').animate({

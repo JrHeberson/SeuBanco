@@ -40,13 +40,71 @@ MyBanking.map = MyBanking.map || {};
             $('#noApiMessage').show();
         }
 
+        setupAvatar();
+
         getUser();        
 
-        setTimeout(function(){if($("#userId").text() == ""){$("#subscribeAlertButton").click();}},1000);
+        setTimeout(function(){
+            if($("#userId").text() == ""){
+                $("#subscribeAlertButton").click();
+                $(".avatar-box").hide();
+            }            
+
+        },1000);
         
         
 
     });
+
+
+    function setupAvatar(){
+        var avatarSettings = "";
+		avatarSettings +='[{"label":"cor do fundo","settings":"background","options":"black,silver,gray,white,maroon,red,purple,pink,fuchsia,green,lime,olive,yellow,navy,blue,teal,aqua,aliceblue,antiquewhite,aquamarine,azure,beige,bisque,blanchedalmond,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,cyan,darkblue,darkcyan,darkgoldenrod,darkgray,darkgreen,darkgrey,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,gainsboro,ghostwhite,gold,goldenrod,greenyellow,grey,honeydew,hotpink,indianred,indigo,ivory,khaki,lavender,lavenderblush,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgreen,lightgrey,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,limegreen,linen,magenta,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,oldlace,olivedrab,orange,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,plum,powderblue,rosybrown,royalblue,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,thistle,tomato,turquoise,violet,wheat,whitesmoke,yellowgreen"},';
+        avatarSettings +='{"label":"tom de pele","settings":"skin","options":"tanned,yellow,pale,light,brown,darkBrown,black"},';
+        avatarSettings +='{"label":"cabelo e acessórios","settings":"top","options":"dreads01,dreads02,frizzle,shaggyMullet,shaggy,shortCurly,shortFlat,shortRound,sides,shortWaved,theCaesarAndSidePart,theCaesar,bigHair,bob,bun,curly,curvy,dreads,frida,froAndBand,fro,longButNotTooLong,miaWallace,shavedSides,straightAndStrand,straight01,straight02,eyepatch,turban,hijab,hat,winterHat01,winterHat02,winterHat03,winterHat04"},';
+        avatarSettings +='{"label":"cor do cabelo","settings":"hairColor","options":"auburn,black,blonde,blondeGolden,brown,brownDark,pastelPink,platinum,red,silverGray"},';        
+        avatarSettings +='{"label":"cor do acessório","settings":"hatColor","options":"black,blue01,blue02,blue03,gray01,gray02,heather,pastelBlue,pastelGreen,pastelOrange,pastelRed,pastelYellow,pink,red,white"},';        
+        avatarSettings +='{"label":"óculos","settings":"accessories","options":"none,kurt,prescription01,prescription02,round,sunglasses,wayfarers"},';
+        avatarSettings +='{"label":"cor do óculos","settings":"accessoriesColor","options":"black,blue01,blue02,blue03,gray01,gray02,heather,pastelBlue,pastelGreen,pastelOrange,pastelRed,pastelYellow,pink,red,white"},';        
+        avatarSettings +='{"label":"barba","settings":"facialHair","options":"none,beardLight,beardMagestic,beardMedium,moustaceFancy,moustacheMagnum"},';
+        avatarSettings +='{"label":"cor da barba","settings":"facialHairColor","options":"auburn,black,blonde,blondeGolden,brown,brownDark,pastelPink,platinum,red,silverGray"},';
+        avatarSettings +='{"label":"roupa","settings":"clothing","options":"blazerAndShirt,blazerAndSweater,collarAndSweater,graphicShirt,hoodie,overall,shirtCrewNeck,shirtScoopNeck,shirtVNeck"},';
+        avatarSettings +='{"label":"cor da roupa","settings":"clothingColor","options":"black,blue01,blue02,blue03,gray01,gray02,heather,pastelBlue,pastelGreen,pastelOrange,pastelRed,pastelYellow,pink,red,white"},';
+        avatarSettings +='{"label":"estampa da Roupa","settings":"clothingGraphic","options":"skrullOutline,skrull,resist,pizza,hola,diamond,deer,dumbia,bear,bat"},';        
+        avatarSettings +='{"label":"olhos","settings":"eyes","options":"squint,closed,cry,default,eyeRoll,happy,hearts,side,surprised,wink,winkWacky,xDizzy"},';
+        avatarSettings +='{"label":"sombrancelhas","settings":"eyebrows","options":"angryNatural,defaultNatural,flatNatural,frownNatural,raisedExcitedNatural,sadConcernedNatural,unibrowNatural,upDownNatural,raisedExcited,angry,default,sadConcerned,upDown"},';
+        avatarSettings +='{"label":"boca","settings":"mouth","options":"concerned,default,disbelief,eating,grimace,sad,screamOpen,serious,smile,tongue,twinkle,vomit"}]';
+
+        var jsonSettings = JSON.parse(avatarSettings);
+        
+        var newSelect = "";
+
+        newSelect = '<select id="settings" class="form-select" aria-label="">'
+        jsonSettings.forEach(element1 => {
+            
+            newSelect += '<option value="'+element1.settings+'">'+element1.label+'</option>';
+
+        });
+        newSelect += '</select>';
+        $("#avatar-settings").append(newSelect);
+
+        newSelect = "";
+
+        jsonSettings.forEach(element1 => {
+            console.log(element1.settings);
+            var label = element1.label;
+            var settings = element1.settings;
+            var options = element1.options.split(",");            
+            newSelect += '<select hidden id="'+settings+'" class="form-select" aria-label="">';
+            options.forEach(element2 => {
+                newSelect += '<option value="'+element2+'">'+element2+'</option>';
+            });
+            newSelect += '</select>';
+            $("#avatar-settings").append(newSelect);
+        });
+
+    }
+
 
     function getUser(){
         
@@ -74,7 +132,17 @@ MyBanking.map = MyBanking.map || {};
     
     function insertUserProfile(event) {
 
-        event.preventDefault();                    
+        event.preventDefault(); 
+        
+            var avatarJSON = "";
+
+            if($("#jsonSVG").val() == ""){
+                avatarJSON = {};
+                $(".avatar-box").show();
+
+            }else{
+                avatarJSON = JSON.parse($("#jsonSVG").val());
+            }
 
             var formData = {firstName : $("#firstName").val(),
             lastName : $("#lastName").val(),
@@ -82,6 +150,7 @@ MyBanking.map = MyBanking.map || {};
             address : $("#address").val(),
             zipcode : $("#zipcode").val(),
             province : $("#province").val(),
+            avatar : avatarJSON
             };
 
             $.ajax({
@@ -109,6 +178,7 @@ MyBanking.map = MyBanking.map || {};
         if(data.hasOwnProperty("Item")){
                     
             var email =  userToEmail(data.Item.email);
+            var avatar =  data.Item.avatar;
             var firstName = data.Item.firstName; 
             var lastName = data.Item.lastName;
             var phoneNumber = data.Item.phoneNumber;
@@ -136,6 +206,10 @@ MyBanking.map = MyBanking.map || {};
                 }
             });            
 
+            var svg = Avataaars.create(avatar);
+
+            $(".avatar-box").html(svg);
+            $("#jsonSVG").text(JSON.stringify(avatar));            
             $("#points").text(points);
             $("#userId").text(email);
             $("#username").text(firstName);
