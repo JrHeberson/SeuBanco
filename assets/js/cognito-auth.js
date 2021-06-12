@@ -166,7 +166,7 @@ var MyBanking = window.MyBanking || {};
             $("#login-btn").attr("data-content",userToEmail(cognitoUser.username));
             
     
-            $("#signin-link").attr("href","#");
+            $("#signin-link").attr("href","userProfile.html");
 
             $("#menuMain").html('<li class="active"><a href="index.html">Home</a></li>'+
             '<li class="active"><a href="userProfile.html">Seu Perfil</a></li>'+          

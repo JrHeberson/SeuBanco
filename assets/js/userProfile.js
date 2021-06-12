@@ -126,7 +126,8 @@ MyBanking.map = MyBanking.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+               
+                window.location.reload();
             },
             
         });
@@ -171,7 +172,8 @@ MyBanking.map = MyBanking.map || {};
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                     console.error('Response: ', jqXHR.responseText);
-                    alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+                    
+                    window.location.reload();
                 }
             });
         

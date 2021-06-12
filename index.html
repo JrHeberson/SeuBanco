@@ -937,6 +937,10 @@
 
             $("#nicknameInputRegister").val(obj.friend);
 
+            if($("#nicknameInputRegister").val() != ""){
+                window.location.hash ="contact";
+            }            
+
         });
 
         function checkTerms(){

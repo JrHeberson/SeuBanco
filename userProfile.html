@@ -60,7 +60,7 @@
                 
             <div class="header-menu-right float-right ">
                 <div id="inviteFriend" onclick="inviteFriend()" class="search-box float-left" data-toggle="popover" data-trigger="focus" data-placement="left"
-                    data-content="Convide seus amigos!">
+                    data-content="Convidar!">
                     <img src="assets/images/avatars/invite-friend.png">
                 </div>
                 <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="bottom"
@@ -458,7 +458,7 @@ $(document).ready(function() {
     };
 
     function inviteFriend(){
-        navigator.share({title: 'My Banking Brasil', url: 'https://mybanking.com.br/index.html#contact?friend='+$("#login-btn").attr("data-content")+'#contact'});
+        navigator.share({title: 'My Banking Brasil', url: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")});
     };
     
     
