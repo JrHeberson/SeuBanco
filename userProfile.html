@@ -489,10 +489,10 @@ $(document).ready(function() {
         method: 'feed',
         link: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")
         }, function(response){
-            if (response && !response.error_code) {
+            if (response && response.post_id) {
                 alert('Posting completed.');
                 } else {
-                alert('Error while posting.');
+                alert('Error while posting:');
                 }
         });
     });
