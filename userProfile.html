@@ -44,27 +44,6 @@
 
 <body>
 
-    <!--FACEBOOK-->
-    <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId      : '506816630523853',
-            xfbml      : true,
-            version    : 'v11.0'
-          });
-          FB.AppEvents.logPageView();
-        };
-      
-        (function(d, s, id){
-           var js, fjs = d.getElementsByTagName(s)[0];
-           if (d.getElementById(id)) {return;}
-           js = d.createElement(s); js.id = id;
-           js.src = "https://connect.facebook.net/en_US/sdk.js";
-           fjs.parentNode.insertBefore(js, fjs);
-         }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-
     <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -152,7 +131,7 @@
                                         <h3><span id="points">0</span> PONTOS</h3>
                                     </span>
                                     <!-- <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div> -->
-                                    <div class="share_fb" style="background: #1877f2; color: white; border-radius: 5px; padding-left: 5px; padding-right: 5px;"><i class="icofont-facebook"></i> Compartilhar</div>                                    
+                                    <div style="background: #1877f2; color: white; border-radius: 5px; padding-left: 5px; padding-right: 5px;"><a href="#" class="share_fb" ><i class="icofont-facebook"></i> Compartilhar</a></div>                                    
                                 </div>
                             </div>
                             <div class="col-md-5 border-right">
@@ -277,8 +256,7 @@
     </div>
 
 
-    <!-- Main jQuery -->
-    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <!-- Main jQuery -->    
     <script src="assets/js/jquery-3.1.0.js"></script>
     <!-- Bootstrap 5 Alpha-->
     <script src="assets/vendors/bootstrap/popper.min.js"></script>
@@ -287,17 +265,12 @@
     <script src="assets/vendors/jquery.isotope.js"></script>
     <script src="assets/vendors/imagesloaded.js"></script>
     <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
-    <!--  Owl Carousel-->
-    <script src="assets/vendors/owl/owl.carousel.min.js"></script>
-    <!-- Progress Bar -->
-    <script src="assets/vendors/counto/apear.js"></script>
-    <script src="assets/vendors/counto/counTo.js"></script>
+    
     <!-- Google Map -->
     <script src="assets/vendors/google-map/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap">
     </script>
-
-    <script src="assets/js/script.js"></script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLK32C4ZZT"></script>
     <script>
@@ -484,23 +457,32 @@ $(document).ready(function() {
         navigator.share({title: 'My Banking Brasil', url: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")});
     };
     
-    $("#userDataDiv").on('click', '.share_fb', function(event) {
+    $(".share_fb").on('click', function(event){
         event.preventDefault();
         var that = $(this);
         var post = that.parents('article.post-area');
         $.ajaxSetup({ cache: true });
-        FB.ui({
-        method: 'share',
-        display: 'iframe',
-        href: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")
-        }, function(response){
-            console.log(response)
-            if (response && !response.error_message) {
+        $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+            FB.init({
+                appId      : '506816630523853',            
+                version    : 'v2.3'
+            });
+            FB.ui({
+                method: 'share',
+                title: 'My Banking Brasil',
+                description: 'Teste',
+                href: 'https://www.mybanking.com.br',
+            },
+            function(response) {
+                console.log(response)
+                if (response && !response.error_code) {
                 alert('Posting completed.');
                 } else {
-                alert('Error while posting:');
+                alert('Error while posting.');
                 }
+            });        
         });
+
     });
 
    /* $("#userDataDiv").on('click', '.share_fb', function(event) {
