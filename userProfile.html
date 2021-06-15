@@ -485,11 +485,17 @@ $(document).ready(function() {
     };
     
     $("#userDataDiv").on('click', '.share_fb', function(event) {
+        event.preventDefault();
+        var that = $(this);
+        var post = that.parents('article.post-area');
+        $.ajaxSetup({ cache: true });
         FB.ui({
-        method: 'feed',
-        link: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")
+        method: 'share',
+        display: 'iframe',
+        href: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")
         }, function(response){
-            if (response && response.post_id) {
+            console.log(response)
+            if (response && !response.error_message) {
                 alert('Posting completed.');
                 } else {
                 alert('Error while posting:');
