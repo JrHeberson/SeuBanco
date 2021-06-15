@@ -43,13 +43,35 @@
 </head>
 
 <body>
+
+    <!--FACEBOOK-->
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '506816630523853',
+            xfbml      : true,
+            version    : 'v11.0'
+          });
+          FB.AppEvents.logPageView();
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
     <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
 
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v11.0" nonce="PrgahVVS"></script>
+       <!-- <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v11.0" nonce="PrgahVVS"></script>-->
 
     <!-- Main Menu Start -->
 
@@ -120,7 +142,7 @@
                     <div class="container rounded bg-white mt-5 mb-5">
                         <div class="row">
                             <div class="col-md-3 border-right">
-                                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <div id="userDataDiv" class="d-flex flex-column align-items-center text-center p-3 py-5">
                                     <!--<img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">-->
                                     <div style="width: 150px; height: 150px;" class="avatar-box" onclick="$('#avatarSelectionButton').click()"></div>
                                     <span id="username" class="font-weight-bold"></span>
@@ -129,7 +151,8 @@
                                         <img src="assets/images/about/icon-trophy.png" data-toggle="tooltip" data-placement="top" title="Descubra mais sobre seus pontos na sessão MISSÕES">
                                         <h3><span id="points">0</span> PONTOS</h3>
                                     </span>
-                                    <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>                                    
+                                    <!-- <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div> -->
+                                    <div class="share_fb" style="background: #1877f2; color: white; border-radius: 5px; padding-left: 5px; padding-right: 5px;"><i class="icofont-facebook"></i> Compartilhar</div>                                    
                                 </div>
                             </div>
                             <div class="col-md-5 border-right">
@@ -286,7 +309,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-WLK32C4ZZT');
-    </script>
+    </script>    
 
 
     <script src="assets/js/aws-cognito-sdk.min.js"></script>
@@ -461,6 +484,42 @@ $(document).ready(function() {
         navigator.share({title: 'My Banking Brasil', url: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")});
     };
     
+    $("#userDataDiv").on('click', '.share_fb', function(event) {
+        FB.ui({
+        method: 'feed',
+        link: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")
+        }, function(response){
+            if (response && !response.error_code) {
+                alert('Posting completed.');
+                } else {
+                alert('Error while posting.');
+                }
+        });
+    });
+
+   /* $("#userDataDiv").on('click', '.share_fb', function(event) {
+        event.preventDefault();
+        var that = $(this);
+        var post = that.parents('article.post-area');
+        $.ajaxSetup({ cache: true });            
+            FB.init({
+            appId: '506816630523853',
+            version: 'v11.0' // or v2.0, v2.1, v2.0
+            });
+            FB.ui({
+                method: 'share',
+                title: 'My Banking Brasil',
+                description: 'Teste',
+                href: 'https://www.mybanking.com.br',
+            },
+            function(response) {
+                if (response && !response.error_code) {
+                alert('Posting completed.');
+                } else {
+                alert('Error while posting.');
+                }
+            });
+    });*/
     
 
 </script>
