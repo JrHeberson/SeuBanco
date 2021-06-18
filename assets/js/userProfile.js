@@ -66,9 +66,9 @@ MyBanking.map = MyBanking.map || {};
         var newElement = "";
 
         interest.forEach(element => {
-            newElement = '<label data-select="interest" style="border-color: #0d6efd; width: fit-content;" onclick="toggleButton(this,event)" class="btn btn-outline-primary" for="'+element+'">'+element+'</label>';
+            newElement = '<label data-select="interest" style="border-color: #0d6efd; width: fit-content;" onclick="tgInterestButton(this,event)" class="btn btn-outline-primary" for="'+element+'">'+element+'</label>';
 
-            newElement += '<label data-select="interest" style="border-color: #0d6efd; width: fit-content; display:none" onclick="toggleButton(this,event)" class="btn btn-outline-primary active" for="'+element+'">'+element+'</label>'
+            newElement += '<label data-select="interest" style="border-color: #0d6efd; width: fit-content; display:none" onclick="tgInterestButton(this,event)" class="btn btn-outline-primary active" for="'+element+'">'+element+'</label>';
                                                 
             $("#interesses").append(newElement);
 
@@ -203,7 +203,7 @@ MyBanking.map = MyBanking.map || {};
                 }
             });
         
-    }
+    };
     
     function setUserData(data){
 
@@ -273,11 +273,11 @@ MyBanking.map = MyBanking.map || {};
 
     function userToEmail(user){
         return user.replace('-at-', '@');
-    }
+    };
     
     function emailToUser(email){
         return email.replace('@', '-at-');
-    }
+    };
       
 
 }(jQuery));

@@ -10,9 +10,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>My Banking Brasil - Teste de Perfil Financeiro</title>
+    <title>My Banking Brasil - Perfil do Usuário</title>
     <meta name="description"
-        content="Este teste de Perfil Financeiro irá nos ajudar a entender melhor suas necessidades">
+        content="Este é o seu perfil dentro da nossa plataforma!">
     <meta name="viewport" content="width=device-width">
 
     <!-- Add site Favicon -->
@@ -38,7 +38,7 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    
+
 
 </head>
 
@@ -49,26 +49,25 @@
         <![endif]-->
 
 
-        <!-- <div id="fb-root"></div>
+    <!-- <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v11.0" nonce="PrgahVVS"></script> -->
 
     <!-- Main Menu Start -->
 
     <nav class="site-navigation " id="mainmenu-area">
-        
-        <div class="container clearfix">
-           <!-- <div id="inviteFriend" onclick="inviteFriend()" class="btn btn-main btn-sm">Convidar amigo!</div> -->
-                
+
+        <div class="container clearfix">            
+
             <div class="header-menu-right float-right ">
-                <div id="inviteFriend" onclick="inviteFriend()" class="search-box float-left" data-toggle="popover" data-trigger="focus" data-placement="left"
-                    data-content="Convidar!">
+                <div id="inviteFriend" onclick="inviteFriend()" class="search-box float-left" data-toggle="popover"
+                    data-trigger="focus" data-placement="left" data-content="Convidar!">
                     <img src="assets/images/avatars/invite-friend.png">
                 </div>
-                <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="bottom"
-                    data-content="">
+                <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus"
+                    data-placement="bottom" data-content="">
                     <a id="signin-link" href="signin.html"><i class="icofont-user"></i></a>
                 </div>
-                
+
 
 
                 <div class="menu-btn-box">
@@ -92,8 +91,7 @@
                     <ul id="menuMain">
                         <li class="active"><a href="index.html">Home</a></li>
                         <li class="active"><a href="signin.html">Login</a></li>
-                        <li class="active"><a href="#contact" onlick="$('.icofont-close').click();">Faça seu
-                                cadastro</a></li>
+                        <li class="active"><a href="#contact" onlick="$('.icofont-close').click();">Faça seu cadastro</a></li>
                     </ul>
                 </nav>
 
@@ -115,22 +113,26 @@
 
 
     <section class="section-padding contact form-wrap" id="contact">
-        <div class="container">         
+        <div class="container">
             <div class="row " id="formDiv">
                 <form id="userProfile" class="contact_form form-row">
                     <div class="container rounded bg-white mt-5 mb-5">
                         <div class="row">
                             <div class="col-md-3 border-right">
-                                <div id="userDataDiv" class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <div id="userDataDiv"
+                                    class="d-flex flex-column align-items-center text-center p-3 py-5">
                                     <!--<img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">-->
-                                    <div style="width: 150px; height: 150px;" class="avatar-box" onclick="$('#avatarSelectionButton').click()"></div>
+                                    <div style="width: 150px; height: 150px;" class="avatar-box"
+                                        onclick="$('#avatarSelectionButton').click()"></div>
                                     <span id="username" class="font-weight-bold"></span>
                                     <span id="userId" class="text-black-50"></span><br>
-                                    <span class="text-black-50"> 
-                                        <img src="assets/images/about/icon-trophy.png" data-toggle="tooltip" data-placement="top" title="Descubra mais sobre seus pontos na sessão MISSÕES">
+                                    <span class="text-black-50">
+                                        <img src="assets/images/about/icon-trophy.png" data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="Descubra mais sobre seus pontos na sessão MISSÕES">
                                         <h3><span id="points">0</span> PONTOS</h3>
                                     </span>
-                                   <!-- <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div> -->
+                                    <!-- <div class="fb-share-button" data-href="https://mybanking.com.br" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmybanking.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div> -->
                                 </div>
                             </div>
                             <div class="col-md-5 border-right">
@@ -139,27 +141,46 @@
                                         <h4 class="text-right">Perfil</h4>
                                     </div>
                                     <div class="row mt-2">
-                                        <div class="col-md-6"><label class="labels">Nome</label><input style="color:#000" id="firstName" type="text" class="form-control" placeholder="" value="" required oninvalid="this.setCustomValidity('Por favor, preencha o campo Nome')" oninput="setCustomValidity('')"></div>
-                                        <div class="col-md-6"><label class="labels">Sobrenome</label><input style="color:#000" id="lastName" type="text" class="form-control" value="" placeholder="" required oninvalid="this.setCustomValidity('Por favor, preencha o campo Sobrenome')" oninput="setCustomValidity('')"></div>
+                                        <div class="col-md-6"><label class="labels">Nome</label><input
+                                                style="color:#000" id="firstName" type="text" class="form-control"
+                                                placeholder="" value="" required
+                                                oninvalid="this.setCustomValidity('Por favor, preencha o campo Nome')"
+                                                oninput="setCustomValidity('')"></div>
+                                        <div class="col-md-6"><label class="labels">Sobrenome</label><input
+                                                style="color:#000" id="lastName" type="text" class="form-control"
+                                                value="" placeholder="" required
+                                                oninvalid="this.setCustomValidity('Por favor, preencha o campo Sobrenome')"
+                                                oninput="setCustomValidity('')"></div>
                                     </div>
                                     <div class="row mt-3">
-                                        <div class="col-md-12"><label class="labels">Telefone/Whatsapp - Principal</label><input style="color:#000" id="mainPhoneNumber" type="text" class="form-control" placeholder="" value="" disabled></div>
-                                        <div class="col-md-12"><label class="labels">Telefone/Whatsapp - Adicional (opcional)</label><input style="color:#000" id="phoneNumber" type="text" class="form-control" placeholder="" value="" onkeypress="mascara(this)"></div>
-                                    <!--    <div class="col-md-12"><label class="labels">Endereço (opcional)</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
+                                        <div class="col-md-12"><label class="labels">Telefone/Whatsapp -
+                                                Principal</label><input style="color:#000" id="mainPhoneNumber"
+                                                type="text" class="form-control" placeholder="" value="" disabled></div>
+                                        <div class="col-md-12"><label class="labels">Telefone/Whatsapp - Adicional
+                                                (opcional)</label><input style="color:#000" id="phoneNumber" type="text"
+                                                class="form-control" placeholder="" value="" onkeypress="mascara(this)">
+                                        </div>
+                                        <!--    
+                                        <div class="col-md-12"><label class="labels">Endereço (opcional)</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
                                         <div class="col-md-12"><label class="labels">CEP (opcional)</label><input style="color:#000" id="zipcode" type="text" class="form-control" placeholder="" value=""></div>
-                                        <div class="col-md-12"><label class="labels">Estado (opcional)</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                -->
+                                        <div class="col-md-12"><label class="labels">Estado (opcional)</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div> 
+                                        -->
 
                                         <div class="col-md-12"><label class="labels">Interesses</label><br>
                                             <div id="interesses">
-                                                
+
                                             </div>
-                                            <input style="color:#000" id="line" type="text" class="form-control" placeholder="" value="" disabled>                                                                                                                                                                                                                                                                                                             
-                                        </div>                                            
+                                            <input style="color:#000" id="line" type="text" class="form-control"
+                                                placeholder="" value="" disabled>
+                                        </div>
 
 
-                                        <input hidden style="color:#000" id="friend" type="text" class="form-control" placeholder="" value="">                                                                                
-                                    </div>                                    
-                                    <div class="mt-5 text-center"><button class="btn btn-main profile-button" type="submit">Atualizar Dados</button></div>
+                                        <input hidden style="color:#000" id="friend" type="text" class="form-control"
+                                            placeholder="" value="">
+                                    </div>
+                                    <div class="mt-5 text-center">
+                                        <button class="btn btn-main profile-button" type="submit">Atualizar Dados</button>
+                                    </div>
                                 </div>
                             </div>
                             <!--
@@ -173,16 +194,18 @@
                             -->
                         </div>
                     </div>
-                    </div>
-                    </div>
-                    <input hidden data-toggle="modal" data-target="#subscribeAlert" data-backdrop="static" data-keyboard="false" id="subscribeAlertButton" type="button" class="btn btn-main" value="">
-                    <input hidden data-toggle="modal" data-target="#avatarSelection" data-backdrop="static" data-keyboard="false" id="avatarSelectionButton" type="button" class="btn btn-main" value="">
-                    <textarea style="display: none;" id="jsonSVG"></textarea>
-                    <textarea style="display: none;" id="jsonSVG_bkp"></textarea>
-                </form>
             </div>
-        </div>        
-    </section>
+        </div>
+        <input hidden data-toggle="modal" data-target="#subscribeAlert" data-backdrop="static" data-keyboard="false"
+            id="subscribeAlertButton" type="button" class="btn btn-main" value="">
+        <input hidden data-toggle="modal" data-target="#avatarSelection" data-backdrop="static" data-keyboard="false"
+            id="avatarSelectionButton" type="button" class="btn btn-main" value="">
+        <textarea style="display: none;" id="jsonSVG"></textarea>
+        <textarea style="display: none;" id="jsonSVG_bkp"></textarea>
+        </form>
+        </div>
+        </div>
+    </section> 
 
     <div class="footer-btm">
         <div class="conainer">
@@ -233,39 +256,42 @@
                     <span aria-hidden="true">&times;</span>
                 </button> -->
                 </div>
-                <div class="modal-body">                    
+                <div class="modal-body">
                     <div class="row">
-                        <div id="previousAvatar" class="col-lg-4 col-md-4 btn-main">                                                        
+                        <div id="previousAvatar" class="col-lg-4 col-md-4 btn-main">
                             <img src="assets/images/avatars/arrow_circle_left.png">
-                          </div>
+                        </div>
                         <div class="col-md-4 col-lg-4">
-                            <div  class="d-flex flex-column align-items-center text-center p-3 py-5">                            
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                                 <div style="width: 300px; height: 300px;" class="avatar-box"></div>
                             </div>
                         </div>
-                        <div id="nextAvatar" class="col-lg-4 col-md-4 btn-main">                            
+                        <div id="nextAvatar" class="col-lg-4 col-md-4 btn-main">
                             <img src="assets/images/avatars/arrow_circle_right.png">
                         </div>
                     </div>
                     <div class="row">
                         <br>
                     </div>
-                    <div class="row">                        
-                        <div id="avatar-settings" class="col-lg-12 col-md-12">                            
-                          
-                        </div>                                                 
+                    <div class="row">
+                        <div id="avatar-settings" class="col-lg-12 col-md-12">
+
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="$('#userProfile').submit()" class="btn btn-secondary" data-dismiss="modal">TERMINEI!</button>
-                    <button type="button" onclick="discardChanges()" class="btn btn-light" data-dismiss="modal">DESCARTAR</button>
+                    <button type="button" onclick="$('#userProfile').submit()" class="btn btn-secondary"
+                        data-dismiss="modal">TERMINEI!</button>
+                    <button type="button" onclick="discardChanges()" class="btn btn-light"
+                        data-dismiss="modal">DESCARTAR</button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- Main jQuery -->    
+    <!-- Main jQuery -->
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
     <script src="assets/js/jquery-3.1.0.js"></script>
     <!-- Bootstrap 5 Alpha-->
     <script src="assets/vendors/bootstrap/popper.min.js"></script>
@@ -273,13 +299,15 @@
     <!-- Isotope -->
     <script src="assets/vendors/jquery.isotope.js"></script>
     <script src="assets/vendors/imagesloaded.js"></script>
-    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
-    
-    <!-- Google Map -->
-    <script src="assets/vendors/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap">
-    </script>
-    
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>    
+    <!--  Owl Carousel-->
+    <script src="assets/vendors/owl/owl.carousel.min.js"></script>
+    <!-- Progress Bar -->
+    <script src="assets/vendors/counto/apear.js"></script>
+    <script src="assets/vendors/counto/counTo.js"></script>
+
+    <script src="assets/js/script.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLK32C4ZZT"></script>
     <script>
@@ -291,49 +319,49 @@
         gtag('js', new Date());
 
         gtag('config', 'G-WLK32C4ZZT');
-    </script>    
+    </script>
 
-
+    <!--COGNITO-->
     <script src="assets/js/aws-cognito-sdk.min.js"></script>
     <script src="assets/js/amazon-cognito-identity.min.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/cognito-auth.js"></script>
+
+    <!--others-->
     <script src="assets/js/userProfile.js"></script>
     <script src="assets/js/avataaars.js"></script>
     <script src="assets/js/jsrsasign-latest-all-min.js"></script>
     <script src="assets/js/json-sans-eval-min.js"></script>
-    <script src="assets/js/jws-3.2.min.js"></script>    
-</body>
+    <script src="assets/js/jws-3.2.min.js"></script>
 
-</html>
-
-<script type="text/javascript"> document.addEventListener('click', function(e) { if(document.activeElement.toString() == '[object HTMLButtonElement]'){ document.activeElement.blur(); } }); </script>
 
 <script>
-
-    function toggleButton(buttonInterest,e){
+    
+    function tgInterestButton(buttonInterest, e) {
         
-        event.preventDefault;
 
         var elementFor = $(buttonInterest).attr("for");
-                
-
-        $('label[for='+elementFor+']').toggle();
 
 
-    }
-    
+        $('label[for=' + elementFor + ']').toggle();
 
-    function mascara(telefone){ 
-        if(telefone.value.length == 0)
-            telefone.value = '(' + telefone.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
-        if(telefone.value.length == 3)
-            telefone.value = telefone.value + ')'; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
 
-        if(telefone.value.length == 9)
-            telefone.value = telefone.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+    };
 
-    }
+
+    function mascara(telefone) {
+        if (telefone.value.length == 0)
+            telefone.value = '(' + telefone
+            .value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+        if (telefone.value.length == 3)
+            telefone.value = telefone.value +
+            ')'; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+
+        if (telefone.value.length == 9)
+            telefone.value = telefone.value +
+            '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+
+    };
 
     function formatPhoneNumber(phoneNumberString) {
         var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
@@ -341,19 +369,19 @@
         var match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
         console.log(match);
         if (match) {
-        return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+            return '(' + match[1] + ') ' + match[2] + '-' + match[3];
         }
         return null;
-    }
+    };
 
-    $(document).ready(function() {  
+    $(document).ready(function () {
         MyBanking.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                
+
                 var sJWS = token;
                 var hN = "";
-                var hE ="";
-                
+                var hE = "";
+
                 var jws = new KJUR.jws.JWS();
 
                 var result = 0;
@@ -370,20 +398,21 @@
                 jws.parsedJWS.sigvalB64U;
                 jws.parsedJWS.si;
                 jws.parsedJWS.sigvalH;
-                
-                jws.parsedJWS.headS;            
+
+                jws.parsedJWS.headS;
 
                 var userData = JSON.parse(jws.parsedJWS.payloadS);
 
                 $("#friend").val(userData.nickname);
-                $("#mainPhoneNumber").val(formatPhoneNumber(userData.phone_number.replaceAll('+55','')));
+                $("#mainPhoneNumber").val(formatPhoneNumber(userData.phone_number.replaceAll('+55',
+                    '')));
             }
         });
     });
 
-    function changeAvatar(selectId){
+    function changeAvatar(selectId) {
         var optionId = selectId;
-        var optionValue = $("#"+selectId).val();
+        var optionValue = $("#" + selectId).val();
 
         var jsonSVG = JSON.parse($("#jsonSVG").val());
 
@@ -402,7 +431,7 @@
     };
 
 
-    function discardChanges(){        
+    function discardChanges() {
 
         var jsonSVG = JSON.parse($("#jsonSVG_bkp").val());
 
@@ -411,50 +440,52 @@
         $(".avatar-box").html(svg);
 
         $("#jsonSVG").text(JSON.stringify(jsonSVG));
-        
+
     };
 
-    $("#nextAvatar").click(function(){                
+    $("#nextAvatar").click(function () {
 
         var settings = $("#settings").val();
 
         console.log(settings);
 
-        var nextElement = $('#'+settings+' > option:selected').next('option');
-        
+        var nextElement = $('#' + settings + ' > option:selected').next('option');
+
         if (nextElement.length > 0) {
-            $('#'+settings+' > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
-        }else{
-            $('#'+settings).find('option:eq(0)').prop('selected', true);
-        }        
+            $('#' + settings + ' > option:selected').removeAttr('selected').next('option').attr('selected',
+                'selected');
+        } else {
+            $('#' + settings).find('option:eq(0)').prop('selected', true);
+        }
 
 
         console.log(nextElement.length);
 
-        console.log($("#"+settings).val());
+        console.log($("#" + settings).val());
 
         changeAvatar(settings);
 
 
     });
 
-    $("#previousAvatar").click(function(){
+    $("#previousAvatar").click(function () {
 
         var settings = $("#settings").val();
 
         console.log(settings);
 
-        var prevElement = $('#'+settings+' > option:selected').prev('option');
+        var prevElement = $('#' + settings + ' > option:selected').prev('option');
 
         console.log(prevElement.length);
 
         if (prevElement.length > 0) {
-            $('#'+settings+' > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
-        }else{
-            $('#'+settings).find('option:last').prop('selected', true);
-        }                
+            $('#' + settings + ' > option:selected').removeAttr('selected').prev('option').attr('selected',
+                'selected');
+        } else {
+            $('#' + settings).find('option:last').prop('selected', true);
+        }
 
-        console.log($("#"+settings).val());
+        console.log($("#" + settings).val());
 
         changeAvatar(settings);
 
@@ -471,7 +502,7 @@
 
     $(window).scroll(function () {
         $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
-        
+
     });
 
     // program the reset button
@@ -490,7 +521,7 @@
             },
             'slow');
 
-    }
+    };
 
     function backToTop(divName) {
         $('html,body').animate({
@@ -500,9 +531,15 @@
 
     };
 
-    function inviteFriend(){
-        navigator.share({title: 'My Banking Brasil', url: 'https://mybanking.com.br/index.html?friend='+$("#login-btn").attr("data-content")});
+    function inviteFriend() {
+        navigator.share({
+            title: 'My Banking Brasil',
+            url: 'https://mybanking.com.br/index.html?friend=' + $("#login-btn").attr("data-content")
+        });
     };
-    
-
 </script>
+
+
+</body>
+
+</html>
