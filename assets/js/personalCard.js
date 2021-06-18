@@ -177,9 +177,9 @@ MyBanking.map = MyBanking.map || {};
         if(data.Count > 1){
             $("#cardCount").html("Encontramos "+data.Count+" cartões compatíveis com sua busca!");
         }else if(data.Count == 1){
-            $("#cardCount").text("Encontramos 1 cartão compatíveis com sua busca!");
+            $("#cardCount").text("Encontramos 1 cartão compatível com sua busca!");
         }else{
-            $("#cardCount").html("Desculpe... não encontramos nenhuma cartão compatível com sua busca. <br> Que tal revisar suas respostas?");
+            $("#cardCount").html("Desculpe... não encontramos nenhum cartão compatível com sua busca. <br> Que tal revisar suas respostas?");
         }
         
 
