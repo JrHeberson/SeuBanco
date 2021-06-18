@@ -321,6 +321,7 @@
                                 <h3>Pronto! Agora só clicar em "Buscar cartões" ou, se precisar revisar suas perguntas, clique em "Revisar perguntas"</h3>
                                 <br>
                                 <input id="btnCalcular" type="submit" class="btn btn-secondary" value="Buscar cartões!">
+                                <label style="display: none;" id="loadingGif" class="btn btn-secondary" ><img src="assets/images/22.gif"/></label>
                                 <input id="reset" onclick='$("#nextQ").click();' class="btn btn-light" value="Revisar perguntas">
                                 <input hidden data-toggle="modal" data-target="#rewards" data-backdrop="static" data-keyboard="false" id="rewardsButton" type="button" class="btn btn-main" value="">                              
                             </div>
@@ -477,7 +478,7 @@
 
 <script>
     $(".scroll-click").click(function () {
-        console.log($(this).attr("nextQ"));
+       
         $("#nextQ").click();
         $('html,body').animate({
                 scrollTop: $("#formDiv").offset().top - 80
