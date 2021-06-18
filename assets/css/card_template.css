@@ -40,7 +40,7 @@
   }
   
   .card__number {
-    font-size: 30px;
+    font-size: 25px;
     padding: 40px 0 10px;
     text-align: left;
   }
@@ -53,6 +53,7 @@
 
   .card__owner {
     text-align: left;
+    font-size: 10px;
   }
 
   .card__logo {

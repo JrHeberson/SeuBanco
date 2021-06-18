@@ -174,6 +174,15 @@ MyBanking.map = MyBanking.map || {};
 
     function printCardData(data){
 
+        if(data.Count > 1){
+            $("#cardCount").html("Encontramos "+data.Count+" cartões compatíveis com sua busca!");
+        }else if(data.Count == 1){
+            $("#cardCount").text("Encontramos 1 cartão compatíveis com sua busca!");
+        }else{
+            $("#cardCount").html("Desculpe... não encontramos nenhuma cartão compatível com sua busca. <br> Que tal revisar suas respostas?");
+        }
+        
+
         $("#cards").html("");
 
         data.Items.forEach(element => {
@@ -203,7 +212,7 @@ MyBanking.map = MyBanking.map || {};
             if(element.hasOwnProperty('pc_annualCardFee')){
                 divContent+="<span>Anuidade: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_annualCardFee)+"<br>"
             }else{
-                divContent+="<span>Anuidade: </span>Não informado pelo banco<br>"
+                divContent+="<span>Anuidade: </span>Não informado pelo<br>"
             }
             divContent+="<span>Renda mínima: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_min_gross_income)+"<br>"
             var needGoodCredit = "Não"
