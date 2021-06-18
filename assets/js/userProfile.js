@@ -42,6 +42,8 @@ MyBanking.map = MyBanking.map || {};
 
         setupAvatar();
 
+        setupInterest();
+
         getUser();        
 
         setTimeout(function(){
@@ -58,7 +60,21 @@ MyBanking.map = MyBanking.map || {};
     });
 
 
+    function setupInterest(){
+        var interest = ["Artes","Cozinha","Redes_Sociais","Voluntariado","Esportes","Música","Viagens","Idiomas","Cinema","Natureza","Fotografia","Pets"];        
+        
+        var newElement = "";
 
+        interest.forEach(element => {
+            newElement = '<label data-select="interest" style="border-color: #0d6efd; width: fit-content;" onclick="toggleButton(this,event)" class="btn btn-outline-primary" for="'+element+'">'+element+'</label>';
+
+            newElement += '<label data-select="interest" style="border-color: #0d6efd; width: fit-content; display:none" onclick="toggleButton(this,event)" class="btn btn-outline-primary active" for="'+element+'">'+element+'</label>'
+                                                
+            $("#interesses").append(newElement);
+
+            newElement = "";
+        });
+    };
 
     function setupAvatar(){
         var avatarSettings = "";
@@ -148,6 +164,15 @@ MyBanking.map = MyBanking.map || {};
                 avatarJSON = JSON.parse($("#jsonSVG").val());
             }
 
+            var interestsList = [];
+            $('label:visible[data-select=interest]').each(function(){ 
+                if($(this).hasClass('active')){ 
+                    interestsList.push($(this).text());
+                }
+            });
+
+            
+
             var formData = {firstName : $("#firstName").val(),
             lastName : $("#lastName").val(),
             phoneNumber : $("#phoneNumber").val(),
@@ -155,7 +180,8 @@ MyBanking.map = MyBanking.map || {};
             zipcode : $("#zipcode").val(),
             province : $("#province").val(),
             friend : emailToUser($("#friend").val()),
-            avatar : avatarJSON
+            avatar : avatarJSON,
+            interests : interestsList
             };
 
             $.ajax({
@@ -192,6 +218,7 @@ MyBanking.map = MyBanking.map || {};
             var zipcode = data.Item.zipcode;
             var province = data.Item.province;
             var missions = data.Item.missions;
+            var interests = data.Item.interests;
             var points = 0;
 
             $('html,body').animate({
@@ -213,6 +240,20 @@ MyBanking.map = MyBanking.map || {};
             });            
 
             var svg = Avataaars.create(avatar);
+
+            
+
+           interests.forEach(element => {
+                
+                console.log(element);
+
+                $('label:visible[for='+element+']').each(function(){ 
+                    if(!$(this).hasClass('active')){ 
+                        $(this).click();
+                    }
+                });
+
+            });
 
             $(".avatar-box").html(svg);
             $("#jsonSVG").text(JSON.stringify(avatar));

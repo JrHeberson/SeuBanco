@@ -145,12 +145,21 @@
                                     <div class="row mt-3">
                                         <div class="col-md-12"><label class="labels">Telefone/Whatsapp - Principal</label><input style="color:#000" id="mainPhoneNumber" type="text" class="form-control" placeholder="" value="" disabled></div>
                                         <div class="col-md-12"><label class="labels">Telefone/Whatsapp - Adicional (opcional)</label><input style="color:#000" id="phoneNumber" type="text" class="form-control" placeholder="" value="" onkeypress="mascara(this)"></div>
-                                        <div class="col-md-12"><label class="labels">Endereço (opcional)</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
+                                    <!--    <div class="col-md-12"><label class="labels">Endereço (opcional)</label><input style="color:#000" id="address" type="text" class="form-control" placeholder="" value=""></div>                                        
                                         <div class="col-md-12"><label class="labels">CEP (opcional)</label><input style="color:#000" id="zipcode" type="text" class="form-control" placeholder="" value=""></div>
-                                        <div class="col-md-12"><label class="labels">Estado (opcional)</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                
+                                        <div class="col-md-12"><label class="labels">Estado (opcional)</label><input style="color:#000" id="province" type="text" class="form-control" placeholder="" value=""></div>                                                                                -->
+
+                                        <div class="col-md-12"><label class="labels">Interesses</label><br>
+                                            <div id="interesses">
+                                                
+                                            </div>
+                                            <input style="color:#000" id="line" type="text" class="form-control" placeholder="" value="" disabled>                                                                                                                                                                                                                                                                                                             
+                                        </div>                                            
+
+
                                         <input hidden style="color:#000" id="friend" type="text" class="form-control" placeholder="" value="">                                                                                
                                     </div>                                    
-                                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Atualizar Dados</button></div>
+                                    <div class="mt-5 text-center"><button class="btn btn-main profile-button" type="submit">Atualizar Dados</button></div>
                                 </div>
                             </div>
                             <!--
@@ -298,7 +307,23 @@
 
 </html>
 
+<script type="text/javascript"> document.addEventListener('click', function(e) { if(document.activeElement.toString() == '[object HTMLButtonElement]'){ document.activeElement.blur(); } }); </script>
+
 <script>
+
+    function toggleButton(buttonInterest,e){
+        
+        event.preventDefault;
+
+        var elementFor = $(buttonInterest).attr("for");
+                
+
+        $('label[for='+elementFor+']').toggle();
+
+
+    }
+    
+
     function mascara(telefone){ 
         if(telefone.value.length == 0)
             telefone.value = '(' + telefone.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
