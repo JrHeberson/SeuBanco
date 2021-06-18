@@ -18,7 +18,7 @@
   position: relative;
   display: flex;
   vertical-align: middle;
-  width: 425px;
+  max-width: 425px;
   height: 270px;
   text-align: left;
   padding: 30px;
