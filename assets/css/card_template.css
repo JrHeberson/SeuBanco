@@ -1,0 +1,98 @@
+.panel {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+@font-face {
+  font-family: 'OCRA';
+  src: url('fonts/OCRA.otf');
+  src: url('fonts/OCRA.otf?#iefix') format('embedded-opentype'),
+  url('fonts/OCRA.ttf') format('truetype')
+}
+
+
+.card {
+  font: 16px/1.5 'Helvetica Neue', Helvetica, sans-serif;
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  width: 425px;
+  height: 270px;
+  text-align: left;
+  padding: 30px;
+  margin-bottom: 50px;
+  color: #000;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background: whitesmoke;
+}
+  
+.card__bank {
+    font-size: 20px;    
+    text-align: left;
+  }
+
+  .card__product {
+    font-size: 20px;    
+    text-align: right;
+  }
+  
+  .card__number {
+    font-size: 30px;
+    padding: 40px 0 10px;
+    text-align: left;
+  }
+
+  .card__expiry-date {
+    font-size: 14px;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
+  .card__owner {
+    text-align: left;
+  }
+
+  .card__logo {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .card__strip {
+    background: #000;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+
+  .card__signature {
+    float: left;
+    width: 65%;
+    height: 40px;
+    margin-left: 10px;
+    background: #999;
+  }
+
+  .card__ccv {
+    float: left;
+    margin-top: 5px;
+    padding: 7px;
+    background: #fff;
+    color: #111;
+    line-height: 1;
+  }
+
+  .card--front {
+    color: black;
+    font-size: 16px;
+    font-family: 'Source Code Pro';
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+  }
+
+  .card--back {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }

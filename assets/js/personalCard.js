@@ -57,7 +57,8 @@ MyBanking.map = MyBanking.map || {};
              error: function ajaxError(jqXHR, textStatus, errorThrown) {
                  console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                  console.error('Response: ', jqXHR.responseText);
-                 alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+                 
+                 window.location.reload();
              },
              
          });
@@ -98,7 +99,7 @@ MyBanking.map = MyBanking.map || {};
 
         var questionsAnswered = $('input[type="radio"]:checked').length;
     
-        if(questionsAnswered === 4){   
+        if(questionsAnswered === 5){   
             
             
 
@@ -124,21 +125,24 @@ MyBanking.map = MyBanking.map || {};
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                     console.error('Response: ', jqXHR.responseText);
-                    alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+                    
+                    window.location.reload();
                 }
             });
 
             
             var ocupationStatus = $('input[name="answer1"]:checked').val();
             var grossIncome = $('input[name="answer2"]:checked').val();
-            var hasRewardProgram = $('input[name="answer3"]:checked').val();
-            var needGoodCredit = $('input[name="answer4"]:checked').val();
+            var hasRewardProgram = $('input[name="answer3"]:checked').val();            
+            var annualCardFee = $('input[name="answer4"]:checked').val();
+            var needGoodCredit = $('input[name="answer5"]:checked').val();
 
             var queryString = "?";
 
             queryString+="ocupationStatus="+ocupationStatus;
             queryString+="&grossIncome="+grossIncome;
             queryString+="&hasRewardProgram="+hasRewardProgram;
+            queryString+="&annualCardFee="+annualCardFee;
             queryString+="&needGoodCredit="+needGoodCredit;
 
             $.ajax({
@@ -156,7 +160,8 @@ MyBanking.map = MyBanking.map || {};
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                     console.error('Response: ', jqXHR.responseText);
-                    alert('An error occured when requesting to insertProfile:\n' + jqXHR.responseText);
+                    
+                    //window.location.reload();
                 },
                 
             });
@@ -175,21 +180,40 @@ MyBanking.map = MyBanking.map || {};
                         
             var divContent = "";
 
-
             divContent+='<div id="'+element.pc_id+'" class="card-div">'
-            divContent+="<span>Instituição: </span>"+element.pc_brand_name+"<br>"
-            divContent+="<span>Nome do cartão: </span>"+element.pc_product_name+"<br>"
-            divContent+="<span>Produto: </span>"+element.pc_product_type+"<br>"
-            divContent+="<span>Bandeira: </span>"+element.pc_card_scheme+"<br>"
+            divContent+='<div class="panel">'
+            if(element.pc_product_type.toUpperCase() == 'PLATINUM'){
+                divContent+='<div class="card card--front" style="background:silver">'
+            }else if(element.pc_product_type.toUpperCase() == 'GOLD'){
+                divContent+='<div class="card card--front" style="background:#caad17">'
+            }
+            else if(element.pc_product_type.toUpperCase() == 'BLACK'){
+                divContent+='<div class="card card--front" style="background:black; color:white">'
+            }else{
+                divContent+='<div class="card card--front">'
+            }            
+            divContent+='<div class="card__product">'+element.pc_product_type.toUpperCase()+'</div>'
+            divContent+='<div class="card__bank">'+element.pc_brand_name+'</div>'            
+            divContent+='<div class="card__number">1111 2222 3333 4444</div>'
+            divContent+='<div class="card__expiry-date">XX/XX</div>'
+            divContent+='<div class="card__owner">'+element.pc_product_name+'</div>'
+            divContent+='<img width="90px" class="card__logo" src="assets/images/logos/'+element.pc_card_scheme.toLowerCase()+'.png" alt="'+element.pc_card_scheme+'"/>'
+            divContent+='</div>'
+            divContent+='</div>'                        
+            if(element.hasOwnProperty('pc_annualCardFee')){
+                divContent+="<span>Anuidade: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_annualCardFee)+"<br>"
+            }else{
+                divContent+="<span>Anuidade: </span>Não informado pelo banco<br>"
+            }
             divContent+="<span>Renda mínima: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_min_gross_income)+"<br>"
-            var needGoodCredit = "Sim"
-            if(!element.pc_min_gross_income){
-                needGoodCredit = "Não"
+            var needGoodCredit = "Não"
+            if(element.pc_needGoodCredit){
+                needGoodCredit = "Sim"
             }
             divContent+="<span>Sujeito a análise de crédito?: </span>"+needGoodCredit+"<br>"
-            var hasRewardProgram = "Sim"
-            if(!element.pc_min_gross_income){
-                hasRewardProgram = "Não"
+            var hasRewardProgram = "Não"
+            if(element.pc_hasRewardProgram){
+                hasRewardProgram = "Sim"
                 divContent+="<span>Possui programa de recompensas?: </span>"+hasRewardProgram+"<br>"
             }else{
                 divContent+="<span>Possui programa de recompensas?: </span>"+hasRewardProgram+"<br>"
