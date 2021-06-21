@@ -184,6 +184,7 @@ MyBanking.map = MyBanking.map || {};
         }
         
 
+        $("#filters").html("");
         $("#cards").html("");
         
         var bankList = [];
