@@ -336,7 +336,7 @@
 
 
 <script>
-    
+
     function tgInterestButton(buttonInterest, e) {
         
 
@@ -365,9 +365,9 @@
 
     function formatPhoneNumber(phoneNumberString) {
         var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-        console.log(cleaned);
+      
         var match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
-        console.log(match);
+      
         if (match) {
             return '(' + match[1] + ') ' + match[2] + '-' + match[3];
         }
@@ -447,7 +447,7 @@
 
         var settings = $("#settings").val();
 
-        console.log(settings);
+      
 
         var nextElement = $('#' + settings + ' > option:selected').next('option');
 
@@ -457,12 +457,7 @@
         } else {
             $('#' + settings).find('option:eq(0)').prop('selected', true);
         }
-
-
-        console.log(nextElement.length);
-
-        console.log($("#" + settings).val());
-
+    
         changeAvatar(settings);
 
 
@@ -472,20 +467,15 @@
 
         var settings = $("#settings").val();
 
-        console.log(settings);
-
         var prevElement = $('#' + settings + ' > option:selected').prev('option');
-
-        console.log(prevElement.length);
-
+    
         if (prevElement.length > 0) {
             $('#' + settings + ' > option:selected').removeAttr('selected').prev('option').attr('selected',
                 'selected');
         } else {
             $('#' + settings).find('option:last').prop('selected', true);
         }
-
-        console.log($("#" + settings).val());
+     
 
         changeAvatar(settings);
 
@@ -493,7 +483,7 @@
 
 
     $(".scroll-click").click(function () {
-        console.log($(this).attr("nextQ"));
+      
         $('html,body').animate({
                 scrollTop: $("#" + $(this).attr("nextQ")).offset().top - 50
             },

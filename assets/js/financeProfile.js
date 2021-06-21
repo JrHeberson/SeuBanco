@@ -25,7 +25,7 @@ MyBanking.map = MyBanking.map || {};
 
         MyBanking.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                console.log(token);
+                //console.log(token);
                 //displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
                 //$('.authToken').text(token);
             }
@@ -51,7 +51,7 @@ MyBanking.map = MyBanking.map || {};
                  Authorization: authToken
              },            
              success: function(data){ 
-                 console.log(data);                        
+              
                  setTimeout(checkMission(data),1000);
                  },
              error: function ajaxError(jqXHR, textStatus, errorThrown) {
@@ -126,8 +126,7 @@ MyBanking.map = MyBanking.map || {};
             var formData = {missionName : "completarTestePerfilFinanceiro"};
 
             $("#rewardsButton").click();
-
-            console.log(authToken);
+           
 
             $.ajax({
                 method: 'POST',

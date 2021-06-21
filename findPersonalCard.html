@@ -343,10 +343,13 @@
 
             <div class="row " id="cardList" style="display: none;">
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xl-8">
-                    <div class="heading ">
+                    <div style="margin-bottom:0px;" class="heading ">
                         <h2 id="cardCount"></h2>
                         <br>                        
                     </div>                    
+                    <div id="filters">
+
+                    </div>
                     <div id="cards">
 
                     </div>
@@ -515,4 +518,23 @@
             'slow');
 
     };
+
+
+    function filterSelect(){                        
+        
+        if($("#bankFilter").val() === 'all' && $("#productFilter").val() === 'all'){
+            $(".card-div").show();    
+        }else if($("#bankFilter").val() === 'all'){
+            $(".card-div").hide();
+            $("div[data-product='"+$("#productFilter").val()+"']").show();
+        }else if($("#productFilter").val() === 'all'){
+            $(".card-div").hide();
+            $("div[data-bank='"+$("#bankFilter").val()+"']").show();
+        }else{
+            $(".card-div").hide();
+            $("div[data-bank='"+$("#bankFilter").val()+"'][data-product='"+$("#productFilter").val()+"']").show();
+        }        
+        
+    };
+
 </script>

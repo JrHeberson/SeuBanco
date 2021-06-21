@@ -185,12 +185,20 @@ MyBanking.map = MyBanking.map || {};
         
 
         $("#cards").html("");
+        
+        var bankList = [];
+        var productList = [];
 
         data.Items.forEach(element => {
+            
+            
+            bankList.push( element.pc_brand_name);
+            productList.push( element.pc_product_type);
+                
                         
             var divContent = "";
 
-            divContent+='<div id="'+element.pc_id+'" class="card-div">'
+            divContent+='<div data-bank="'+element.pc_brand_name+'" data-product="'+element.pc_product_type.toUpperCase()+'" id="'+element.pc_id+'" class="card-div">'
             divContent+='<div class="panel">'
             if(element.pc_product_type.toUpperCase() == 'PLATINUM'){
                 divContent+='<div class="card card--front" style="background:silver">'
@@ -243,12 +251,41 @@ MyBanking.map = MyBanking.map || {};
 
             
             
-            divContent+='</div><br>'
+            divContent+='</div>'
             
             $("#cards").append(divContent);
 
         });
 
+        console.log(bankList);
+
+        var bankUniq = bankList.filter((v, i, a) => a.indexOf(v) === i); 
+
+        console.log(bankUniq);
+
+        var bankFilterSelect = '<label for="bankFilter">Bancos</label>'
+        bankFilterSelect +='<select style="margin-bottom:20px;" onchange="filterSelect(this,\'data-bank\')" id="bankFilter" class="form-select" aria-label="">';
+        bankFilterSelect += '<option value="all">Mostrar Todos</option>';
+        bankUniq.forEach(element1 => {
+            bankFilterSelect += '<option value="'+element1+'">'+element1+'</option>';
+        });
+        bankFilterSelect += '</select>';
+        $("#filters").append(bankFilterSelect);
+
+        console.log(productList);
+
+        var productUniq = productList.filter((v, i, a) => a.indexOf(v) === i); 
+
+        console.log(productUniq);
+
+        var productFilterSelect = '<label for="productFilter">Produto</label>'
+        productFilterSelect +='<select style="margin-bottom:20px;" onchange="filterSelect(this,\'data-product\')" id="productFilter" class="form-select" aria-label="">';
+        productFilterSelect += '<option value="all">Mostrar Todos</option>';
+        productUniq.forEach(element1 => {
+            productFilterSelect += '<option value="'+element1+'">'+element1+'</option>';
+        });
+        productFilterSelect += '</select>';
+        $("#filters").append(productFilterSelect);
         
         $("#formDiv").hide();
         $("#pageTitle").hide();

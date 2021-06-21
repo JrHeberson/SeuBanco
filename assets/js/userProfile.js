@@ -30,7 +30,7 @@ MyBanking.map = MyBanking.map || {};
 
         MyBanking.authToken.then(function updateAuthMessage(token) {
             if (token) {
-                console.log(token);
+                //console.log(token);
                 //displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
                 //$('.authToken').text(token);
             }
@@ -110,7 +110,7 @@ MyBanking.map = MyBanking.map || {};
         newSelect = "";
 
         jsonSettings.forEach(element1 => {
-            console.log(element1.settings);
+           
             var label = element1.label;
             var settings = element1.settings;
             var options = element1.options.split(",");            
@@ -136,7 +136,7 @@ MyBanking.map = MyBanking.map || {};
                 Authorization: authToken
             },            
             success: function(data){ 
-                console.log(data);                        
+               
                 setTimeout(setUserData(data),1000);
                 },
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
@@ -244,8 +244,7 @@ MyBanking.map = MyBanking.map || {};
             
 
            interests.forEach(element => {
-                
-                console.log(element);
+                               
 
                 $('label:visible[for='+element+']').each(function(){ 
                     if(!$(this).hasClass('active')){ 
