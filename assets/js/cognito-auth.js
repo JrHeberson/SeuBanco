@@ -172,7 +172,9 @@ var MyBanking = window.MyBanking || {};
             '<li class="active"><a href="userProfile.html">Seu Perfil</a></li>'+          
             '<li class="active"><a href="profileTest.html">Teste de Perfil Financeiro</a></li>'+
             '<li class="active"><a href="findPersonalCard.html">Encontre seu Cartão!</a></li>'+
-            '<li class="active"><a href="#" onclick="MyBanking.signOut();">Sair</a></li>')            
+            '<li class="active"><a href="#" onclick="MyBanking.signOut();">Sair</a></li>')
+            
+            $('#indexContact').hide();
 
 
         }
