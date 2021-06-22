@@ -197,7 +197,7 @@ var MyBanking = window.MyBanking || {};
                 window.location.href = 'userProfile.html';
             },
             function signinError(err) {
-                alert(err);
+                alert("Não autorizado!\nUsuário ou senha incorreta!");
             }
         );
     }
@@ -213,7 +213,7 @@ var MyBanking = window.MyBanking || {};
                 window.location.href = 'signin.html';
             },
             function updatePwdError(err) {
-                alert(err);
+                alert("Código inválido ou expirado!\nSolicite um novo código de verificação!");
             }
         );
     }
@@ -234,7 +234,10 @@ var MyBanking = window.MyBanking || {};
             }
         };
         var onFailure = function registerFailure(err) {
-            alert(err);
+            
+            alert("Usuário já cadastrado!\nAcesse a tela de login para cadastrar nova senha");
+            
+            
         };
         event.preventDefault();
 
@@ -257,7 +260,7 @@ var MyBanking = window.MyBanking || {};
                 window.location.href = signinUrl;
             },
             function verifyError(err) {
-                alert(err);
+                alert("Código de verificação inválido!\nPor favor, tente novamente.");
             }
         );
     }
