@@ -443,25 +443,32 @@
                             
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" id="phone_numberInputRegister" placeholder="Fone/Whatsapp" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]*" onkeypress="mascara(this)" required>
+                                    <input type="tel" class="form-control" id="phone_numberInputRegister" placeholder="Fone/Whatsapp" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]*" onkeypress="mascara(this)" required oninvalid="this.setCustomValidity('Por favor, preencha com um telefone válido')" oninput="setCustomValidity('')">
                                 </div>
                             </div>
 
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" pattern=".*" required>
+                                    <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}" required oninvalid="this.setCustomValidity('Por favor, preencha com um email válido')" oninput="setCustomValidity('')">
                                     <input hidden type="nickname" class="form-control" id="nicknameInputRegister" placeholder="" pattern=".*">
                                 </div>
                             </div>                            
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="passwordInputRegister" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                        <input type="password" class="form-control" id="passwordInputRegister" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required oninvalid="this.setCustomValidity('Por favor, preencha uma senha válida')" oninput="setCustomValidity('')">
+                                        <div id="message">
+                                            <span class="subheading">Sua senha precisa conter pelo menos:</span>
+                                            <p id="letter" class="invalid">1 letra <b>minúscula</b></p>
+                                            <p id="capital" class="invalid">1 letra <b>maiúscula</b></p>
+                                            <p id="number" class="invalid">1 <b>número</b></p>
+                                            <p id="length" class="invalid">No mínimo <b>8 caracteres</b></p>
+                                        </div>
                                     </div>
                                 </div>                           
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirmar Senha" pattern=".*" required>
+                                        <input type="password" class="form-control" id="password2InputRegister" placeholder="Confirmar Senha" pattern=".*" required oninvalid="this.setCustomValidity('Por favor, preencha com a mesma senha')" oninput="setCustomValidity('')">
                                     </div>
                                 </div>
                             </div>
@@ -488,14 +495,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <div id="message">
-                        <span class="subheading">Sua senha precisa conter pelo menos:</span>
-                        <p id="letter" class="invalid">1 letra <b>minúscula</b></p>
-                        <p id="capital" class="invalid">1 letra <b>maiúscula</b></p>
-                        <p id="number" class="invalid">1 <b>número</b></p>
-                        <p id="length" class="invalid">No mínimo <b>8 caracteres</b></p>
-                    </div>
+                    </form>                    
                 </div>
             </div>
         </div>
@@ -741,7 +741,7 @@
             $("#nicknameInputRegister").val(obj.friend);
 
             if($("#nicknameInputRegister").val() != ""){
-                window.location.hash ="contact";
+                window.location.hash ="indexContact";
             }            
 
         });
@@ -788,7 +788,6 @@
 
 </body>
 
-<a hidden href='https://br.freepik.com/fotos/mao'>Mão foto criado por pch.vector - br.freepik.com</a>
 
 </html>
 

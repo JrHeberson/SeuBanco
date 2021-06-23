@@ -61,7 +61,7 @@ MyBanking.map = MyBanking.map || {};
 
 
     function setupInterest(){
-        var interest = ["Artes","Cozinha","Redes_Sociais","Voluntariado","Esportes","Música","Viagens","Idiomas","Cinema","Natureza","Fotografia","Pets"];        
+        var interest = ["Tecnologia","Artes","Cozinha","Redes_Sociais","Voluntariado","Esportes","Música","Viagens","Idiomas","Cinema","Natureza","Fotografia","Pets"];        
         
         var newElement = "";
 
@@ -199,7 +199,7 @@ MyBanking.map = MyBanking.map || {};
                     console.error('Error requesting insertProfile: ', textStatus, ', Details: ', errorThrown);
                     console.error('Response: ', jqXHR.responseText);
                     
-                    window.location.reload();
+                   // window.location.reload();
                 }
             });
         

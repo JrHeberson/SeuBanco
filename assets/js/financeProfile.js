@@ -71,12 +71,16 @@ MyBanking.map = MyBanking.map || {};
         var found = false;   
         
         var testResult = "";
+        var testDate = "";
 
         data.Item.missions.map(function(item){ 
             if(item.mission == "completarTestePerfilFinanceiro"){
 
                 found = true;
                 testResult = data.Item.financeProfile;
+                testDate = item.completedTimestamp;
+                var d = new Date(testDate)
+                testDate = d.toLocaleString('pt-BR');
                 
             }
         });        
@@ -85,6 +89,7 @@ MyBanking.map = MyBanking.map || {};
             $("#challengeAlertButton").click();
         }else{
             console.log("missionComplete");
+            console.log(testDate);
             $("#rewardsButton").prop("disabled", true);
 
                 var profileTitle = "";
@@ -105,6 +110,7 @@ MyBanking.map = MyBanking.map || {};
                 // If you add more choices, you must add another response below.
                 $("#profileTitle").text(profileTitle);
                 $("#profileDesc").text(profileDesc);
+                $("#testDate").text(testDate);
                 $("#profileResult").show();
                 $("#reset").show();
                 $("#formDiv").hide();
@@ -201,9 +207,12 @@ MyBanking.map = MyBanking.map || {};
             profileTitle = "Endividado";
             profileDesc = "Sua situação é delicada, você pode estar inadimplente ou muito próximo disso. É preciso ter muita atenção e não desanimar, porque chegou o momento de levantar a cabeça e saber que sempre existe um caminho. É preciso fazer um diagnóstico financeiro, saber quanto ganha, com o que gasta, descrever e detalhar todos os credores e os valores das dívidas. Mas, atenção, não procure o credor para fazer acordo no primeiro momento; caso ele venha lhe procurar, diga que você está se organizando financeiramente, sabe que deve e pagará quando e como puder. Portanto, tome atitude, tenha disciplina e muita perseverança. Tudo começa com o primeiro degrau e, lembre-se, estar endividado ou inadimplente é uma questão de escolha! Acredite na beleza dos seus sonhos! Boa sorte!";
         }
+
+        var d = new Date(Date.now())        
     
         // If you add more choices, you must add another response below.
         $("#profileTitle").text(profileTitle);
+        $("#testDate").text(d.toLocaleString('pt-BR'));
         $("#profileDesc").text(profileDesc);
         $("#profileResult").show();
         $("#reset").show();

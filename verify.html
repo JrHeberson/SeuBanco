@@ -66,10 +66,10 @@
             <form id="verifyForm" class="contact_form form-row">
                 <div class="row"> 
                     <div class="col-lg-12">
-                        <input type="email" class="form-control" id="emailInputVerify" placeholder="Email" required>
+                        <input type="email" class="form-control" id="emailInputVerify" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}" oninvalid="this.setCustomValidity('Por favor, preencha com um email válido')" oninput="setCustomValidity('')">
                     </div>
                     <div class="col-lg-12">
-                        <input type="text" class="form-control" id="codeInputVerify" placeholder="Código de verificação" pattern=".*" required>
+                        <input type="text" class="form-control" id="codeInputVerify" placeholder="Código de verificação" pattern=".*" required oninvalid="this.setCustomValidity('Por favor, preencha um código válido')" oninput="setCustomValidity('')">
                     </div>
                 </div>
                 <div class="col-lg-12">
