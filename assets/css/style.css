@@ -240,7 +240,7 @@ button:focus {
 }
 
 a {
-  color: #000;
+  color: #7a9ba0;
   outline: none;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -342,6 +342,11 @@ Page Banner Area
 
 .service-bg {
   background: url("../images/bg/service-bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.financas-bg {
+  background: url("../images/bg/financas-bg.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -1574,7 +1579,7 @@ Contact PAge
    Service Page
   ==============================*/
 .service-section-single {
-  padding: 160px 0px;
+  padding: 20px 0px;
 }
 
 .services-info-block {
