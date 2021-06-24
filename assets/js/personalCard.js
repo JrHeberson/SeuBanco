@@ -199,59 +199,66 @@ MyBanking.map = MyBanking.map || {};
                         
             var divContent = "";
 
-            divContent+='<div data-bank="'+element.pc_brand_name+'" data-product="'+element.pc_product_type.toUpperCase()+'" id="'+element.pc_id+'" class="card-div">'
-            divContent+='<div class="panel">'
-            if(element.pc_product_type.toUpperCase() == 'PLATINUM'){
-                divContent+='<div class="card card--front" style="background:silver">'
-            }else if(element.pc_product_type.toUpperCase() == 'GOLD'){
-                divContent+='<div class="card card--front" style="background:#caad17">'
-            }
-            else if(element.pc_product_type.toUpperCase() == 'BLACK'){
-                divContent+='<div class="card card--front" style="background:black; color:white">'
-            }else{
-                divContent+='<div class="card card--front">'
-            }            
-            divContent+='<div class="card__product">'+element.pc_product_type.toUpperCase()+'</div>'
-            divContent+='<div class="card__bank">'+element.pc_brand_name+'</div>'            
-            divContent+='<div class="card__number">1111 2222 3333 4444</div>'
-            divContent+='<div class="card__expiry-date">XX/XX</div>'
-            divContent+='<div class="card__owner">'+element.pc_product_name+'</div>'
-            divContent+='<img width="90px" class="card__logo" src="assets/images/logos/'+element.pc_card_scheme.toLowerCase()+'.png" alt="'+element.pc_card_scheme+'"/>'
-            divContent+='</div>'
-            divContent+='</div>'                        
-            if(element.hasOwnProperty('pc_annualCardFee')){
-                divContent+="<span>Anuidade: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_annualCardFee)+"<br>"
-            }else{
-                divContent+="<span>Anuidade: </span>Não informado pelo<br>"
-            }
-            divContent+="<span>Renda mínima: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_min_gross_income)+"<br>"
-            var needGoodCredit = "Não"
-            if(element.pc_needGoodCredit){
-                needGoodCredit = "Sim"
-            }
-            divContent+="<span>Sujeito a análise de crédito?: </span>"+needGoodCredit+"<br>"
-            var hasRewardProgram = "Não"
-            if(element.pc_hasRewardProgram){
-                hasRewardProgram = "Sim"
-                divContent+="<span>Possui programa de recompensas?: </span>"+hasRewardProgram+"<br>"
-            }else{
-                divContent+="<span>Possui programa de recompensas?: </span>"+hasRewardProgram+"<br>"
-                if(element.pc_reward_program_info === 'null'){
-                    divContent+="<span>Informações sobre o programa de recompensas: </span><u>Informação não disponível</u><br>"
-                }else{
-                    divContent+="<span>Informações sobre o programa de recompensas: </span><u><a href='"+element.pc_reward_program_info+"'>"+element.pc_reward_program_info+"</a></u><br>"
-                }
-                
-            }
-
-            if(element.pc_eligibility_criteria.substr(0,4) === 'http'){
-                divContent+="<span>Critério de eligibilidade: </span><u><a href='"+element.pc_eligibility_criteria+"'>"+element.pc_eligibility_criteria+"</a></u><br>"
-            }else{
-                divContent+="<span>Critério de eligibilidade: </span>"+element.pc_eligibility_criteria+"<br>"
-            }
-
             
-            
+
+            divContent+='<div class="row align-items-center justify-content-center service-section-single card-div" data-bank="'+element.pc_brand_name+'" data-product="'+element.pc_product_type.toUpperCase()+'" id="'+element.pc_id+'" >'            
+                divContent+='<div class="col-lg-6 col-xl-5">'
+                    divContent+='<div class="services-icon-block">'
+                        divContent+='<div class="panel">'
+                            if(element.pc_product_type.toUpperCase() == 'PLATINUM'){
+                                divContent+='<div class="card card--front" style="background:silver">'
+                            }else if(element.pc_product_type.toUpperCase() == 'GOLD'){
+                                divContent+='<div class="card card--front" style="background:#caad17">'
+                            }
+                            else if(element.pc_product_type.toUpperCase() == 'BLACK'){
+                                divContent+='<div class="card card--front" style="background:black; color:white">'
+                            }else{
+                                divContent+='<div class="card card--front">'
+                            }            
+                                divContent+='<div class="card__product">'+element.pc_product_type.toUpperCase()+'</div>'
+                                divContent+='<div class="card__bank">'+element.pc_brand_name+'</div>'            
+                                divContent+='<div class="card__number">1111 2222 3333 4444</div>'
+                                divContent+='<div class="card__expiry-date">XX/XX</div>'
+                                divContent+='<div class="card__owner">'+element.pc_product_name+'</div>'
+                                divContent+='<img style="width:90px" class="card__logo" src="assets/images/logos/'+element.pc_card_scheme.toLowerCase()+'.png" alt="'+element.pc_card_scheme+'"/>'
+                            divContent+='</div>'
+                        divContent+='</div>'
+                    divContent+='</div>'
+                divContent+='</div>'            
+                divContent+='<div class="col-lg-6 col-xl-5">'
+                    divContent+='<div style="text-align:left" class="services-icon-block">'                        
+                        if(element.hasOwnProperty('pc_annualCardFee')){
+                            divContent+="<span>Anuidade: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_annualCardFee)+"<br>"
+                        }else{
+                            divContent+="<span>Anuidade: </span>Não informado pelo<br>"
+                        }
+                        divContent+="<span>Renda mínima: </span>"+new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(element.pc_min_gross_income)+"<br>"
+                        var needGoodCredit = "Não"
+                        if(element.pc_needGoodCredit){
+                            needGoodCredit = "Sim"
+                        }
+                        divContent+="<span>Sujeito a análise de crédito?: </span>"+needGoodCredit+"<br>"
+                        var hasRewardProgram = "Não"
+                        if(element.pc_hasRewardProgram){
+                            hasRewardProgram = "Sim"
+                            divContent+="<span>Possui programa de recompensas?: </span>"+hasRewardProgram+"<br>"
+                        }else{
+                            divContent+="<span>Possui programa de recompensas?: </span>"+hasRewardProgram+"<br>"
+                            if(element.pc_reward_program_info === 'null'){
+                                divContent+="<span>Informações sobre o programa de recompensas: </span><u>Informação não disponível</u><br>"
+                            }else{
+                                divContent+="<span>Informações sobre o programa de recompensas: </span><u><a href='"+element.pc_reward_program_info+"'>"+element.pc_reward_program_info+"</a></u><br>"
+                            }
+                            
+                        }
+
+                        if(element.pc_eligibility_criteria.substr(0,4) === 'http'){
+                            divContent+="<span>Critério de eligibilidade: </span><u><a href='"+element.pc_eligibility_criteria+"'>"+element.pc_eligibility_criteria+"</a></u><br>"
+                        }else{
+                            divContent+="<span>Critério de eligibilidade: </span>"+element.pc_eligibility_criteria+"<br>"
+                        }            
+                    divContent+='</div>'
+                divContent+='</div>'
             divContent+='</div>'
             
             $("#cards").append(divContent);

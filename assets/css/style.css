@@ -2991,8 +2991,7 @@ display: block;
 }
 
 .card-div {
-  color: black;
-  background-color: cadetblue;
+  color: #fff;  
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 20px;
