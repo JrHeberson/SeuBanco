@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="pt-br">
+    <title>My Banking Brasil - Como funciona o Open Banking</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="My Banking Brasil - Como funciona o Open Banking">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="canonical" href="https://www.mybanking.com.br">
+
+    <!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mybanking.com.br">
+    <meta property="og:title" content="My Banking Brasil - Como funciona o Open Banking">
+    <meta property="og:description" content="My Banking Brasil - Como funciona o Open Banking">
+    <meta property="og:image" itemprop="image" content="https://www.mybanking.com.br/assets/images/about/mbb-logo.png">
+    <meta property="og:image:secure_url" itemprop="image"
+        content="https://www.mybanking.com.br/assets/images/about/mbb-logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:image:alt" content="MBB - My Banking Brasil" />
+    <meta property="og:site_name" content="My Banking Brasil">
+    <meta property="fb:app_id" content="XXXXXXXXXXXXXX">
+
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.mybanking.com.br/">
+    <meta property="twitter:title" content="My Banking Brasil - Como funciona o Open Banking">
+    <meta property="twitter:description" content="My Banking Brasil - Como funciona o Open Banking">
+    <meta property="twitter:image" content="assets/images/about/mbb-logo.png">
+
+
+    <!-- Add site Favicon -->
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="assets/images/favicon/favicon-32x32.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/images/favicon/favicon-32x32.png">
+    <meta name="msapplication-TileImage" content="assets/images/favicon/favicon-32x32.png">
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/bootstrap.min.css">
+    <!-- Iconfont Css -->
+    <link rel="stylesheet" href="assets/vendors/icofont/icofont.min.css">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="assets/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css">
+
+    <!-- Owl Carousel  CSS -->
+    <link rel="stylesheet" href="assets/vendors/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendors/owl/assets/owl.theme.default.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body id="top-header" data-target="#navbarMenu">
+
+
+
+
+
+    <!-- Main Menu Start -->
+
+    <nav class="site-navigation" id="mainmenu-area">
+        <div class="container clearfix">
+
+
+            <!--
+           <a class="navbar-brand" href="index.html">
+                 <img  src="assets/images/about/mbb-logo-238x51.png" alt="" class="img-fluid">
+                
+            </a>
+        -->
+
+            <div class="header-menu-right float-right ">
+                <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="left"
+                    data-content="">
+                    <a id="signin-link" href="signin.html"><i class="icofont-user"></i></a>
+                </div>
+
+
+                <div class="menu-btn-box">
+                    <button class="nav-toggle-btn a-nav-toggle">
+                        <span class="nav-toggle">
+                            <span class="stick stick-1"></span>
+                            <span class="stick stick-3"></span>
+                            <span class="stick stick-2"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+
+            <!--  <div class="search">
+                <div class="search-form">
+                    <form id="search-form" action="#">
+                        <input type="search" placeholder="Search here..." name="search">
+                        <button type="submit">
+                            <span><i class="icofont-location-arrow"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div> -->
+
+            <div class="hide-menu a-nav-toggle"></div>
+            <div class="menu">
+                <div class="sidebar-close">
+                    <i class="icofont-close"></i>
+                </div>
+                <nav class="menu-main clickable-mainmenu-wrap" id="accordion">
+                    <ul id="menuMain">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="signin.html">Login</a></li>
+                        <li class="active"><a href="#indexContact" onclick="$('.icofont-close').click();">Faça seu
+                                cadastro</a></li>
+                        <!--  <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="has-sub-menu active">
+                            <a href="#">Portfolio<span class="menu-expand"><i
+                                        class="icofont-caret-down"></i></span></a>
+                            <ul class="sub-menu-2">
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">Blog<span class="menu-expand"><i class="icofont-caret-down"></i></span></a>
+                            <ul class="sub-menu-2">
+                                <li><a href="blog.html">Blog Page</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>-->
+                    </ul>
+                </nav>
+
+                <div class="menu-footer">
+                    <ul class="social social-rounded">
+                        <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+                        <li><a href="#"><i class="lni lni-behance-original"></i></a></li>
+                        <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
+                    </ul>
+                    <div class="menu-copyright">© My Banking Brasil 2021 <br>All Rights Reserved</div>
+                </div>
+            </div>
+
+        </div> <!-- / .container -->
+    </nav>
+
+
+
+
+
+    <section style="padding: 100px 0px 110px" class="page-header financas-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-xl-12">
+                    <div class="page-header-info text-center">
+                        <!--<span>FINANÇAS</span>-->
+                        <h2>Como funciona o Open Banking</h2>
+                        <div class="arrow-link">
+                            <a href="#"><img src="assets/images/about/arrow-down.png" alt="" class="img-fluid"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services ">
+        <div class="container">
+
+            <div class="accordion" id="accordionFaq">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1. Como funciona o Open Banking?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                A premissa básica do Open Banking é o consentimento e sua lógica de funcionamento é bem
+                                simples: o cliente é dono dos seus dados financeiros e poderá escolher quando e com
+                                quais
+                                empresas vai compartilhá-los.
+                            </p>
+                            <p>
+                                Esse compartilhamento de informações ocorrerá de maneira transparente, sempre mediante
+                                autorização prévia, e o próprio usuário vai definir as permissões de acesso por meio dos
+                                aplicativos já existentes das instituições financeiras.
+                            </p>
+                            <p>
+                                Na prática, o cliente de um banco, por exemplo, poderá cotar taxas em outro banco sem,
+                                necessariamente, abrir uma nova conta.
+                            </p>
+                            <p>
+                                O processo será bem parecido com o da portabilidade de crédito e funcionará da seguinte
+                                forma:
+                                <ul style="list-style-type: circle; padding-left: 10px;">
+                                    <li>– O cliente do banco A faz a solicitação de cotação por meio do app ou internet
+                                        banking
+                                        do
+                                        banco B.
+                                    </li>
+                                    <li>
+                                        – O banco B aciona o banco A para ter acesso às informações financeiras do
+                                        cliente.
+                                    </li>
+                                    <li>
+                                        – O banco A pede autorização do cliente para compartilhar seus dados com o banco
+                                        B e,
+                                        quando
+                                        há o consentimento, envia os dados.
+                                    </li>
+                                    <li>
+                                        – O banco B consegue fazer uma cotação de forma mais rápida e customizada a
+                                        partir do
+                                        histórico do cliente que teve acesso.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                Há uma série de possibilidades em relação ao uso de produtos e serviços que vão surgir a
+                                partir da implementação do Open Banking, mas a experiência do cliente certamente será um
+                                dos
+                                pontos centrais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2. Para que serve o Open Banking?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                O Open Banking faz parte da agenda do Banco Central de incentivo à competitividade no
+                                Sistema Financeiro Nacional e seu objetivo principal é fazer com que os consumidores
+                                tenham maior autonomia sobre a sua vida financeira e acesso a mais opções de produtos e
+                                serviços, com menos custos e mais transparência.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3. O que significa Open Banking
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                O termo Open Banking significa “sistema financeiro aberto” e pode ser entendido como um
+                                conjunto de regras sobre o uso e compartilhamento de dados e informações financeiras
+                                entre instituições.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              <!--  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            4. Benefícios do Open Banking
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                O Open Banking promete causar grandes mudanças no mercado bancário e financeiro e trazer
+                                benefícios não apenas para os cidadãos, mas também para todo o sistema. Aqui listamos
+                                alguns deles:
+                            </p>
+                            <p>
+                                <ul style="list-style-type: circle; padding-left: 10px;">>
+                                    <li>
+                                        Empoderamento do cliente: mais liberdade e autonomia para os usuários
+                                        compartilharem seus dados e escolherem os melhores produtos e serviços
+                                        financeiros e as instituições com as quais querem se relacionar.
+                                    </li>
+                                    <li>
+                                        Incentivo à modernização do setor financeiro: promoção da cooperação e a
+                                        estruturação de um ambiente mais inclusivo e colaborativo entre as instituições.
+                                    </li>
+                                    <li>
+                                        Fomento à competitividade entre os participantes para estimular o
+                                        desenvolvimento de produtos e serviços melhores e mais inovadores para os
+                                        clientes.
+                                    </li>
+                                    <li>
+                                        Ampliação da oferta de produtos e serviços customizados a partir dos dados dos
+                                        consumidores: aumento das opções de crédito, ofertas de produtos com taxas
+                                        diferenciadas e condições de pagamento facilitadas, mais adequados às
+                                        necessidades e ao perfil dos consumidores
+                                    </li>
+                                    <li>
+                                        Garantia da padronização do compartilhamento de dados e serviços entre
+                                        instituições financeiras para maior segurança e efetividade da troca de
+                                        informações.
+                                    </li>
+                                    <li>
+                                        Menores custos: APIs abertas criam um sistema mais integrado, com menos
+                                        intermediários e tornam os processos mais baratos e rápidos.
+                                    </li>
+                                    <li>
+                                        Melhora na organização da vida financeira dos consumidores: facilidade na gestão
+                                        de receitas, despesas, dívidas e investimentos.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            5. Quanto custa o Open Banking?
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                O consumidor não terá nenhum custo ao solicitar o compartilhamento dos seus dados de uma
+                                instituição para outra. Ou seja, o banco transmissor da informação não poderá fazer
+                                cobranças diretas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            6. O Open Banking é seguro?
+                        </button>
+                    </h2>
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                O Open Banking funciona sob a regulação do Banco Central do Brasil e um dos objetivos do
+                                sistema é garantir a segurança e a proteção dos dados que serão compartilhados. Por
+                                isso, as instituições participantes deverão seguir todos os requisitos e regras
+                                estabelecidos à risca, assim como seguem hoje na oferta de outros tipos de produtos e
+                                serviços.
+                            </p>
+                            <p>
+                                Além disso, todo envio e recebimento de informações dentro do ecossistema do Open
+                                Banking está condicionado a duas leis:
+                                <ul style="list-style-type: circle; padding-left: 10px;">
+                                    <li>
+                                        – Lei do Sigilo Bancário (n° 105/2001), que proíbe o compartilhamento de dados
+                                        para instituições não participantes e a venda de informações de consumidores
+                                        para terceiros.
+                                    </li>
+                                    <li>
+                                        – Lei Geral de Proteção de Dados (n° 13.709/2018), que entrou em vigor em 2020,
+                                        e dá autonomia para o cliente em relação aos seus dados.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                A regulação, sem dúvidas, é rígida e o perímetro de atuação do Open Banking é bem
+                                definido. A ideia é que o Banco Central fiscalize todos os participantes e aplique
+                                punições, caso necessário, em benefício do bom funcionamento do sistema.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            7. Open Banking no mundo
+                        </button>
+                    </h2>
+                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                A agenda de Open Banking já é realidade em países da Europa, Ásia, África, Oceania,
+                                América do Norte e América do Sul
+                            </p>
+                            <p>
+                                O Reino Unido foi pioneiro ao regulamentar o sistema em 2018. Austrália, Índia, Estados
+                                Unidos, Canadá e Rússia também já aderiram e seguem analisando maneiras de incorporá-lo
+                                aos seus sistemas financeiros.
+                            </p>
+                            <p>
+                                Cada país está adotando o Open Banking conforme as suas características e liberando o
+                                compartilhamento de dados em algum nível, mas, de modo geral, o objetivo é o mesmo no
+                                mundo todo: estimular a concorrência, promover a eficiência e oferecer novos – e
+                                melhores – produtos para o consumidor final.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            8. Instituições que fazem parte do Open Banking
+                        </button>
+                    </h2>
+                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
+                        data-bs-parent="#accordionFaq">
+                        <div class="accordion-body">
+                            <p>
+                                No Brasil, somente as instituições financeiras que funcionam sob algum tipo de regulação
+                                oficial do Banco Central poderão participar do Open Banking.
+                            </p>
+                            <p>
+                                A participação é obrigatória para instituições que possuem porte superior a 1% do PIB ou
+                                que tenham atividade internacional relevante. Para demais instituições, a adesão é
+                                voluntária.
+                            </p>
+                            <p>
+                                Independentemente da obrigatoriedade de participação, a premissa mais importante que
+                                envolve os participantes é a da reciprocidade.
+                            </p>
+                            <p>
+                                Isso significa que todas as empresas que aderirem poderão receber dados de seus
+                                concorrentes, mas também devem compartilhar as informações de suas respectivas bases –
+                                quando houver, claro, consentimento por parte dos clientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--
+<section class="latets-works section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-8">
+                <div class="heading text-center">
+                    <h2> Check our latest works</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+           <div class="latest-work-gallery owl-carousel owl-theme">
+                <div class="work-single">
+                    <a href="#"> <img src="assets/images/portfolio/work1.jpg" alt="" class="img-fluid"></a>
+                    <div class="work-content">
+                        <span>Desgin, Illustrator</span>
+                        <h5>Astronomy Or Astrology</h5>
+                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-single">
+                    <a href="#"> <img src="assets/images/portfolio/work2.jpg" alt="" class="img-fluid"></a>
+                    <div class="work-content">
+                        <span>Desgin, Illustrator</span>
+                        <h5>Astronomy Or Astrology</h5>
+                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-single">
+                    <a href="#"> <img src="assets/images/portfolio/work3.jpg" alt="" class="img-fluid"></a>
+                    <div class="work-content">
+                        <span>Desgin, Illustrator</span>
+                        <h5>Astronomy Or Astrology</h5>
+                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-single">
+                    <a href="#"> <img src="assets/images/portfolio/work2.jpg" alt="" class="img-fluid"></a>
+                    <div class="work-content">
+                        <span>Desgin, Illustrator</span>
+                        <h5>Astronomy Or Astrology</h5>
+                    </div>
+                </div>
+                <div class="work-single">
+                    <a href="#"> <img src="assets/images/portfolio/work1.jpg" alt="" class="img-fluid"></a>
+                    <div class="work-content">
+                        <span>Desgin, Illustrator</span>
+                        <h5>Astronomy Or Astrology</h5>
+                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</section>
+-->
+
+    <!--
+    <section class="cta ">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-xl-7">
+                    <div class="cta-content">
+                        <h3>Ready Create Awesome Things?</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xl-3">
+                    <div class="text-xl-right mt-4 mt-xl-0 mt-lg-0">
+                        <a href="#" class="btn btn-white">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+    <!-- Footer section Start -->
+    <section class="footer ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="footer-top text-center">
+                        <div class="footer-logo">
+                            <img src="assets/images/about/mbb-logo-fino.png" alt="MBB" class="img-fluid">
+                        </div>
+                        <p>Conheça nossas Redes Sociais!</p>
+                        <div class="list-inline footer-socials ">
+                            <!-- <a href="https://twitter.com"><i class="icofont-twitter"></i></a>
+                        <a href="https://facebook.com"><i class="icofont-facebook"></i></a>
+                        <a href="https://youtube.com/"><i class="icofont-youtube-play"></i></a>
+                        <a href="https://google.com"><i class="icofont-google-plus"></i></a> -->
+                            <a target="_blank" href="https://instagram.com/mybankingbrasil/"><i
+                                    class="icofont-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="footer-btm">
+        <div class="conainer">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-6">
+                    <div class="copyright text-center">
+                        <p class="copyright">© 2021 <strong>My Banking Brasil</strong> <i
+                                class="icofont-heart text-success" aria-hidden="true"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer section end -->
+
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    <!-- Main jQuery -->
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/js/jquery-3.1.0.js"></script>
+    <!-- Bootstrap 5 Alpha-->
+    <script src="assets/vendors/bootstrap/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/vendors/jquery.isotope.js"></script>
+    <script src="assets/vendors/imagesloaded.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <!--  Owl Carousel-->
+    <script src="assets/vendors/owl/owl.carousel.min.js"></script>
+    <!-- Progress Bar -->
+    <script src="assets/vendors/counto/apear.js"></script>
+    <script src="assets/vendors/counto/counTo.js"></script>
+    <!-- Google Map -->
+    <script src="assets/vendors/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap">
+    </script>
+
+    <script src="assets/js/script.js"></script>
+
+    <!--COGNITO-->
+    <script src="assets/js/aws-cognito-sdk.min.js"></script>
+    <script src="assets/js/amazon-cognito-identity.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/cognito-auth.js"></script>
+    <script src="assets/js/articles.js"></script>
+
+    <script>
+        $(window).scroll(function () {
+            $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+        });
+    </script>
+
+</body>
+
+</html>

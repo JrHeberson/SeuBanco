@@ -20,8 +20,7 @@ MyBanking.map = MyBanking.map || {};
      *  Event Handlers
      */    
 
-    $(function onDocReady() {    
-        $('#profileTestForm').submit(insertUserProfile);
+    $(function onDocReady() {            
 
         MyBanking.authToken.then(function updateAuthMessage(token) {
             if (token) {
@@ -34,8 +33,7 @@ MyBanking.map = MyBanking.map || {};
         if (!_config.api.invokeUrl) {
             $('#noApiMessage').show();
         }
-
-        getUser();
+        
 
     });
 
