@@ -22,9 +22,9 @@
     <meta property="og:url" content="https://www.mybanking.com.br">
     <meta property="og:title" content="My Banking Brasil - Como funciona o Open Banking">
     <meta property="og:description" content="My Banking Brasil - Como funciona o Open Banking">
-    <meta property="og:image" itemprop="image" content="https://www.mybanking.com.br/assets/images/about/mbb-logo.png">
+    <meta property="og:image" itemprop="image" content="https://www.mybanking.com.br/assets/images/artigos/financas/priorize.jpg">
     <meta property="og:image:secure_url" itemprop="image"
-        content="https://www.mybanking.com.br/assets/images/about/mbb-logo.png">
+        content="https://www.mybanking.com.br/assets/images/artigos/financas/priorize.jpg">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="256" />
     <meta property="og:image:height" content="256" />
@@ -38,7 +38,7 @@
     <meta property="twitter:url" content="https://www.mybanking.com.br/">
     <meta property="twitter:title" content="My Banking Brasil - Como funciona o Open Banking">
     <meta property="twitter:description" content="My Banking Brasil - Como funciona o Open Banking">
-    <meta property="twitter:image" content="assets/images/about/mbb-logo.png">
+    <meta property="twitter:image" content="assets/images/artigos/financas/priorize.jpg">
 
 
     <!-- Add site Favicon -->
@@ -84,7 +84,10 @@
         -->
 
             <div class="header-menu-right float-right ">
-                <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="left"
+                <div id="share" onclick="shareLink('open_banking_faq.html')" class="search-box float-left">
+                    <i class="icofont-share"></i>
+                </div>
+                <div id="login-btn" class="search-box" data-toggle="popover" data-trigger="focus" data-placement="bottom"
                     data-content="">
                     <a id="signin-link" href="signin.html"><i class="icofont-user"></i></a>
                 </div>
@@ -151,7 +154,7 @@
                         <li><a href="#"><i class="lni lni-behance-original"></i></a></li>
                         <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
                     </ul>
-                    <div class="menu-copyright">© My Banking Brasil 2021 <br>All Rights Reserved</div>
+                    <div class="menu-copyright">© My Banking Brasil 2021</div>
                 </div>
             </div>
 
@@ -162,13 +165,13 @@
 
 
 
-    <section style="padding: 100px 0px 110px" class="page-header financas-bg">
+    <section style="padding: 100px 0px 110px" class="page-header question-bg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-xl-12">
                     <div class="page-header-info text-center">
                         <!--<span>FINANÇAS</span>-->
-                        <h2>Como funciona o Open Banking</h2>
+                        <h2>Perguntas Frequentes sobre o Open Banking</h2>
                         <div class="arrow-link">
                             <a href="#"><img src="assets/images/about/arrow-down.png" alt="" class="img-fluid"></a>
                         </div>
@@ -181,290 +184,249 @@
     <section class="services ">
         <div class="container">
 
-            <div class="accordion" id="accordionFaq">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            1. Como funciona o Open Banking?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                A premissa básica do Open Banking é o consentimento e sua lógica de funcionamento é bem
-                                simples: o cliente é dono dos seus dados financeiros e poderá escolher quando e com
-                                quais
-                                empresas vai compartilhá-los.
-                            </p>
-                            <p>
-                                Esse compartilhamento de informações ocorrerá de maneira transparente, sempre mediante
-                                autorização prévia, e o próprio usuário vai definir as permissões de acesso por meio dos
-                                aplicativos já existentes das instituições financeiras.
-                            </p>
-                            <p>
-                                Na prática, o cliente de um banco, por exemplo, poderá cotar taxas em outro banco sem,
-                                necessariamente, abrir uma nova conta.
-                            </p>
-                            <p>
-                                O processo será bem parecido com o da portabilidade de crédito e funcionará da seguinte
-                                forma:
-                                <ul style="list-style-type: circle; padding-left: 10px;">
-                                    <li>– O cliente do banco A faz a solicitação de cotação por meio do app ou internet
-                                        banking
-                                        do
-                                        banco B.
-                                    </li>
-                                    <li>
-                                        – O banco B aciona o banco A para ter acesso às informações financeiras do
-                                        cliente.
-                                    </li>
-                                    <li>
-                                        – O banco A pede autorização do cliente para compartilhar seus dados com o banco
-                                        B e,
-                                        quando
-                                        há o consentimento, envia os dados.
-                                    </li>
-                                    <li>
-                                        – O banco B consegue fazer uma cotação de forma mais rápida e customizada a
-                                        partir do
-                                        histórico do cliente que teve acesso.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                Há uma série de possibilidades em relação ao uso de produtos e serviços que vão surgir a
-                                partir da implementação do Open Banking, mas a experiência do cliente certamente será um
-                                dos
-                                pontos centrais.
-                            </p>
-                        </div>
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>1. Como funciona o Open Banking?</h2>
+                        <p>
+                            A premissa básica do Open Banking é o consentimento e sua lógica de funcionamento é bem
+                            simples: o cliente é dono dos seus dados financeiros e poderá escolher quando e com
+                            quais
+                            empresas vai compartilhá-los.
+                        </p>
+                        <p>
+                            Esse compartilhamento de informações ocorrerá de maneira transparente, sempre mediante
+                            autorização prévia, e o próprio usuário vai definir as permissões de acesso por meio dos
+                            aplicativos já existentes das instituições financeiras.
+                        </p>
+                        <p>
+                            Na prática, o cliente de um banco, por exemplo, poderá cotar taxas em outro banco sem,
+                            necessariamente, abrir uma nova conta.
+                        </p>
+                        <p>
+                            O processo será bem parecido com o da portabilidade de crédito e funcionará da seguinte
+                            forma:
+                            <ul style="list-style-type: circle; padding-left: 10px;">
+                                <li>– O cliente do banco A faz a solicitação de cotação por meio do app ou internet
+                                    banking
+                                    do
+                                    banco B.
+                                </li>
+                                <li>
+                                    – O banco B aciona o banco A para ter acesso às informações financeiras do
+                                    cliente.
+                                </li>
+                                <li>
+                                    – O banco A pede autorização do cliente para compartilhar seus dados com o banco
+                                    B e,
+                                    quando
+                                    há o consentimento, envia os dados.
+                                </li>
+                                <li>
+                                    – O banco B consegue fazer uma cotação de forma mais rápida e customizada a
+                                    partir do
+                                    histórico do cliente que teve acesso.
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            Há uma série de possibilidades em relação ao uso de produtos e serviços que vão surgir a
+                            partir da implementação do Open Banking, mas a experiência do cliente certamente será um
+                            dos
+                            pontos centrais.
+                        </p>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            2. Para que serve o Open Banking?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                O Open Banking faz parte da agenda do Banco Central de incentivo à competitividade no
-                                Sistema Financeiro Nacional e seu objetivo principal é fazer com que os consumidores
-                                tenham maior autonomia sobre a sua vida financeira e acesso a mais opções de produtos e
-                                serviços, com menos custos e mais transparência.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            3. O que significa Open Banking
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                O termo Open Banking significa “sistema financeiro aberto” e pode ser entendido como um
-                                conjunto de regras sobre o uso e compartilhamento de dados e informações financeiras
-                                entre instituições.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-              <!--  <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                            4. Benefícios do Open Banking
-                        </button>
-                    </h2>
-                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                O Open Banking promete causar grandes mudanças no mercado bancário e financeiro e trazer
-                                benefícios não apenas para os cidadãos, mas também para todo o sistema. Aqui listamos
-                                alguns deles:
-                            </p>
-                            <p>
-                                <ul style="list-style-type: circle; padding-left: 10px;">>
-                                    <li>
-                                        Empoderamento do cliente: mais liberdade e autonomia para os usuários
-                                        compartilharem seus dados e escolherem os melhores produtos e serviços
-                                        financeiros e as instituições com as quais querem se relacionar.
-                                    </li>
-                                    <li>
-                                        Incentivo à modernização do setor financeiro: promoção da cooperação e a
-                                        estruturação de um ambiente mais inclusivo e colaborativo entre as instituições.
-                                    </li>
-                                    <li>
-                                        Fomento à competitividade entre os participantes para estimular o
-                                        desenvolvimento de produtos e serviços melhores e mais inovadores para os
-                                        clientes.
-                                    </li>
-                                    <li>
-                                        Ampliação da oferta de produtos e serviços customizados a partir dos dados dos
-                                        consumidores: aumento das opções de crédito, ofertas de produtos com taxas
-                                        diferenciadas e condições de pagamento facilitadas, mais adequados às
-                                        necessidades e ao perfil dos consumidores
-                                    </li>
-                                    <li>
-                                        Garantia da padronização do compartilhamento de dados e serviços entre
-                                        instituições financeiras para maior segurança e efetividade da troca de
-                                        informações.
-                                    </li>
-                                    <li>
-                                        Menores custos: APIs abertas criam um sistema mais integrado, com menos
-                                        intermediários e tornam os processos mais baratos e rápidos.
-                                    </li>
-                                    <li>
-                                        Melhora na organização da vida financeira dos consumidores: facilidade na gestão
-                                        de receitas, despesas, dívidas e investimentos.
-                                    </li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading5">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                            5. Quanto custa o Open Banking?
-                        </button>
-                    </h2>
-                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                O consumidor não terá nenhum custo ao solicitar o compartilhamento dos seus dados de uma
-                                instituição para outra. Ou seja, o banco transmissor da informação não poderá fazer
-                                cobranças diretas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading6">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                            6. O Open Banking é seguro?
-                        </button>
-                    </h2>
-                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                O Open Banking funciona sob a regulação do Banco Central do Brasil e um dos objetivos do
-                                sistema é garantir a segurança e a proteção dos dados que serão compartilhados. Por
-                                isso, as instituições participantes deverão seguir todos os requisitos e regras
-                                estabelecidos à risca, assim como seguem hoje na oferta de outros tipos de produtos e
-                                serviços.
-                            </p>
-                            <p>
-                                Além disso, todo envio e recebimento de informações dentro do ecossistema do Open
-                                Banking está condicionado a duas leis:
-                                <ul style="list-style-type: circle; padding-left: 10px;">
-                                    <li>
-                                        – Lei do Sigilo Bancário (n° 105/2001), que proíbe o compartilhamento de dados
-                                        para instituições não participantes e a venda de informações de consumidores
-                                        para terceiros.
-                                    </li>
-                                    <li>
-                                        – Lei Geral de Proteção de Dados (n° 13.709/2018), que entrou em vigor em 2020,
-                                        e dá autonomia para o cliente em relação aos seus dados.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                A regulação, sem dúvidas, é rígida e o perímetro de atuação do Open Banking é bem
-                                definido. A ideia é que o Banco Central fiscalize todos os participantes e aplique
-                                punições, caso necessário, em benefício do bom funcionamento do sistema.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading7">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                            7. Open Banking no mundo
-                        </button>
-                    </h2>
-                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                A agenda de Open Banking já é realidade em países da Europa, Ásia, África, Oceania,
-                                América do Norte e América do Sul
-                            </p>
-                            <p>
-                                O Reino Unido foi pioneiro ao regulamentar o sistema em 2018. Austrália, Índia, Estados
-                                Unidos, Canadá e Rússia também já aderiram e seguem analisando maneiras de incorporá-lo
-                                aos seus sistemas financeiros.
-                            </p>
-                            <p>
-                                Cada país está adotando o Open Banking conforme as suas características e liberando o
-                                compartilhamento de dados em algum nível, mas, de modo geral, o objetivo é o mesmo no
-                                mundo todo: estimular a concorrência, promover a eficiência e oferecer novos – e
-                                melhores – produtos para o consumidor final.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading8">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                            8. Instituições que fazem parte do Open Banking
-                        </button>
-                    </h2>
-                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
-                        data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <p>
-                                No Brasil, somente as instituições financeiras que funcionam sob algum tipo de regulação
-                                oficial do Banco Central poderão participar do Open Banking.
-                            </p>
-                            <p>
-                                A participação é obrigatória para instituições que possuem porte superior a 1% do PIB ou
-                                que tenham atividade internacional relevante. Para demais instituições, a adesão é
-                                voluntária.
-                            </p>
-                            <p>
-                                Independentemente da obrigatoriedade de participação, a premissa mais importante que
-                                envolve os participantes é a da reciprocidade.
-                            </p>
-                            <p>
-                                Isso significa que todas as empresas que aderirem poderão receber dados de seus
-                                concorrentes, mas também devem compartilhar as informações de suas respectivas bases –
-                                quando houver, claro, consentimento por parte dos clientes.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                -->
             </div>
+
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>2. Para que serve o Open Banking?</h2>
+                        <p>
+                            O Open Banking faz parte da agenda do Banco Central de incentivo à competitividade no
+                            Sistema Financeiro Nacional e seu objetivo principal é fazer com que os consumidores
+                            tenham maior autonomia sobre a sua vida financeira e acesso a mais opções de produtos e
+                            serviços, com menos custos e mais transparência.
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>3. O que significa Open Banking</h2>
+                        <p>
+                            O Open Banking faz parte da agenda do Banco Central de incentivo à competitividade no
+                            Sistema Financeiro Nacional e seu objetivo principal é fazer com que os consumidores
+                            tenham maior autonomia sobre a sua vida financeira e acesso a mais opções de produtos e
+                            serviços, com menos custos e mais transparência.
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>4. Benefícios do Open Banking</h2>
+                        <p>
+                            O Open Banking promete causar grandes mudanças no mercado bancário e financeiro e trazer
+                            benefícios não apenas para os cidadãos, mas também para todo o sistema. Aqui listamos
+                            alguns deles:
+                        </p>
+                        <p>
+                            <ul style="list-style-type: circle; padding-left: 10px;">>
+                                <li>
+                                    Empoderamento do cliente: mais liberdade e autonomia para os usuários
+                                    compartilharem seus dados e escolherem os melhores produtos e serviços
+                                    financeiros e as instituições com as quais querem se relacionar.
+                                </li>
+                                <li>
+                                    Incentivo à modernização do setor financeiro: promoção da cooperação e a
+                                    estruturação de um ambiente mais inclusivo e colaborativo entre as instituições.
+                                </li>
+                                <li>
+                                    Fomento à competitividade entre os participantes para estimular o
+                                    desenvolvimento de produtos e serviços melhores e mais inovadores para os
+                                    clientes.
+                                </li>
+                                <li>
+                                    Ampliação da oferta de produtos e serviços customizados a partir dos dados dos
+                                    consumidores: aumento das opções de crédito, ofertas de produtos com taxas
+                                    diferenciadas e condições de pagamento facilitadas, mais adequados às
+                                    necessidades e ao perfil dos consumidores
+                                </li>
+                                <li>
+                                    Garantia da padronização do compartilhamento de dados e serviços entre
+                                    instituições financeiras para maior segurança e efetividade da troca de
+                                    informações.
+                                </li>
+                                <li>
+                                    Menores custos: APIs abertas criam um sistema mais integrado, com menos
+                                    intermediários e tornam os processos mais baratos e rápidos.
+                                </li>
+                                <li>
+                                    Melhora na organização da vida financeira dos consumidores: facilidade na gestão
+                                    de receitas, despesas, dívidas e investimentos.
+                                </li>
+                            </ul>
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>5. Quanto custa o Open Banking?</h2>
+                        <p>
+                            O consumidor não terá nenhum custo ao solicitar o compartilhamento dos seus dados de uma
+                            instituição para outra. Ou seja, o banco transmissor da informação não poderá fazer
+                            cobranças diretas.
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>6. O Open Banking é seguro?</h2>
+                        <p>
+                            O Open Banking funciona sob a regulação do Banco Central do Brasil e um dos objetivos do
+                            sistema é garantir a segurança e a proteção dos dados que serão compartilhados. Por
+                            isso, as instituições participantes deverão seguir todos os requisitos e regras
+                            estabelecidos à risca, assim como seguem hoje na oferta de outros tipos de produtos e
+                            serviços.
+                        </p>
+                        <p>
+                            Além disso, todo envio e recebimento de informações dentro do ecossistema do Open
+                            Banking está condicionado a duas leis:
+                            <ul style="list-style-type: circle; padding-left: 10px;">
+                                <li>
+                                    – Lei do Sigilo Bancário (n° 105/2001), que proíbe o compartilhamento de dados
+                                    para instituições não participantes e a venda de informações de consumidores
+                                    para terceiros.
+                                </li>
+                                <li>
+                                    – Lei Geral de Proteção de Dados (n° 13.709/2018), que entrou em vigor em 2020,
+                                    e dá autonomia para o cliente em relação aos seus dados.
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            A regulação, sem dúvidas, é rígida e o perímetro de atuação do Open Banking é bem
+                            definido. A ideia é que o Banco Central fiscalize todos os participantes e aplique
+                            punições, caso necessário, em benefício do bom funcionamento do sistema.
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>7. Open Banking no mundo</h2>
+                        <p>
+                            A agenda de Open Banking já é realidade em países da Europa, Ásia, África, Oceania,
+                            América do Norte e América do Sul
+                        </p>
+                        <p>
+                            O Reino Unido foi pioneiro ao regulamentar o sistema em 2018. Austrália, Índia, Estados
+                            Unidos, Canadá e Rússia também já aderiram e seguem analisando maneiras de incorporá-lo
+                            aos seus sistemas financeiros.
+                        </p>
+                        <p>
+                            Cada país está adotando o Open Banking conforme as suas características e liberando o
+                            compartilhamento de dados em algum nível, mas, de modo geral, o objetivo é o mesmo no
+                            mundo todo: estimular a concorrência, promover a eficiência e oferecer novos – e
+                            melhores – produtos para o consumidor final.
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center service-section-single">                
+                <div class="col-lg-12 col-xl-12">
+                    <div class="services-info-block">
+                        <h2>8. Instituições que fazem parte do Open Banking</h2>
+                        <p>
+                            No Brasil, somente as instituições financeiras que funcionam sob algum tipo de regulação
+                            oficial do Banco Central poderão participar do Open Banking.
+                        </p>
+                        <p>
+                            A participação é obrigatória para instituições que possuem porte superior a 1% do PIB ou
+                            que tenham atividade internacional relevante. Para demais instituições, a adesão é
+                            voluntária.
+                        </p>
+                        <p>
+                            Independentemente da obrigatoriedade de participação, a premissa mais importante que
+                            envolve os participantes é a da reciprocidade.
+                        </p>
+                        <p>
+                            Isso significa que todas as empresas que aderirem poderão receber dados de seus
+                            concorrentes, mas também devem compartilhar as informações de suas respectivas bases –
+                            quando houver, claro, consentimento por parte dos clientes.
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
 
 
-    <!--
+    
 <section class="latets-works section-padding">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-xl-8">
                 <div class="heading text-center">
-                    <h2> Check our latest works</h2>
+                    <h2>Leia mais de nossos artigos</h2>
                 </div>
             </div>
         </div>
@@ -472,49 +434,31 @@
         <div class="row align-items-center">
            <div class="latest-work-gallery owl-carousel owl-theme">
                 <div class="work-single">
-                    <a href="#"> <img src="assets/images/portfolio/work1.jpg" alt="" class="img-fluid"></a>
-                    <div class="work-content">
-                        <span>Desgin, Illustrator</span>
-                        <h5>Astronomy Or Astrology</h5>
-                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
+                    <a href="open_banking_chega_ao_brasil.html"> <img style="max-height: 300px;" src="assets/images/artigos/openBanking/open_banking_participants.jpg" alt="" class="img-fluid"></a>
+                    <div class="">
+                        <span>Open Banking chega ao Brasil!</span>
+                        <h5>Mas... você sabe o que é Open Banking?</h5>                        
+                    </div>
+                </div> 
+                <div class="work-single">
+                    <a href="como_funciona_o_open_banking.html"> <img style="max-height: 300px;" src="assets/images/artigos/openBanking/open_banking_2.jpg" alt="" class="img-fluid"></a>
+                    <div class="">
+                        <span>Como funciona o Open Banking?</span>
+                        <h5>Entende melhor essa ferramenta que chegou para te ajudar!</h5>                        
                     </div>
                 </div>
                 <div class="work-single">
-                    <a href="#"> <img src="assets/images/portfolio/work2.jpg" alt="" class="img-fluid"></a>
-                    <div class="work-content">
-                        <span>Desgin, Illustrator</span>
-                        <h5>Astronomy Or Astrology</h5>
-                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
+                    <a href="6_habitos_para_poupar.html"> <img style="max-height: 300px;" src="assets/images/artigos/financas/sonhos.jpg" alt="" class="img-fluid"></a>
+                    <div class="">
+                        <span>6 hábitos para começar a poupar</span>
+                        <h5>As vezes a parte mais difícil é saber por onde começar!</h5>                        
                     </div>
-                </div>
-                <div class="work-single">
-                    <a href="#"> <img src="assets/images/portfolio/work3.jpg" alt="" class="img-fluid"></a>
-                    <div class="work-content">
-                        <span>Desgin, Illustrator</span>
-                        <h5>Astronomy Or Astrology</h5>
-                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="work-single">
-                    <a href="#"> <img src="assets/images/portfolio/work2.jpg" alt="" class="img-fluid"></a>
-                    <div class="work-content">
-                        <span>Desgin, Illustrator</span>
-                        <h5>Astronomy Or Astrology</h5>
-                    </div>
-                </div>
-                <div class="work-single">
-                    <a href="#"> <img src="assets/images/portfolio/work1.jpg" alt="" class="img-fluid"></a>
-                    <div class="work-content">
-                        <span>Desgin, Illustrator</span>
-                        <h5>Astronomy Or Astrology</h5>
-                        <a href="#" class="more-btn"><i class="icofont-long-arrow-right"></i></a>
-                    </div>
-                </div>
+                </div>                
            </div>
         </div>
     </div>
 </section>
--->
+
 
     <!--
     <section class="cta ">
@@ -584,20 +528,11 @@
     <script src="assets/js/jquery-3.1.0.js"></script>
     <!-- Bootstrap 5 Alpha-->
     <script src="assets/vendors/bootstrap/popper.min.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.min.js"></script>
-    <!-- Isotope -->
-    <script src="assets/vendors/jquery.isotope.js"></script>
-    <script src="assets/vendors/imagesloaded.js"></script>
-    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.min.js"></script>    
     <!--  Owl Carousel-->
     <script src="assets/vendors/owl/owl.carousel.min.js"></script>
-    <!-- Progress Bar -->
-    <script src="assets/vendors/counto/apear.js"></script>
-    <script src="assets/vendors/counto/counTo.js"></script>
-    <!-- Google Map -->
-    <script src="assets/vendors/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap">
-    </script>
+        
+    
 
     <script src="assets/js/script.js"></script>
 
@@ -612,6 +547,13 @@
         $(window).scroll(function () {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
         });
+
+        function shareLink(link) {
+            navigator.share({
+                title: 'My Banking Brasil',
+                url: 'https://mybanking.com.br/'+link
+            });
+        };
     </script>
 
 </body>

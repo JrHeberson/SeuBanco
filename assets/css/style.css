@@ -350,6 +350,21 @@ Page Banner Area
   background-size: cover;
 }
 
+.question-bg {
+  background: url("../images/bg/question-bg.png") no-repeat;
+  background-size: cover;
+}
+
+.techWorking-bg {
+  background: url("../images/bg/techWorking-bg.png") no-repeat;
+  background-size: cover;
+}
+
+.open-bg {
+  background: url("../images/bg/open-bg.png") no-repeat;
+  background-size: cover;
+}
+
 .portfolio-bg {
   background: url("../images/bg/portfolio-bg.jpg") no-repeat;
   background-size: cover;
@@ -2279,7 +2294,7 @@ Footer Section
 }
 
 .blog-post-item .post-content {
-  padding: 60px 70px 70px;
+  padding: 20px 30px 30px;
 }
 
 .blog-post-item .post-content p {

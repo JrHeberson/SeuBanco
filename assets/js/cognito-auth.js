@@ -170,7 +170,8 @@ var MyBanking = window.MyBanking || {};
 
             $("#menuMain").html('<li class="active"><a href="index.html">Home</a></li>'+
             '<li class="active"><a href="userProfile.html">Seu Perfil</a></li>'+          
-            '<li class="active"><a href="profileTest.html">Teste de Perfil Financeiro</a></li>'+
+            '<li class="active"><a href="artigos.html">Nossos Artigos</a></li>'+          
+            '<li class="active"><a href="profileTest.html">Análise Financeira</a></li>'+
             '<li class="active"><a href="findPersonalCard.html">Encontre seu Cartão!</a></li>'+
             '<li class="active"><a href="#" onclick="MyBanking.signOut();">Sair</a></li>')
             
