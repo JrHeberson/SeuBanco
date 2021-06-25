@@ -153,10 +153,14 @@
                             <br>
                             Nosso buscador irá analisar as respostas fornecidas e, com base nelas, mostrará todos os cartões disponíves das entidades participantes do Open Banking!.
                         </span>
+                        <div class=" mt-4">
+                            <input type="button" id="start" onclick="$('#pageTitle').hide();$('#formDiv').show();" class="btn btn-secondary"
+                                value="Iniciar Busca">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row " id="formDiv">
+            <div style="display: none;" class="row " id="formDiv">
                 <form id="personalCardForm" class="contact_form form-row">                    
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                         <!--<ol class="carousel-indicators">
@@ -531,8 +535,7 @@
 
     // program the reset button
     function resetAnswer() {                
-        $("#formDiv").show();
-        $("#pageTitle").show();
+        $("#formDiv").show();        
         $("#cardList").hide();
         
 

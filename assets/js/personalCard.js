@@ -100,9 +100,7 @@ MyBanking.map = MyBanking.map || {};
         var questionsAnswered = $('input[type="radio"]:checked').length;
     
         if(questionsAnswered === 5){   
-            
-            $("#btnCalcular").hide();
-            $("#loadingGif").show();
+                        
 
             //var formData = {resposta1 : $("#profileTitle").text()};            
 
