@@ -151,6 +151,9 @@ var MyBanking = window.MyBanking || {};
      */
 
     $(function onDocReady() {
+
+        var pageLocation = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
         var cognitoUser = userPool.getCurrentUser();
         $('#signinForm').submit(handleSignin);
         $('#registrationForm').submit(handleRegister);
@@ -181,9 +184,16 @@ var MyBanking = window.MyBanking || {};
         }
         
         $("#login-btn").popover('show');
-        $("#inviteFriend").popover('show');            
+        if(pageLocation == "userProfile.html"){
+            $("#inviteFriend").popover('show');
+            $("#trophyPoints").tooltip('show');
+            setTimeout(function(){ $("#login-btn").popover('hide');$("#inviteFriend").popover('hide');$("#trophyPoints").tooltip('hide');},5000);
+        }else{
+            setTimeout(function(){ $("#login-btn").popover('hide');},5000);
+        }
+        
                     
-        setTimeout(function(){ $("#login-btn").popover('hide');$("#inviteFriend").popover('hide');},5000);
+        
 
         
     });
